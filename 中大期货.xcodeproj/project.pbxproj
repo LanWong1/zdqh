@@ -7,15 +7,98 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA28D437219E4AF300323C8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D436219E4AF300323C8D /* AppDelegate.m */; };
-		BA28D43A219E4AF300323C8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D439219E4AF300323C8D /* ViewController.m */; };
-		BA28D43D219E4AF300323C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA28D43B219E4AF300323C8D /* Main.storyboard */; };
+		9D773DDDFBE243102BDA1EC9 /* libPods-中大期货.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B07B6AA338BFBDF067EE29 /* libPods-中大期货.a */; };
 		BA28D43F219E4B0100323C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA28D43E219E4B0100323C8D /* Assets.xcassets */; };
-		BA28D442219E4B0100323C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA28D440219E4B0100323C8D /* LaunchScreen.storyboard */; };
-		BA28D445219E4B0100323C8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D444219E4B0100323C8D /* main.m */; };
 		BA28D44F219E4B0100323C8D /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D44E219E4B0100323C8D /* ____Tests.m */; };
 		BA28D45A219E4B0100323C8D /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D459219E4B0100323C8D /* ____UITests.m */; };
+		BA28D46E219E52AD00323C8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D46D219E52AD00323C8D /* AppDelegate.m */; };
+		BA28D470219E52C100323C8D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA28D46F219E52C100323C8D /* Launch Screen.storyboard */; };
+		BA28D61C219E53C900323C8D /* MyFavoriteCodeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA28D474219E53BF00323C8D /* MyFavoriteCodeModel.xcdatamodeld */; };
+		BA28D7CA219E53D900323C8D /* buttonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA28D739219E53D800323C8D /* buttonView.xib */; };
+		BA28D7CE219E53D900323C8D /* BaoBiaoItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA28D741219E53D800323C8D /* BaoBiaoItemHeader.xib */; };
+		BA28D7CF219E53D900323C8D /* BaoBiaoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D744219E53D800323C8D /* BaoBiaoLayout.m */; };
+		BA28D7D0219E53D900323C8D /* BaoBiaoItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA28D745219E53D800323C8D /* BaoBiaoItem.xib */; };
+		BA28D7D1219E53D900323C8D /* BaoBiaoItemHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D746219E53D800323C8D /* BaoBiaoItemHeader.m */; };
+		BA28D7D2219E53D900323C8D /* BaoBiaoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D747219E53D800323C8D /* BaoBiaoItem.m */; };
+		BA28D7D8219E53D900323C8D /* QuickOrderCodeListVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D758219E53D800323C8D /* QuickOrderCodeListVCViewController.m */; };
+		BA28D7D9219E53D900323C8D /* CodeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D75A219E53D800323C8D /* CodeListCell.m */; };
+		BA28D7DA219E53D900323C8D /* MyFavoriteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D75C219E53D800323C8D /* MyFavoriteModel.m */; };
+		BA28D7DB219E53D900323C8D /* CodeListCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D75D219E53D800323C8D /* CodeListCoreData.m */; };
+		BA28D7DC219E53D900323C8D /* Y_StockChartLandScapeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D762219E53D800323C8D /* Y_StockChartLandScapeViewController.m */; };
+		BA28D7DD219E53D900323C8D /* Y_StockChartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D765219E53D800323C8D /* Y_StockChartViewController.m */; };
+		BA28D7DE219E53D900323C8D /* Y_StockChartGlobalVariable.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D76B219E53D800323C8D /* Y_StockChartGlobalVariable.m */; };
+		BA28D7DF219E53D900323C8D /* UIColor+Y_StockChart.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D770219E53D800323C8D /* UIColor+Y_StockChart.m */; };
+		BA28D7E0219E53D900323C8D /* Y_StockChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D771219E53D800323C8D /* Y_StockChartView.m */; };
+		BA28D7E1219E53D900323C8D /* Y_KlineMAVLabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D774219E53D800323C8D /* Y_KlineMAVLabelView.m */; };
+		BA28D7E2219E53D900323C8D /* Y_KLineMAView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D777219E53D800323C8D /* Y_KLineMAView.m */; };
+		BA28D7E3219E53D900323C8D /* Y_KLineView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D778219E53D800323C8D /* Y_KLineView.m */; };
+		BA28D7E4219E53D900323C8D /* Y_StockChartRightYView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D77A219E53D800323C8D /* Y_StockChartRightYView.m */; };
+		BA28D7E5219E53D900323C8D /* quoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA28D77C219E53D800323C8D /* quoteView.xib */; };
+		BA28D7E6219E53D900323C8D /* Y_VolumeMAView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D77F219E53D800323C8D /* Y_VolumeMAView.m */; };
+		BA28D7E7219E53D900323C8D /* Y_KLineAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D781219E53D800323C8D /* Y_KLineAccessoryView.m */; };
+		BA28D7E8219E53D900323C8D /* Y_KLineAccessory.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D784219E53D800323C8D /* Y_KLineAccessory.m */; };
+		BA28D7E9219E53D900323C8D /* Y_AccessoryMAView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D787219E53D800323C8D /* Y_AccessoryMAView.m */; };
+		BA28D7EA219E53D900323C8D /* Y_KLinePositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D78B219E53D800323C8D /* Y_KLinePositionModel.m */; };
+		BA28D7EB219E53D900323C8D /* Y_KLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D790219E53D800323C8D /* Y_KLineModel.m */; };
+		BA28D7EC219E53D900323C8D /* Y_KLineGroupModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D791219E53D800323C8D /* Y_KLineGroupModel.m */; };
+		BA28D7ED219E53D900323C8D /* Y_KLineVolumePositionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D792219E53D800323C8D /* Y_KLineVolumePositionModel.m */; };
+		BA28D7EE219E53D900323C8D /* Y_KLineVolumeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D795219E53D800323C8D /* Y_KLineVolumeView.m */; };
+		BA28D7EF219E53D900323C8D /* Y_KLineVolume.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D797219E53D800323C8D /* Y_KLineVolume.m */; };
+		BA28D7F0219E53D900323C8D /* Y_KLineMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D79B219E53D800323C8D /* Y_KLineMainView.m */; };
+		BA28D7F1219E53D900323C8D /* Y_MALine.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D79F219E53D800323C8D /* Y_MALine.m */; };
+		BA28D7F2219E53D900323C8D /* Y_KLine.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7A0219E53D800323C8D /* Y_KLine.m */; };
+		BA28D7F3219E53D900323C8D /* Y_StockChartSegmentView.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7A3219E53D800323C8D /* Y_StockChartSegmentView.m */; };
+		BA28D7F4219E53D900323C8D /* FundDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7A6219E53D900323C8D /* FundDataModel.m */; };
+		BA28D7F5219E53D900323C8D /* QuoteArrayModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7A8219E53D900323C8D /* QuoteArrayModel.m */; };
+		BA28D7F6219E53D900323C8D /* HoldDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7A9219E53D900323C8D /* HoldDataModel.m */; };
+		BA28D7F7219E53D900323C8D /* OrderDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7AC219E53D900323C8D /* OrderDataModel.m */; };
+		BA28D7F8219E53D900323C8D /* UIColor+YW.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7AF219E53D900323C8D /* UIColor+YW.m */; };
+		BA28D7FA219E53D900323C8D /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7B3219E53D900323C8D /* UIView+Extension.m */; };
+		BA28D7FB219E53D900323C8D /* WYLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7B7219E53D900323C8D /* WYLoginVC.m */; };
+		BA28D7FC219E53D900323C8D /* ICEQuickOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7BA219E53D900323C8D /* ICEQuickOrder.m */; };
+		BA28D7FD219E53D900323C8D /* SQLServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7BD219E53D900323C8D /* SQLServerAPI.m */; };
+		BA28D7FE219E53D900323C8D /* ICEQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7C0219E53D900323C8D /* ICEQuote.m */; };
+		BA28D7FF219E53D900323C8D /* ICETool.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7C2219E53D900323C8D /* ICETool.m */; };
+		BA28D801219E53D900323C8D /* ICENpTrade.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7C5219E53D900323C8D /* ICENpTrade.m */; };
+		BA28DB8F219E659100323C8D /* config3.client in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB86219E659000323C8D /* config3.client */; };
+		BA28DB90219E659100323C8D /* SqlServer.ice in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB87219E659000323C8D /* SqlServer.ice */; };
+		BA28DB91219E659100323C8D /* config2.client in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB88219E659000323C8D /* config2.client */; };
+		BA28DB92219E659100323C8D /* WpQuote.ice in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB89219E659000323C8D /* WpQuote.ice */; };
+		BA28DB93219E659100323C8D /* config1.client in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB8A219E659000323C8D /* config1.client */; };
+		BA28DB94219E659100323C8D /* config.client in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB8B219E659100323C8D /* config.client */; };
+		BA28DB95219E659100323C8D /* QuickOrder.ice in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB8C219E659100323C8D /* QuickOrder.ice */; };
+		BA28DB96219E659100323C8D /* WpTrade.ice in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB8D219E659100323C8D /* WpTrade.ice */; };
+		BA28DB97219E659100323C8D /* NpTrade.ice in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB8E219E659100323C8D /* NpTrade.ice */; };
+		BA28DB9E219E659D00323C8D /* NSDictionary+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DB99219E659C00323C8D /* NSDictionary+Extension.m */; };
+		BA28DBA0219E659D00323C8D /* NSArray+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DB9B219E659D00323C8D /* NSArray+Extension.m */; };
+		BA28DBA4219E65F200323C8D /* NpTrade.ice in Sources */ = {isa = PBXBuildFile; fileRef = BA28DB8E219E659100323C8D /* NpTrade.ice */; };
+		BA28DBA5219E65F200323C8D /* QuickOrder.ice in Sources */ = {isa = PBXBuildFile; fileRef = BA28DB8C219E659100323C8D /* QuickOrder.ice */; };
+		BA28DBA6219E65F200323C8D /* SqlServer.ice in Sources */ = {isa = PBXBuildFile; fileRef = BA28DB87219E659000323C8D /* SqlServer.ice */; };
+		BA28DBA7219E65F200323C8D /* WpQuote.ice in Sources */ = {isa = PBXBuildFile; fileRef = BA28DB89219E659000323C8D /* WpQuote.ice */; };
+		BA28DBA8219E65F200323C8D /* WpTrade.ice in Sources */ = {isa = PBXBuildFile; fileRef = BA28DB8D219E659100323C8D /* WpTrade.ice */; };
+		BA28DBB6219E697300323C8D /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBB5219E697300323C8D /* HomePageViewController.m */; };
+		BA28DBBC219E69D500323C8D /* InformationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBBB219E69D500323C8D /* InformationVC.m */; };
+		BA28DBC1219E6A1F00323C8D /* MyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBC0219E6A1F00323C8D /* MyVC.m */; };
+		BA28DBC7219E6E9200323C8D /* QuoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBC5219E6E9200323C8D /* QuoteModel.m */; };
+		BA28DBE2219E6F0100323C8D /* ContracInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBD9219E6F0100323C8D /* ContracInfoModel.m */; };
+		BA28DBE5219E7B2F00323C8D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA28DBE3219E7B2F00323C8D /* Info.plist */; };
+		BA28DBE6219E7B2F00323C8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBE4219E7B2F00323C8D /* main.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		BA28D467219E4D4600323C8D /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*.ice";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).m",
+				"$(DERIVED_FILE_DIR)/$(INPUT_FILE_BASE).h",
+			);
+			script = "/usr/local/bin/icebuilder\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXContainerItemProxy section */
 		BA28D44B219E4B0100323C8D /* PBXContainerItemProxy */ = {
@@ -35,22 +118,136 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E618CC11A1B4F28A0F40F05 /* Pods-中大期货.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-中大期货.debug.xcconfig"; path = "Pods/Target Support Files/Pods-中大期货/Pods-中大期货.debug.xcconfig"; sourceTree = "<group>"; };
+		33B07B6AA338BFBDF067EE29 /* libPods-中大期货.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-中大期货.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA28D432219E4AF300323C8D /* 中大期货.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "中大期货.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA28D435219E4AF300323C8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BA28D436219E4AF300323C8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BA28D438219E4AF300323C8D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BA28D439219E4AF300323C8D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BA28D43C219E4AF300323C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA28D43E219E4B0100323C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BA28D441219E4B0100323C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BA28D443219E4B0100323C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA28D444219E4B0100323C8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA28D44A219E4B0100323C8D /* 中大期货Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "中大期货Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA28D44E219E4B0100323C8D /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
 		BA28D450219E4B0100323C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA28D455219E4B0100323C8D /* 中大期货UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "中大期货UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA28D459219E4B0100323C8D /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
 		BA28D45B219E4B0100323C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA28D468219E529B00323C8D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BA28D46D219E52AD00323C8D /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BA28D46F219E52C100323C8D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		BA28D475219E53BF00323C8D /* MyFavoriteCodeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFavoriteCodeModel.xcdatamodel; sourceTree = "<group>"; };
+		BA28D739219E53D800323C8D /* buttonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = buttonView.xib; sourceTree = "<group>"; };
+		BA28D741219E53D800323C8D /* BaoBiaoItemHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaoBiaoItemHeader.xib; sourceTree = "<group>"; };
+		BA28D742219E53D800323C8D /* BaoBiaoItemHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoBiaoItemHeader.h; sourceTree = "<group>"; };
+		BA28D743219E53D800323C8D /* BaoBiaoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoBiaoItem.h; sourceTree = "<group>"; };
+		BA28D744219E53D800323C8D /* BaoBiaoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoBiaoLayout.m; sourceTree = "<group>"; };
+		BA28D745219E53D800323C8D /* BaoBiaoItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaoBiaoItem.xib; sourceTree = "<group>"; };
+		BA28D746219E53D800323C8D /* BaoBiaoItemHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoBiaoItemHeader.m; sourceTree = "<group>"; };
+		BA28D747219E53D800323C8D /* BaoBiaoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoBiaoItem.m; sourceTree = "<group>"; };
+		BA28D748219E53D800323C8D /* BaoBiaoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoBiaoLayout.h; sourceTree = "<group>"; };
+		BA28D757219E53D800323C8D /* CodeListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeListCell.h; sourceTree = "<group>"; };
+		BA28D758219E53D800323C8D /* QuickOrderCodeListVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickOrderCodeListVCViewController.m; sourceTree = "<group>"; };
+		BA28D759219E53D800323C8D /* QuickOrderCodeListVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickOrderCodeListVCViewController.h; sourceTree = "<group>"; };
+		BA28D75A219E53D800323C8D /* CodeListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeListCell.m; sourceTree = "<group>"; };
+		BA28D75C219E53D800323C8D /* MyFavoriteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyFavoriteModel.m; sourceTree = "<group>"; };
+		BA28D75D219E53D800323C8D /* CodeListCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CodeListCoreData.m; sourceTree = "<group>"; };
+		BA28D75E219E53D800323C8D /* MyFavoriteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyFavoriteModel.h; sourceTree = "<group>"; };
+		BA28D75F219E53D800323C8D /* CodeListCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeListCoreData.h; sourceTree = "<group>"; };
+		BA28D762219E53D800323C8D /* Y_StockChartLandScapeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartLandScapeViewController.m; sourceTree = "<group>"; };
+		BA28D763219E53D800323C8D /* Y_StockChartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartViewController.h; sourceTree = "<group>"; };
+		BA28D764219E53D800323C8D /* Y_StockChartLandScapeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartLandScapeViewController.h; sourceTree = "<group>"; };
+		BA28D765219E53D800323C8D /* Y_StockChartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartViewController.m; sourceTree = "<group>"; };
+		BA28D767219E53D800323C8D /* Y_StockChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartView.h; sourceTree = "<group>"; };
+		BA28D76A219E53D800323C8D /* Y_StockChartGlobalVariable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartGlobalVariable.h; sourceTree = "<group>"; };
+		BA28D76B219E53D800323C8D /* Y_StockChartGlobalVariable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartGlobalVariable.m; sourceTree = "<group>"; };
+		BA28D76D219E53D800323C8D /* Y_StockChartConstant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartConstant.h; sourceTree = "<group>"; };
+		BA28D76F219E53D800323C8D /* UIColor+Y_StockChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Y_StockChart.h"; sourceTree = "<group>"; };
+		BA28D770219E53D800323C8D /* UIColor+Y_StockChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Y_StockChart.m"; sourceTree = "<group>"; };
+		BA28D771219E53D800323C8D /* Y_StockChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartView.m; sourceTree = "<group>"; };
+		BA28D774219E53D800323C8D /* Y_KlineMAVLabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KlineMAVLabelView.m; sourceTree = "<group>"; };
+		BA28D775219E53D800323C8D /* Y_KLineMAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineMAView.h; sourceTree = "<group>"; };
+		BA28D776219E53D800323C8D /* Y_KlineMAVLabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KlineMAVLabelView.h; sourceTree = "<group>"; };
+		BA28D777219E53D800323C8D /* Y_KLineMAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineMAView.m; sourceTree = "<group>"; };
+		BA28D778219E53D800323C8D /* Y_KLineView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineView.m; sourceTree = "<group>"; };
+		BA28D77A219E53D800323C8D /* Y_StockChartRightYView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartRightYView.m; sourceTree = "<group>"; };
+		BA28D77B219E53D800323C8D /* Y_StockChartRightYView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartRightYView.h; sourceTree = "<group>"; };
+		BA28D77C219E53D800323C8D /* quoteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = quoteView.xib; sourceTree = "<group>"; };
+		BA28D77E219E53D800323C8D /* Y_VolumeMAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_VolumeMAView.h; sourceTree = "<group>"; };
+		BA28D77F219E53D800323C8D /* Y_VolumeMAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_VolumeMAView.m; sourceTree = "<group>"; };
+		BA28D781219E53D800323C8D /* Y_KLineAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineAccessoryView.m; sourceTree = "<group>"; };
+		BA28D783219E53D800323C8D /* Y_KLineAccessory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineAccessory.h; sourceTree = "<group>"; };
+		BA28D784219E53D800323C8D /* Y_KLineAccessory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineAccessory.m; sourceTree = "<group>"; };
+		BA28D785219E53D800323C8D /* Y_KLineAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineAccessoryView.h; sourceTree = "<group>"; };
+		BA28D787219E53D800323C8D /* Y_AccessoryMAView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_AccessoryMAView.m; sourceTree = "<group>"; };
+		BA28D788219E53D800323C8D /* Y_AccessoryMAView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_AccessoryMAView.h; sourceTree = "<group>"; };
+		BA28D78B219E53D800323C8D /* Y_KLinePositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLinePositionModel.m; sourceTree = "<group>"; };
+		BA28D78C219E53D800323C8D /* Y_KLineModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineModel.h; sourceTree = "<group>"; };
+		BA28D78D219E53D800323C8D /* Y_KLineGroupModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineGroupModel.h; sourceTree = "<group>"; };
+		BA28D78E219E53D800323C8D /* Y_KLineVolumePositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineVolumePositionModel.h; sourceTree = "<group>"; };
+		BA28D78F219E53D800323C8D /* Y_KLinePositionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLinePositionModel.h; sourceTree = "<group>"; };
+		BA28D790219E53D800323C8D /* Y_KLineModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineModel.m; sourceTree = "<group>"; };
+		BA28D791219E53D800323C8D /* Y_KLineGroupModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineGroupModel.m; sourceTree = "<group>"; };
+		BA28D792219E53D800323C8D /* Y_KLineVolumePositionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineVolumePositionModel.m; sourceTree = "<group>"; };
+		BA28D793219E53D800323C8D /* Y_KLineView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineView.h; sourceTree = "<group>"; };
+		BA28D795219E53D800323C8D /* Y_KLineVolumeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineVolumeView.m; sourceTree = "<group>"; };
+		BA28D797219E53D800323C8D /* Y_KLineVolume.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineVolume.m; sourceTree = "<group>"; };
+		BA28D798219E53D800323C8D /* Y_KLineVolume.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineVolume.h; sourceTree = "<group>"; };
+		BA28D799219E53D800323C8D /* Y_KLineVolumeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineVolumeView.h; sourceTree = "<group>"; };
+		BA28D79B219E53D800323C8D /* Y_KLineMainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLineMainView.m; sourceTree = "<group>"; };
+		BA28D79D219E53D800323C8D /* Y_MALine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_MALine.h; sourceTree = "<group>"; };
+		BA28D79E219E53D800323C8D /* Y_KLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLine.h; sourceTree = "<group>"; };
+		BA28D79F219E53D800323C8D /* Y_MALine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_MALine.m; sourceTree = "<group>"; };
+		BA28D7A0219E53D800323C8D /* Y_KLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_KLine.m; sourceTree = "<group>"; };
+		BA28D7A1219E53D800323C8D /* Y_KLineMainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_KLineMainView.h; sourceTree = "<group>"; };
+		BA28D7A3219E53D800323C8D /* Y_StockChartSegmentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Y_StockChartSegmentView.m; sourceTree = "<group>"; };
+		BA28D7A4219E53D800323C8D /* Y_StockChartSegmentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Y_StockChartSegmentView.h; sourceTree = "<group>"; };
+		BA28D7A6219E53D900323C8D /* FundDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FundDataModel.m; sourceTree = "<group>"; };
+		BA28D7A7219E53D900323C8D /* OrderDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderDataModel.h; sourceTree = "<group>"; };
+		BA28D7A8219E53D900323C8D /* QuoteArrayModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteArrayModel.m; sourceTree = "<group>"; };
+		BA28D7A9219E53D900323C8D /* HoldDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoldDataModel.m; sourceTree = "<group>"; };
+		BA28D7AA219E53D900323C8D /* FundDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FundDataModel.h; sourceTree = "<group>"; };
+		BA28D7AB219E53D900323C8D /* QuoteArrayModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteArrayModel.h; sourceTree = "<group>"; };
+		BA28D7AC219E53D900323C8D /* OrderDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderDataModel.m; sourceTree = "<group>"; };
+		BA28D7AD219E53D900323C8D /* HoldDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoldDataModel.h; sourceTree = "<group>"; };
+		BA28D7AF219E53D900323C8D /* UIColor+YW.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+YW.m"; sourceTree = "<group>"; };
+		BA28D7B0219E53D900323C8D /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		BA28D7B2219E53D900323C8D /* UIColor+YW.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+YW.h"; sourceTree = "<group>"; };
+		BA28D7B3219E53D900323C8D /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		BA28D7B6219E53D900323C8D /* WYLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYLoginVC.h; sourceTree = "<group>"; };
+		BA28D7B7219E53D900323C8D /* WYLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYLoginVC.m; sourceTree = "<group>"; };
+		BA28D7B9219E53D900323C8D /* ICETool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICETool.h; sourceTree = "<group>"; };
+		BA28D7BA219E53D900323C8D /* ICEQuickOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEQuickOrder.m; sourceTree = "<group>"; };
+		BA28D7BB219E53D900323C8D /* ICEQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEQuote.h; sourceTree = "<group>"; };
+		BA28D7BD219E53D900323C8D /* SQLServerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLServerAPI.m; sourceTree = "<group>"; };
+		BA28D7BF219E53D900323C8D /* ICENpTrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICENpTrade.h; sourceTree = "<group>"; };
+		BA28D7C0219E53D900323C8D /* ICEQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEQuote.m; sourceTree = "<group>"; };
+		BA28D7C1219E53D900323C8D /* ICEQuickOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEQuickOrder.h; sourceTree = "<group>"; };
+		BA28D7C2219E53D900323C8D /* ICETool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICETool.m; sourceTree = "<group>"; };
+		BA28D7C3219E53D900323C8D /* SQLServerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLServerAPI.h; sourceTree = "<group>"; };
+		BA28D7C5219E53D900323C8D /* ICENpTrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICENpTrade.m; sourceTree = "<group>"; };
+		BA28DB86219E659000323C8D /* config3.client */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config3.client; sourceTree = "<group>"; };
+		BA28DB87219E659000323C8D /* SqlServer.ice */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SqlServer.ice; sourceTree = "<group>"; };
+		BA28DB88219E659000323C8D /* config2.client */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config2.client; sourceTree = "<group>"; };
+		BA28DB89219E659000323C8D /* WpQuote.ice */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WpQuote.ice; sourceTree = "<group>"; };
+		BA28DB8A219E659000323C8D /* config1.client */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config1.client; sourceTree = "<group>"; };
+		BA28DB8B219E659100323C8D /* config.client */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config.client; sourceTree = "<group>"; };
+		BA28DB8C219E659100323C8D /* QuickOrder.ice */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = QuickOrder.ice; sourceTree = "<group>"; };
+		BA28DB8D219E659100323C8D /* WpTrade.ice */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WpTrade.ice; sourceTree = "<group>"; };
+		BA28DB8E219E659100323C8D /* NpTrade.ice */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NpTrade.ice; sourceTree = "<group>"; };
+		BA28DB99219E659C00323C8D /* NSDictionary+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Extension.m"; sourceTree = "<group>"; };
+		BA28DB9B219E659D00323C8D /* NSArray+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Extension.m"; sourceTree = "<group>"; };
+		BA28DBA2219E65B500323C8D /* NSDictionary+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Extension.h"; sourceTree = "<group>"; };
+		BA28DBA3219E65B500323C8D /* NSArray+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Extension.h"; sourceTree = "<group>"; };
+		BA28DBB2219E68C900323C8D /* ZYWChart-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZYWChart-Prefix.pch"; sourceTree = "<group>"; };
+		BA28DBB4219E697300323C8D /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		BA28DBB5219E697300323C8D /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		BA28DBBA219E69D500323C8D /* InformationVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InformationVC.h; sourceTree = "<group>"; };
+		BA28DBBB219E69D500323C8D /* InformationVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InformationVC.m; sourceTree = "<group>"; };
+		BA28DBBF219E6A1F00323C8D /* MyVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyVC.h; sourceTree = "<group>"; };
+		BA28DBC0219E6A1F00323C8D /* MyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVC.m; sourceTree = "<group>"; };
+		BA28DBC5219E6E9200323C8D /* QuoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteModel.m; sourceTree = "<group>"; };
+		BA28DBC6219E6E9200323C8D /* QuoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteModel.h; sourceTree = "<group>"; };
+		BA28DBC8219E6EFE00323C8D /* ContracInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContracInfoModel.h; path = "../../../ZYWStock-1/ZYWChart/Model/ContracInfoModel.h"; sourceTree = "<group>"; };
+		BA28DBD9219E6F0100323C8D /* ContracInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContracInfoModel.m; path = "../../../ZYWStock-1/ZYWChart/Model/ContracInfoModel.m"; sourceTree = "<group>"; };
+		BA28DBE3219E7B2F00323C8D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA28DBE4219E7B2F00323C8D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D6BC732FC548E7025799FD81 /* Pods-中大期货.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-中大期货.release.xcconfig"; path = "Pods/Target Support Files/Pods-中大期货/Pods-中大期货.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +255,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D773DDDFBE243102BDA1EC9 /* libPods-中大期货.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +276,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8CC3A0CA549A3031C8EC5E2F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0E618CC11A1B4F28A0F40F05 /* Pods-中大期货.debug.xcconfig */,
+				D6BC732FC548E7025799FD81 /* Pods-中大期货.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AF760B8C29DD6935F769AC3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				33B07B6AA338BFBDF067EE29 /* libPods-中大期货.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA28D429219E4AF200323C8D = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +300,8 @@
 				BA28D44D219E4B0100323C8D /* 中大期货Tests */,
 				BA28D458219E4B0100323C8D /* 中大期货UITests */,
 				BA28D433219E4AF300323C8D /* Products */,
+				8CC3A0CA549A3031C8EC5E2F /* Pods */,
+				AF760B8C29DD6935F769AC3A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,15 +318,22 @@
 		BA28D434219E4AF300323C8D /* 中大期货 */ = {
 			isa = PBXGroup;
 			children = (
-				BA28D435219E4AF300323C8D /* AppDelegate.h */,
-				BA28D436219E4AF300323C8D /* AppDelegate.m */,
-				BA28D438219E4AF300323C8D /* ViewController.h */,
-				BA28D439219E4AF300323C8D /* ViewController.m */,
-				BA28D43B219E4AF300323C8D /* Main.storyboard */,
+				BA28DBBD219E69F700323C8D /* 我的 */,
+				BA28DBB8219E699300323C8D /* 资讯 */,
+				BA28DBB3219E694D00323C8D /* 首页 */,
+				BA28DB85219E657200323C8D /* SupportFile */,
+				BA28D7B5219E53D900323C8D /* 登录 */,
+				BA28D754219E53D800323C8D /* 行情 */,
+				BA28D7AE219E53D900323C8D /* Category */,
+				BA28D733219E53D800323C8D /* Controller */,
+				BA28D7B8219E53D900323C8D /* ICETool */,
+				BA28D7A5219E53D900323C8D /* Model */,
 				BA28D43E219E4B0100323C8D /* Assets.xcassets */,
-				BA28D440219E4B0100323C8D /* LaunchScreen.storyboard */,
-				BA28D443219E4B0100323C8D /* Info.plist */,
-				BA28D444219E4B0100323C8D /* main.m */,
+				BA28D468219E529B00323C8D /* AppDelegate.h */,
+				BA28D46D219E52AD00323C8D /* AppDelegate.m */,
+				BA28D46F219E52C100323C8D /* Launch Screen.storyboard */,
+				BA28D474219E53BF00323C8D /* MyFavoriteCodeModel.xcdatamodeld */,
+				BA28DBB2219E68C900323C8D /* ZYWChart-Prefix.pch */,
 			);
 			path = "中大期货";
 			sourceTree = "<group>";
@@ -132,6 +356,414 @@
 			path = "中大期货UITests";
 			sourceTree = "<group>";
 		};
+		BA28D733219E53D800323C8D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D740219E53D800323C8D /* 查询 */,
+				BA28D739219E53D800323C8D /* buttonView.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA28D740219E53D800323C8D /* 查询 */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D741219E53D800323C8D /* BaoBiaoItemHeader.xib */,
+				BA28D742219E53D800323C8D /* BaoBiaoItemHeader.h */,
+				BA28D743219E53D800323C8D /* BaoBiaoItem.h */,
+				BA28D744219E53D800323C8D /* BaoBiaoLayout.m */,
+				BA28D745219E53D800323C8D /* BaoBiaoItem.xib */,
+				BA28D746219E53D800323C8D /* BaoBiaoItemHeader.m */,
+				BA28D747219E53D800323C8D /* BaoBiaoItem.m */,
+				BA28D748219E53D800323C8D /* BaoBiaoLayout.h */,
+			);
+			path = "查询";
+			sourceTree = "<group>";
+		};
+		BA28D754219E53D800323C8D /* 行情 */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D755219E53D800323C8D /* 行情列表 */,
+				BA28D760219E53D800323C8D /* Kline */,
+			);
+			path = "行情";
+			sourceTree = "<group>";
+		};
+		BA28D755219E53D800323C8D /* 行情列表 */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D756219E53D800323C8D /* Controller */,
+				BA28D75B219E53D800323C8D /* model */,
+			);
+			path = "行情列表";
+			sourceTree = "<group>";
+		};
+		BA28D756219E53D800323C8D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D757219E53D800323C8D /* CodeListCell.h */,
+				BA28D758219E53D800323C8D /* QuickOrderCodeListVCViewController.m */,
+				BA28D759219E53D800323C8D /* QuickOrderCodeListVCViewController.h */,
+				BA28D75A219E53D800323C8D /* CodeListCell.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		BA28D75B219E53D800323C8D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D75C219E53D800323C8D /* MyFavoriteModel.m */,
+				BA28D75D219E53D800323C8D /* CodeListCoreData.m */,
+				BA28D75E219E53D800323C8D /* MyFavoriteModel.h */,
+				BA28D75F219E53D800323C8D /* CodeListCoreData.h */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BA28D760219E53D800323C8D /* Kline */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D761219E53D800323C8D /* controller */,
+				BA28D766219E53D800323C8D /* View */,
+			);
+			path = Kline;
+			sourceTree = "<group>";
+		};
+		BA28D761219E53D800323C8D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D762219E53D800323C8D /* Y_StockChartLandScapeViewController.m */,
+				BA28D763219E53D800323C8D /* Y_StockChartViewController.h */,
+				BA28D764219E53D800323C8D /* Y_StockChartLandScapeViewController.h */,
+				BA28D765219E53D800323C8D /* Y_StockChartViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		BA28D766219E53D800323C8D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D767219E53D800323C8D /* Y_StockChartView.h */,
+				BA28D768219E53D800323C8D /* Config */,
+				BA28D771219E53D800323C8D /* Y_StockChartView.m */,
+				BA28D772219E53D800323C8D /* KLine */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BA28D768219E53D800323C8D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D769219E53D800323C8D /* GlobalVariable */,
+				BA28D76C219E53D800323C8D /* Constant */,
+				BA28D76E219E53D800323C8D /* Theme */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		BA28D769219E53D800323C8D /* GlobalVariable */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D76A219E53D800323C8D /* Y_StockChartGlobalVariable.h */,
+				BA28D76B219E53D800323C8D /* Y_StockChartGlobalVariable.m */,
+			);
+			path = GlobalVariable;
+			sourceTree = "<group>";
+		};
+		BA28D76C219E53D800323C8D /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D76D219E53D800323C8D /* Y_StockChartConstant.h */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		BA28D76E219E53D800323C8D /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D76F219E53D800323C8D /* UIColor+Y_StockChart.h */,
+				BA28D770219E53D800323C8D /* UIColor+Y_StockChart.m */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		BA28D772219E53D800323C8D /* KLine */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D773219E53D800323C8D /* KLine_MAView */,
+				BA28D778219E53D800323C8D /* Y_KLineView.m */,
+				BA28D779219E53D800323C8D /* PriceView */,
+				BA28D77C219E53D800323C8D /* quoteView.xib */,
+				BA28D77D219E53D800323C8D /* Volume_MAView */,
+				BA28D780219E53D800323C8D /* AccessoryView */,
+				BA28D786219E53D800323C8D /* Accessory_MAView */,
+				BA28D789219E53D800323C8D /* Model */,
+				BA28D793219E53D800323C8D /* Y_KLineView.h */,
+				BA28D794219E53D800323C8D /* VolumeView */,
+				BA28D79A219E53D800323C8D /* MainKLineView */,
+				BA28D7A2219E53D800323C8D /* SegmentView */,
+			);
+			path = KLine;
+			sourceTree = "<group>";
+		};
+		BA28D773219E53D800323C8D /* KLine_MAView */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D774219E53D800323C8D /* Y_KlineMAVLabelView.m */,
+				BA28D775219E53D800323C8D /* Y_KLineMAView.h */,
+				BA28D776219E53D800323C8D /* Y_KlineMAVLabelView.h */,
+				BA28D777219E53D800323C8D /* Y_KLineMAView.m */,
+			);
+			path = KLine_MAView;
+			sourceTree = "<group>";
+		};
+		BA28D779219E53D800323C8D /* PriceView */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D77A219E53D800323C8D /* Y_StockChartRightYView.m */,
+				BA28D77B219E53D800323C8D /* Y_StockChartRightYView.h */,
+			);
+			path = PriceView;
+			sourceTree = "<group>";
+		};
+		BA28D77D219E53D800323C8D /* Volume_MAView */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D77E219E53D800323C8D /* Y_VolumeMAView.h */,
+				BA28D77F219E53D800323C8D /* Y_VolumeMAView.m */,
+			);
+			path = Volume_MAView;
+			sourceTree = "<group>";
+		};
+		BA28D780219E53D800323C8D /* AccessoryView */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D781219E53D800323C8D /* Y_KLineAccessoryView.m */,
+				BA28D782219E53D800323C8D /* Line */,
+				BA28D785219E53D800323C8D /* Y_KLineAccessoryView.h */,
+			);
+			path = AccessoryView;
+			sourceTree = "<group>";
+		};
+		BA28D782219E53D800323C8D /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D783219E53D800323C8D /* Y_KLineAccessory.h */,
+				BA28D784219E53D800323C8D /* Y_KLineAccessory.m */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		BA28D786219E53D800323C8D /* Accessory_MAView */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D787219E53D800323C8D /* Y_AccessoryMAView.m */,
+				BA28D788219E53D800323C8D /* Y_AccessoryMAView.h */,
+			);
+			path = Accessory_MAView;
+			sourceTree = "<group>";
+		};
+		BA28D789219E53D800323C8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D78A219E53D800323C8D /* KLineModel */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA28D78A219E53D800323C8D /* KLineModel */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D78B219E53D800323C8D /* Y_KLinePositionModel.m */,
+				BA28D78C219E53D800323C8D /* Y_KLineModel.h */,
+				BA28D78D219E53D800323C8D /* Y_KLineGroupModel.h */,
+				BA28D78E219E53D800323C8D /* Y_KLineVolumePositionModel.h */,
+				BA28D78F219E53D800323C8D /* Y_KLinePositionModel.h */,
+				BA28D790219E53D800323C8D /* Y_KLineModel.m */,
+				BA28D791219E53D800323C8D /* Y_KLineGroupModel.m */,
+				BA28D792219E53D800323C8D /* Y_KLineVolumePositionModel.m */,
+			);
+			path = KLineModel;
+			sourceTree = "<group>";
+		};
+		BA28D794219E53D800323C8D /* VolumeView */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D795219E53D800323C8D /* Y_KLineVolumeView.m */,
+				BA28D796219E53D800323C8D /* Line */,
+				BA28D799219E53D800323C8D /* Y_KLineVolumeView.h */,
+			);
+			path = VolumeView;
+			sourceTree = "<group>";
+		};
+		BA28D796219E53D800323C8D /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D797219E53D800323C8D /* Y_KLineVolume.m */,
+				BA28D798219E53D800323C8D /* Y_KLineVolume.h */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		BA28D79A219E53D800323C8D /* MainKLineView */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D79B219E53D800323C8D /* Y_KLineMainView.m */,
+				BA28D79C219E53D800323C8D /* Line */,
+				BA28D7A1219E53D800323C8D /* Y_KLineMainView.h */,
+			);
+			path = MainKLineView;
+			sourceTree = "<group>";
+		};
+		BA28D79C219E53D800323C8D /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D79D219E53D800323C8D /* Y_MALine.h */,
+				BA28D79E219E53D800323C8D /* Y_KLine.h */,
+				BA28D79F219E53D800323C8D /* Y_MALine.m */,
+				BA28D7A0219E53D800323C8D /* Y_KLine.m */,
+			);
+			path = Line;
+			sourceTree = "<group>";
+		};
+		BA28D7A2219E53D800323C8D /* SegmentView */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D7A3219E53D800323C8D /* Y_StockChartSegmentView.m */,
+				BA28D7A4219E53D800323C8D /* Y_StockChartSegmentView.h */,
+			);
+			path = SegmentView;
+			sourceTree = "<group>";
+		};
+		BA28D7A5219E53D900323C8D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D7AA219E53D900323C8D /* FundDataModel.h */,
+				BA28D7A6219E53D900323C8D /* FundDataModel.m */,
+				BA28D7AD219E53D900323C8D /* HoldDataModel.h */,
+				BA28D7A9219E53D900323C8D /* HoldDataModel.m */,
+				BA28D7AC219E53D900323C8D /* OrderDataModel.m */,
+				BA28D7A7219E53D900323C8D /* OrderDataModel.h */,
+				BA28DBC8219E6EFE00323C8D /* ContracInfoModel.h */,
+				BA28DBD9219E6F0100323C8D /* ContracInfoModel.m */,
+				BA28DBC6219E6E9200323C8D /* QuoteModel.h */,
+				BA28DBC5219E6E9200323C8D /* QuoteModel.m */,
+				BA28D7A8219E53D900323C8D /* QuoteArrayModel.m */,
+				BA28D7AB219E53D900323C8D /* QuoteArrayModel.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BA28D7AE219E53D900323C8D /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D7AF219E53D900323C8D /* UIColor+YW.m */,
+				BA28D7B0219E53D900323C8D /* UIView+Extension.h */,
+				BA28D7B2219E53D900323C8D /* UIColor+YW.h */,
+				BA28D7B3219E53D900323C8D /* UIView+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		BA28D7B5219E53D900323C8D /* 登录 */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D7B6219E53D900323C8D /* WYLoginVC.h */,
+				BA28D7B7219E53D900323C8D /* WYLoginVC.m */,
+			);
+			path = "登录";
+			sourceTree = "<group>";
+		};
+		BA28D7B8219E53D900323C8D /* ICETool */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D7B9219E53D900323C8D /* ICETool.h */,
+				BA28D7BA219E53D900323C8D /* ICEQuickOrder.m */,
+				BA28D7BB219E53D900323C8D /* ICEQuote.h */,
+				BA28D7BD219E53D900323C8D /* SQLServerAPI.m */,
+				BA28D7BF219E53D900323C8D /* ICENpTrade.h */,
+				BA28D7C0219E53D900323C8D /* ICEQuote.m */,
+				BA28D7C1219E53D900323C8D /* ICEQuickOrder.h */,
+				BA28D7C2219E53D900323C8D /* ICETool.m */,
+				BA28D7C3219E53D900323C8D /* SQLServerAPI.h */,
+				BA28D7C5219E53D900323C8D /* ICENpTrade.m */,
+			);
+			path = ICETool;
+			sourceTree = "<group>";
+		};
+		BA28DB85219E657200323C8D /* SupportFile */ = {
+			isa = PBXGroup;
+			children = (
+				BA28DBE3219E7B2F00323C8D /* Info.plist */,
+				BA28DBE4219E7B2F00323C8D /* main.m */,
+				BA28DB8B219E659100323C8D /* config.client */,
+				BA28DB8A219E659000323C8D /* config1.client */,
+				BA28DB88219E659000323C8D /* config2.client */,
+				BA28DB86219E659000323C8D /* config3.client */,
+				BA28DB8E219E659100323C8D /* NpTrade.ice */,
+				BA28DB8C219E659100323C8D /* QuickOrder.ice */,
+				BA28DB87219E659000323C8D /* SqlServer.ice */,
+				BA28DB89219E659000323C8D /* WpQuote.ice */,
+				BA28DB8D219E659100323C8D /* WpTrade.ice */,
+				BA28DB9B219E659D00323C8D /* NSArray+Extension.m */,
+				BA28DB99219E659C00323C8D /* NSDictionary+Extension.m */,
+				BA28DBA3219E65B500323C8D /* NSArray+Extension.h */,
+				BA28DBA2219E65B500323C8D /* NSDictionary+Extension.h */,
+			);
+			path = SupportFile;
+			sourceTree = "<group>";
+		};
+		BA28DBB3219E694D00323C8D /* 首页 */ = {
+			isa = PBXGroup;
+			children = (
+				BA28DBB7219E697900323C8D /* controller */,
+			);
+			path = "首页";
+			sourceTree = "<group>";
+		};
+		BA28DBB7219E697900323C8D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA28DBB4219E697300323C8D /* HomePageViewController.h */,
+				BA28DBB5219E697300323C8D /* HomePageViewController.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		BA28DBB8219E699300323C8D /* 资讯 */ = {
+			isa = PBXGroup;
+			children = (
+				BA28DBB9219E69AB00323C8D /* controller */,
+			);
+			path = "资讯";
+			sourceTree = "<group>";
+		};
+		BA28DBB9219E69AB00323C8D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA28DBBA219E69D500323C8D /* InformationVC.h */,
+				BA28DBBB219E69D500323C8D /* InformationVC.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
+		BA28DBBD219E69F700323C8D /* 我的 */ = {
+			isa = PBXGroup;
+			children = (
+				BA28DBBE219E6A0300323C8D /* controller */,
+			);
+			path = "我的";
+			sourceTree = "<group>";
+		};
+		BA28DBBE219E6A0300323C8D /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				BA28DBBF219E6A1F00323C8D /* MyVC.h */,
+				BA28DBC0219E6A1F00323C8D /* MyVC.m */,
+			);
+			path = controller;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,11 +771,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA28D45E219E4B0100323C8D /* Build configuration list for PBXNativeTarget "中大期货" */;
 			buildPhases = (
+				90EC73229F960C3E42BA9DEB /* [CP] Check Pods Manifest.lock */,
 				BA28D42E219E4AF300323C8D /* Sources */,
 				BA28D42F219E4AF300323C8D /* Frameworks */,
 				BA28D430219E4AF300323C8D /* Resources */,
 			);
 			buildRules = (
+				BA28D467219E4D4600323C8D /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -235,9 +869,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA28D442219E4B0100323C8D /* LaunchScreen.storyboard in Resources */,
+				BA28DB96219E659100323C8D /* WpTrade.ice in Resources */,
+				BA28DBE5219E7B2F00323C8D /* Info.plist in Resources */,
+				BA28D7D0219E53D900323C8D /* BaoBiaoItem.xib in Resources */,
+				BA28DB8F219E659100323C8D /* config3.client in Resources */,
+				BA28DB92219E659100323C8D /* WpQuote.ice in Resources */,
+				BA28DB90219E659100323C8D /* SqlServer.ice in Resources */,
+				BA28D7CE219E53D900323C8D /* BaoBiaoItemHeader.xib in Resources */,
+				BA28DB91219E659100323C8D /* config2.client in Resources */,
 				BA28D43F219E4B0100323C8D /* Assets.xcassets in Resources */,
-				BA28D43D219E4AF300323C8D /* Main.storyboard in Resources */,
+				BA28D470219E52C100323C8D /* Launch Screen.storyboard in Resources */,
+				BA28D7E5219E53D900323C8D /* quoteView.xib in Resources */,
+				BA28DB95219E659100323C8D /* QuickOrder.ice in Resources */,
+				BA28DB93219E659100323C8D /* config1.client in Resources */,
+				BA28D7CA219E53D900323C8D /* buttonView.xib in Resources */,
+				BA28DB94219E659100323C8D /* config.client in Resources */,
+				BA28DB97219E659100323C8D /* NpTrade.ice in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,14 +904,89 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		90EC73229F960C3E42BA9DEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-中大期货-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA28D42E219E4AF300323C8D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA28D43A219E4AF300323C8D /* ViewController.m in Sources */,
-				BA28D445219E4B0100323C8D /* main.m in Sources */,
-				BA28D437219E4AF300323C8D /* AppDelegate.m in Sources */,
+				BA28DBA4219E65F200323C8D /* NpTrade.ice in Sources */,
+				BA28DBA5219E65F200323C8D /* QuickOrder.ice in Sources */,
+				BA28DBA6219E65F200323C8D /* SqlServer.ice in Sources */,
+				BA28DBA7219E65F200323C8D /* WpQuote.ice in Sources */,
+				BA28DBB6219E697300323C8D /* HomePageViewController.m in Sources */,
+				BA28DBA8219E65F200323C8D /* WpTrade.ice in Sources */,
+				BA28D7E6219E53D900323C8D /* Y_VolumeMAView.m in Sources */,
+				BA28D7F0219E53D900323C8D /* Y_KLineMainView.m in Sources */,
+				BA28D7DF219E53D900323C8D /* UIColor+Y_StockChart.m in Sources */,
+				BA28D7DA219E53D900323C8D /* MyFavoriteModel.m in Sources */,
+				BA28D7E1219E53D900323C8D /* Y_KlineMAVLabelView.m in Sources */,
+				BA28D7FF219E53D900323C8D /* ICETool.m in Sources */,
+				BA28D7EC219E53D900323C8D /* Y_KLineGroupModel.m in Sources */,
+				BA28D7FD219E53D900323C8D /* SQLServerAPI.m in Sources */,
+				BA28DBE2219E6F0100323C8D /* ContracInfoModel.m in Sources */,
+				BA28DB9E219E659D00323C8D /* NSDictionary+Extension.m in Sources */,
+				BA28D7FB219E53D900323C8D /* WYLoginVC.m in Sources */,
+				BA28D46E219E52AD00323C8D /* AppDelegate.m in Sources */,
+				BA28D7DD219E53D900323C8D /* Y_StockChartViewController.m in Sources */,
+				BA28DBC7219E6E9200323C8D /* QuoteModel.m in Sources */,
+				BA28D61C219E53C900323C8D /* MyFavoriteCodeModel.xcdatamodeld in Sources */,
+				BA28DBBC219E69D500323C8D /* InformationVC.m in Sources */,
+				BA28DBC1219E6A1F00323C8D /* MyVC.m in Sources */,
+				BA28D7F6219E53D900323C8D /* HoldDataModel.m in Sources */,
+				BA28D7E9219E53D900323C8D /* Y_AccessoryMAView.m in Sources */,
+				BA28D7DB219E53D900323C8D /* CodeListCoreData.m in Sources */,
+				BA28D7F4219E53D900323C8D /* FundDataModel.m in Sources */,
+				BA28D7FE219E53D900323C8D /* ICEQuote.m in Sources */,
+				BA28D7E3219E53D900323C8D /* Y_KLineView.m in Sources */,
+				BA28D7E2219E53D900323C8D /* Y_KLineMAView.m in Sources */,
+				BA28D7EB219E53D900323C8D /* Y_KLineModel.m in Sources */,
+				BA28D7D8219E53D900323C8D /* QuickOrderCodeListVCViewController.m in Sources */,
+				BA28D7E7219E53D900323C8D /* Y_KLineAccessoryView.m in Sources */,
+				BA28D7EF219E53D900323C8D /* Y_KLineVolume.m in Sources */,
+				BA28DBE6219E7B2F00323C8D /* main.m in Sources */,
+				BA28D7DE219E53D900323C8D /* Y_StockChartGlobalVariable.m in Sources */,
+				BA28D7EE219E53D900323C8D /* Y_KLineVolumeView.m in Sources */,
+				BA28D7F8219E53D900323C8D /* UIColor+YW.m in Sources */,
+				BA28D7F3219E53D900323C8D /* Y_StockChartSegmentView.m in Sources */,
+				BA28D7F7219E53D900323C8D /* OrderDataModel.m in Sources */,
+				BA28D7FC219E53D900323C8D /* ICEQuickOrder.m in Sources */,
+				BA28D7F1219E53D900323C8D /* Y_MALine.m in Sources */,
+				BA28D7E4219E53D900323C8D /* Y_StockChartRightYView.m in Sources */,
+				BA28D7F5219E53D900323C8D /* QuoteArrayModel.m in Sources */,
+				BA28D801219E53D900323C8D /* ICENpTrade.m in Sources */,
+				BA28D7EA219E53D900323C8D /* Y_KLinePositionModel.m in Sources */,
+				BA28D7D9219E53D900323C8D /* CodeListCell.m in Sources */,
+				BA28D7DC219E53D900323C8D /* Y_StockChartLandScapeViewController.m in Sources */,
+				BA28D7ED219E53D900323C8D /* Y_KLineVolumePositionModel.m in Sources */,
+				BA28D7F2219E53D900323C8D /* Y_KLine.m in Sources */,
+				BA28DBA0219E659D00323C8D /* NSArray+Extension.m in Sources */,
+				BA28D7D1219E53D900323C8D /* BaoBiaoItemHeader.m in Sources */,
+				BA28D7E0219E53D900323C8D /* Y_StockChartView.m in Sources */,
+				BA28D7CF219E53D900323C8D /* BaoBiaoLayout.m in Sources */,
+				BA28D7FA219E53D900323C8D /* UIView+Extension.m in Sources */,
+				BA28D7E8219E53D900323C8D /* Y_KLineAccessory.m in Sources */,
+				BA28D7D2219E53D900323C8D /* BaoBiaoItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,25 +1020,6 @@
 			targetProxy = BA28D456219E4B0100323C8D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		BA28D43B219E4AF300323C8D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BA28D43C219E4AF300323C8D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BA28D440219E4B0100323C8D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BA28D441219E4B0100323C8D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		BA28D45C219E4B0100323C8D /* Debug */ = {
@@ -433,35 +1136,95 @@
 		};
 		BA28D45F219E4B0100323C8D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E618CC11A1B4F28A0F40F05 /* Pods-中大期货.debug.xcconfig */;
 			buildSettings = {
+				ADDITIONAL_SDKS = "/usr/local/opt/ice/sdk/$(PLATFORM_NAME).sdk";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W9753JG9F5;
+				ENABLE_TESTABILITY = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "/Users/zdqh/Documents/工作/app/中大期货/中大期货/ZYWChart-Prefix.pch";
 				INFOPLIST_FILE = "中大期货/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Cocoa-Charts\"",
+					"-l\"FHHFPSIndicator\"",
+					"-l\"GDataXML-HTML\"",
+					"-l\"KVOController\"",
+					"-l\"Masonry\"",
+					"-l\"xml2\"",
+					"-framework",
+					"\"Foundation\"",
+					"-lbz2",
+					"-framework",
+					"\"UIKit\"",
+					"-lIceObjc",
+					"-liconv",
+					"-lIceSSL",
+					"-lGlacier2Objc",
+					"-lIce",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ianwong.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
 		BA28D460219E4B0100323C8D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6BC732FC548E7025799FD81 /* Pods-中大期货.release.xcconfig */;
 			buildSettings = {
+				ADDITIONAL_SDKS = "/usr/local/opt/ice/sdk/$(PLATFORM_NAME).sdk";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W9753JG9F5;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "/Users/zdqh/Documents/工作/app/中大期货/中大期货/ZYWChart-Prefix.pch";
 				INFOPLIST_FILE = "中大期货/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"Cocoa-Charts\"",
+					"-l\"FHHFPSIndicator\"",
+					"-l\"GDataXML-HTML\"",
+					"-l\"KVOController\"",
+					"-l\"Masonry\"",
+					"-l\"xml2\"",
+					"-framework",
+					"\"Foundation\"",
+					"-lbz2",
+					"-framework",
+					"\"UIKit\"",
+					"-lIceObjc",
+					"-liconv",
+					"-lIceSSL",
+					"-lGlacier2Objc",
+					"-lIce",
+					"-lc++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "ianwong.----";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -579,6 +1342,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BA28D474219E53BF00323C8D /* MyFavoriteCodeModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BA28D475219E53BF00323C8D /* MyFavoriteCodeModel.xcdatamodel */,
+			);
+			currentVersion = BA28D475219E53BF00323C8D /* MyFavoriteCodeModel.xcdatamodel */;
+			path = MyFavoriteCodeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BA28D42A219E4AF200323C8D /* Project object */;
 }
