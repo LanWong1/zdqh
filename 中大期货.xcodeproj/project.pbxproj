@@ -1,0 +1,584 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BA28D437219E4AF300323C8D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D436219E4AF300323C8D /* AppDelegate.m */; };
+		BA28D43A219E4AF300323C8D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D439219E4AF300323C8D /* ViewController.m */; };
+		BA28D43D219E4AF300323C8D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA28D43B219E4AF300323C8D /* Main.storyboard */; };
+		BA28D43F219E4B0100323C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA28D43E219E4B0100323C8D /* Assets.xcassets */; };
+		BA28D442219E4B0100323C8D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA28D440219E4B0100323C8D /* LaunchScreen.storyboard */; };
+		BA28D445219E4B0100323C8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D444219E4B0100323C8D /* main.m */; };
+		BA28D44F219E4B0100323C8D /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D44E219E4B0100323C8D /* ____Tests.m */; };
+		BA28D45A219E4B0100323C8D /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D459219E4B0100323C8D /* ____UITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BA28D44B219E4B0100323C8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA28D42A219E4AF200323C8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA28D431219E4AF300323C8D;
+			remoteInfo = "中大期货";
+		};
+		BA28D456219E4B0100323C8D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA28D42A219E4AF200323C8D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA28D431219E4AF300323C8D;
+			remoteInfo = "中大期货";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BA28D432219E4AF300323C8D /* 中大期货.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "中大期货.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA28D435219E4AF300323C8D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BA28D436219E4AF300323C8D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BA28D438219E4AF300323C8D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BA28D439219E4AF300323C8D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BA28D43C219E4AF300323C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BA28D43E219E4B0100323C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BA28D441219E4B0100323C8D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BA28D443219E4B0100323C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA28D444219E4B0100323C8D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BA28D44A219E4B0100323C8D /* 中大期货Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "中大期货Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA28D44E219E4B0100323C8D /* ____Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____Tests.m"; sourceTree = "<group>"; };
+		BA28D450219E4B0100323C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA28D455219E4B0100323C8D /* 中大期货UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "中大期货UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA28D459219E4B0100323C8D /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
+		BA28D45B219E4B0100323C8D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BA28D42F219E4AF300323C8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA28D447219E4B0100323C8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA28D452219E4B0100323C8D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BA28D429219E4AF200323C8D = {
+			isa = PBXGroup;
+			children = (
+				BA28D434219E4AF300323C8D /* 中大期货 */,
+				BA28D44D219E4B0100323C8D /* 中大期货Tests */,
+				BA28D458219E4B0100323C8D /* 中大期货UITests */,
+				BA28D433219E4AF300323C8D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BA28D433219E4AF300323C8D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D432219E4AF300323C8D /* 中大期货.app */,
+				BA28D44A219E4B0100323C8D /* 中大期货Tests.xctest */,
+				BA28D455219E4B0100323C8D /* 中大期货UITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BA28D434219E4AF300323C8D /* 中大期货 */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D435219E4AF300323C8D /* AppDelegate.h */,
+				BA28D436219E4AF300323C8D /* AppDelegate.m */,
+				BA28D438219E4AF300323C8D /* ViewController.h */,
+				BA28D439219E4AF300323C8D /* ViewController.m */,
+				BA28D43B219E4AF300323C8D /* Main.storyboard */,
+				BA28D43E219E4B0100323C8D /* Assets.xcassets */,
+				BA28D440219E4B0100323C8D /* LaunchScreen.storyboard */,
+				BA28D443219E4B0100323C8D /* Info.plist */,
+				BA28D444219E4B0100323C8D /* main.m */,
+			);
+			path = "中大期货";
+			sourceTree = "<group>";
+		};
+		BA28D44D219E4B0100323C8D /* 中大期货Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D44E219E4B0100323C8D /* ____Tests.m */,
+				BA28D450219E4B0100323C8D /* Info.plist */,
+			);
+			path = "中大期货Tests";
+			sourceTree = "<group>";
+		};
+		BA28D458219E4B0100323C8D /* 中大期货UITests */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D459219E4B0100323C8D /* ____UITests.m */,
+				BA28D45B219E4B0100323C8D /* Info.plist */,
+			);
+			path = "中大期货UITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA28D431219E4AF300323C8D /* 中大期货 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA28D45E219E4B0100323C8D /* Build configuration list for PBXNativeTarget "中大期货" */;
+			buildPhases = (
+				BA28D42E219E4AF300323C8D /* Sources */,
+				BA28D42F219E4AF300323C8D /* Frameworks */,
+				BA28D430219E4AF300323C8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "中大期货";
+			productName = "中大期货";
+			productReference = BA28D432219E4AF300323C8D /* 中大期货.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA28D449219E4B0100323C8D /* 中大期货Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA28D461219E4B0100323C8D /* Build configuration list for PBXNativeTarget "中大期货Tests" */;
+			buildPhases = (
+				BA28D446219E4B0100323C8D /* Sources */,
+				BA28D447219E4B0100323C8D /* Frameworks */,
+				BA28D448219E4B0100323C8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA28D44C219E4B0100323C8D /* PBXTargetDependency */,
+			);
+			name = "中大期货Tests";
+			productName = "中大期货Tests";
+			productReference = BA28D44A219E4B0100323C8D /* 中大期货Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BA28D454219E4B0100323C8D /* 中大期货UITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA28D464219E4B0100323C8D /* Build configuration list for PBXNativeTarget "中大期货UITests" */;
+			buildPhases = (
+				BA28D451219E4B0100323C8D /* Sources */,
+				BA28D452219E4B0100323C8D /* Frameworks */,
+				BA28D453219E4B0100323C8D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA28D457219E4B0100323C8D /* PBXTargetDependency */,
+			);
+			name = "中大期货UITests";
+			productName = "中大期货UITests";
+			productReference = BA28D455219E4B0100323C8D /* 中大期货UITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BA28D42A219E4AF200323C8D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = com.zdqh;
+				TargetAttributes = {
+					BA28D431219E4AF300323C8D = {
+						CreatedOnToolsVersion = 10.0;
+					};
+					BA28D449219E4B0100323C8D = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = BA28D431219E4AF300323C8D;
+					};
+					BA28D454219E4B0100323C8D = {
+						CreatedOnToolsVersion = 10.0;
+						TestTargetID = BA28D431219E4AF300323C8D;
+					};
+				};
+			};
+			buildConfigurationList = BA28D42D219E4AF200323C8D /* Build configuration list for PBXProject "中大期货" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BA28D429219E4AF200323C8D;
+			productRefGroup = BA28D433219E4AF300323C8D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA28D431219E4AF300323C8D /* 中大期货 */,
+				BA28D449219E4B0100323C8D /* 中大期货Tests */,
+				BA28D454219E4B0100323C8D /* 中大期货UITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BA28D430219E4AF300323C8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA28D442219E4B0100323C8D /* LaunchScreen.storyboard in Resources */,
+				BA28D43F219E4B0100323C8D /* Assets.xcassets in Resources */,
+				BA28D43D219E4AF300323C8D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA28D448219E4B0100323C8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA28D453219E4B0100323C8D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BA28D42E219E4AF300323C8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA28D43A219E4AF300323C8D /* ViewController.m in Sources */,
+				BA28D445219E4B0100323C8D /* main.m in Sources */,
+				BA28D437219E4AF300323C8D /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA28D446219E4B0100323C8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA28D44F219E4B0100323C8D /* ____Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA28D451219E4B0100323C8D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA28D45A219E4B0100323C8D /* ____UITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BA28D44C219E4B0100323C8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA28D431219E4AF300323C8D /* 中大期货 */;
+			targetProxy = BA28D44B219E4B0100323C8D /* PBXContainerItemProxy */;
+		};
+		BA28D457219E4B0100323C8D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA28D431219E4AF300323C8D /* 中大期货 */;
+			targetProxy = BA28D456219E4B0100323C8D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BA28D43B219E4AF300323C8D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA28D43C219E4AF300323C8D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BA28D440219E4B0100323C8D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BA28D441219E4B0100323C8D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BA28D45C219E4B0100323C8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BA28D45D219E4B0100323C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BA28D45F219E4B0100323C8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9753JG9F5;
+				INFOPLIST_FILE = "中大期货/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ianwong.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BA28D460219E4B0100323C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9753JG9F5;
+				INFOPLIST_FILE = "中大期货/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ianwong.----";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BA28D462219E4B0100323C8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9753JG9F5;
+				INFOPLIST_FILE = "中大期货Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ianwong.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/中大期货.app/中大期货";
+			};
+			name = Debug;
+		};
+		BA28D463219E4B0100323C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9753JG9F5;
+				INFOPLIST_FILE = "中大期货Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ianwong.----Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/中大期货.app/中大期货";
+			};
+			name = Release;
+		};
+		BA28D465219E4B0100323C8D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9753JG9F5;
+				INFOPLIST_FILE = "中大期货UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ianwong.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "中大期货";
+			};
+			name = Debug;
+		};
+		BA28D466219E4B0100323C8D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = W9753JG9F5;
+				INFOPLIST_FILE = "中大期货UITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ianwong.----UITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "中大期货";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BA28D42D219E4AF200323C8D /* Build configuration list for PBXProject "中大期货" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA28D45C219E4B0100323C8D /* Debug */,
+				BA28D45D219E4B0100323C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA28D45E219E4B0100323C8D /* Build configuration list for PBXNativeTarget "中大期货" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA28D45F219E4B0100323C8D /* Debug */,
+				BA28D460219E4B0100323C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA28D461219E4B0100323C8D /* Build configuration list for PBXNativeTarget "中大期货Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA28D462219E4B0100323C8D /* Debug */,
+				BA28D463219E4B0100323C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA28D464219E4B0100323C8D /* Build configuration list for PBXNativeTarget "中大期货UITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA28D465219E4B0100323C8D /* Debug */,
+				BA28D466219E4B0100323C8D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BA28D42A219E4AF200323C8D /* Project object */;
+}
