@@ -83,6 +83,7 @@
 		BA28DBE2219E6F0100323C8D /* ContracInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBD9219E6F0100323C8D /* ContracInfoModel.m */; };
 		BA28DBE5219E7B2F00323C8D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA28DBE3219E7B2F00323C8D /* Info.plist */; };
 		BA28DBE6219E7B2F00323C8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBE4219E7B2F00323C8D /* main.m */; };
+		BAE6184C21A244C4003A9F11 /* CheckView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE6184B21A244C4003A9F11 /* CheckView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -247,6 +248,8 @@
 		BA28DBD9219E6F0100323C8D /* ContracInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContracInfoModel.m; path = "../../../ZYWStock-1/ZYWChart/Model/ContracInfoModel.m"; sourceTree = "<group>"; };
 		BA28DBE3219E7B2F00323C8D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA28DBE4219E7B2F00323C8D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAE6184A21A244C4003A9F11 /* CheckView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckView.h; sourceTree = "<group>"; };
+		BAE6184B21A244C4003A9F11 /* CheckView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckView.m; sourceTree = "<group>"; };
 		D6BC732FC548E7025799FD81 /* Pods-中大期货.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-中大期货.release.xcconfig"; path = "Pods/Target Support Files/Pods-中大期货/Pods-中大期货.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -329,6 +332,7 @@
 				BA28D7B8219E53D900323C8D /* ICETool */,
 				BA28D7A5219E53D900323C8D /* Model */,
 				BA28D43E219E4B0100323C8D /* Assets.xcassets */,
+				BA28DBE3219E7B2F00323C8D /* Info.plist */,
 				BA28D468219E529B00323C8D /* AppDelegate.h */,
 				BA28D46D219E52AD00323C8D /* AppDelegate.m */,
 				BA28D46F219E52C100323C8D /* Launch Screen.storyboard */,
@@ -433,9 +437,9 @@
 			isa = PBXGroup;
 			children = (
 				BA28D762219E53D800323C8D /* Y_StockChartLandScapeViewController.m */,
-				BA28D763219E53D800323C8D /* Y_StockChartViewController.h */,
 				BA28D764219E53D800323C8D /* Y_StockChartLandScapeViewController.h */,
 				BA28D765219E53D800323C8D /* Y_StockChartViewController.m */,
+				BA28D763219E53D800323C8D /* Y_StockChartViewController.h */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -443,10 +447,8 @@
 		BA28D766219E53D800323C8D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BA28D767219E53D800323C8D /* Y_StockChartView.h */,
-				BA28D768219E53D800323C8D /* Config */,
-				BA28D771219E53D800323C8D /* Y_StockChartView.m */,
-				BA28D772219E53D800323C8D /* KLine */,
+				BAE6184921A24484003A9F11 /* CheckView */,
+				BAE6184721A243A6003A9F11 /* KLineView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -454,6 +456,7 @@
 		BA28D768219E53D800323C8D /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				BA28D772219E53D800323C8D /* KLine */,
 				BA28D769219E53D800323C8D /* GlobalVariable */,
 				BA28D76C219E53D800323C8D /* Constant */,
 				BA28D76E219E53D800323C8D /* Theme */,
@@ -694,7 +697,6 @@
 		BA28DB85219E657200323C8D /* SupportFile */ = {
 			isa = PBXGroup;
 			children = (
-				BA28DBE3219E7B2F00323C8D /* Info.plist */,
 				BA28DBE4219E7B2F00323C8D /* main.m */,
 				BA28DB8B219E659100323C8D /* config.client */,
 				BA28DB8A219E659000323C8D /* config1.client */,
@@ -762,6 +764,25 @@
 				BA28DBC0219E6A1F00323C8D /* MyVC.m */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		BAE6184721A243A6003A9F11 /* KLineView */ = {
+			isa = PBXGroup;
+			children = (
+				BA28D768219E53D800323C8D /* Config */,
+				BA28D767219E53D800323C8D /* Y_StockChartView.h */,
+				BA28D771219E53D800323C8D /* Y_StockChartView.m */,
+			);
+			path = KLineView;
+			sourceTree = "<group>";
+		};
+		BAE6184921A24484003A9F11 /* CheckView */ = {
+			isa = PBXGroup;
+			children = (
+				BAE6184A21A244C4003A9F11 /* CheckView.h */,
+				BAE6184B21A244C4003A9F11 /* CheckView.m */,
+			);
+			path = CheckView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -947,6 +968,7 @@
 				BA28DBE2219E6F0100323C8D /* ContracInfoModel.m in Sources */,
 				BA28DB9E219E659D00323C8D /* NSDictionary+Extension.m in Sources */,
 				BA28D7FB219E53D900323C8D /* WYLoginVC.m in Sources */,
+				BAE6184C21A244C4003A9F11 /* CheckView.m in Sources */,
 				BA28D46E219E52AD00323C8D /* AppDelegate.m in Sources */,
 				BA28D7DD219E53D900323C8D /* Y_StockChartViewController.m in Sources */,
 				BA28DBC7219E6E9200323C8D /* QuoteModel.m in Sources */,

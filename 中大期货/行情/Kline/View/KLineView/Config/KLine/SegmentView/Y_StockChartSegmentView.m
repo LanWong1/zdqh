@@ -255,6 +255,7 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
             return;
         }
     }
+    
     if(self.delegate && [self.delegate respondsToSelector:@selector(y_StockChartSegmentView:clickSegmentButtonIndex:)])
     {
         [self.delegate y_StockChartSegmentView:self clickSegmentButtonIndex: btn.tag-Y_StockChartSegmentStartTag];

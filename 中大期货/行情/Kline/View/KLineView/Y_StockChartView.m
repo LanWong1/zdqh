@@ -149,9 +149,7 @@
 
 - (void)y_StockChartSegmentView:(Y_StockChartSegmentView *)segmentView clickSegmentButtonIndex:(NSInteger)index
 {
-
-
-    
+   
     self.currentIndex = index;
     //技术线 指标按钮
     if (index == 105) {

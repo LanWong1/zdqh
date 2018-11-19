@@ -22,7 +22,7 @@
 #import "NSDictionary+Extension.h"
 #import "QuoteArrayModel.h"
 #import "QuoteModel.h"
-
+#import "CheckView.h"
 
 
 typedef NS_ENUM(NSInteger,TradeKind){
@@ -44,7 +44,7 @@ typedef NS_ENUM(NSInteger,TradeKind){
 #define SCREEN_MAX_LENGTH MAX(kScreenWidth,kScreenHeight)
 #define IS_IPHONE_X (IS_IPHONE && SCREEN_MAX_LENGTH == 812.0)
 
-@interface Y_StockChartViewController ()<Y_StockChartViewDataSource,UIGestureRecognizerDelegate,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,QuoteModelDelegate>
+@interface Y_StockChartViewController ()<Y_StockChartViewDataSource,UIGestureRecognizerDelegate,UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource,QuoteModelDelegate,CheckViewDataSourse>
 
 @property (nonatomic, strong) Y_StockChartLandScapeViewController *stockChartLangVC;
 @property (nonatomic, strong) Y_StockChartView *stockChartView;
@@ -62,6 +62,8 @@ typedef NS_ENUM(NSInteger,TradeKind){
 @property (nonatomic,strong) UIView *tradeView ;
 @property (nonatomic,assign)NSInteger tradeButtonOldFlagChangeFlag;
 
+
+@property (nonatomic, strong) CheckView *checkView;
 //线的数据
 @property (nonatomic, strong) NSMutableArray *MinData;
 @property (nonatomic, strong) NSMutableArray *fiveMinsData;
@@ -147,6 +149,7 @@ typedef NS_ENUM(NSInteger,TradeKind){
 @end
 
 @implementation Y_StockChartViewController
+
 
 
 
@@ -486,72 +489,7 @@ typedef NS_ENUM(NSInteger,TradeKind){
     }
 }
 
-////行情通知
-//- (void)quoteData:(NSNotification*)notif{
-//
-//
-//    NSArray *arry = [NSArray arrayWithArray:notif.userInfo[@"message"]];
-//   //删除字符串的数字
-//    NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"[0-9]" options:0 error:NULL];
-//    NSString *code = [regular stringByReplacingMatchesInString:arry[1] options:0 range:NSMakeRange(0, [arry[1] length]) withTemplate:@""];
-//
-//
-//    NSLog(@"code is ......... %@, code lenth === %lu",code,(unsigned long)[code length]);
-//
-//    //NSLog(@"行情========%@   type = %@",notif.userInfo[@"message"],notif.userInfo[@"type"]);
-//    if( [self.title containsString: code]){
-//
-//        //价格变化
-//        _stockChartView.lastPrice.text = arry[4];
-//        float priceChange = [arry[4] floatValue] - [ arry[5] floatValue];
-//        //价格变化百分比
-//        float chagepercentage = 100*priceChange/[arry[5] floatValue];
-//        //NSLog(@"chagepercentage ===  %f",chagepercentage);
-//
-//        if(priceChange<0){
-//            self.stockChartView.priceChangePercentage.textColor = DropColor;//导航栏背景色
-//            _stockChartView.priceChange.textColor = DropColor;
-//            _stockChartView.lastPrice.textColor = DropColor;
-//            _stockChartView.priceChangePercentage.text = [NSString stringWithFormat:@"%.2f%@",chagepercentage ,@"\%"];
-//            _stockChartView.priceChange.text =  [NSString stringWithFormat:@"%.1f",priceChange];
-//        }
-//        else{
-//
-//            _stockChartView.priceChangePercentage.text = [NSString stringWithFormat:@"%@%.2f%@",@"+",chagepercentage ,@"\%"];
-//            _stockChartView.priceChange.text =  [NSString stringWithFormat:@"%@%.1f",@"+",priceChange];
-//            self.stockChartView.priceChangePercentage.textColor = RoseColor;//导航栏背景色
-//            _stockChartView.priceChange.textColor = RoseColor;
-//            _stockChartView.lastPrice.textColor = RoseColor;
-//
-//        }
-//
-//        _stockChartView.AskPrice.text = arry[24];
-//        _stockChartView.AskVolume.text = arry[25];
-//        _stockChartView.BidPrice.text = arry[22];
-//        _stockChartView.BidVolume.text = arry[23];
-//        _stockChartView.OpenInterest.text = arry[13];
-//        NSInteger InterestAdd = [arry[13] integerValue] - [arry[7] integerValue];
-//        _stockChartView.dayGrowHold.text = [NSString stringWithFormat:@"%ld",(long)InterestAdd];
-//        //有持仓
-//        if(_buyCountValue>0){
-//            //持仓盈亏
-//            __block float win;
-//            [_tradeRecordArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//                win += [obj[@"count"] integerValue] * ([arry[4] floatValue]- [obj[@"avgPrice"] floatValue]);
-//
-//            }];
-//            if (win<0) {
-//                _holdWinLossLable.text = [NSString stringWithFormat:@"%@%.1f",@"-",win];
-//                [_holdWinLossLable setTextColor:DropColor];
-//            }
-//            else{
-//                _holdWinLossLable.text = [NSString stringWithFormat:@"%.1f",win];
-//                [_holdWinLossLable setTextColor:RoseColor];
-//            }
-//        }
-//
-//    }
-//}
+
 #pragma --mark 添加views
 // scrollview
 - (void)addScrollView{
@@ -625,7 +563,9 @@ typedef NS_ENUM(NSInteger,TradeKind){
 
     
     [[NSBundle mainBundle]loadNibNamed:@"buttonView" owner:self options:nil];
+    
     [self.tradeView addSubview:_lableView];
+    
     [_lableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.tradeView.mas_left);
         make.width.equalTo(self.tradeView);
@@ -686,8 +626,12 @@ typedef NS_ENUM(NSInteger,TradeKind){
 }
 // 交易按钮 看涨 看跌 清仓 分批清仓
 -(void)addTradeButtons{
+    
+    
     UIView *tradeButtonView = [[UIView alloc]init];
+    
     [tradeButtonView setUserInteractionEnabled:YES];
+    
     [self.tradeView addSubview:tradeButtonView];
     
     [tradeButtonView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -883,11 +827,37 @@ typedef NS_ENUM(NSInteger,TradeKind){
         self.buttomBtnView.hidden = YES;
     }
     else{
-//        checkVC *vc = [checkVC new];
-//        vc.hidesBottomBarWhenPushed = YES;
-//        // [self presentViewController:vc animated:YES completion:nil];
-//        //UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:self];
-//        [self.navigationController pushViewController:vc animated:YES];
+        
+        //self.checkView.backgroundColor = [UIColor whiteColor];
+        
+        UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(checkViewDown)];
+        swipe.direction = UISwipeGestureRecognizerDirectionDown;
+        
+        [self.checkView addGestureRecognizer:swipe];
+        [self.view addSubview:_checkView];
+        [_checkView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.view.mas_left);
+            make.width.equalTo(self.view);
+            //make.top.equalTo(self.stockChartView.mas_bottom);
+            make.height.equalTo(@(DEVICE_HEIGHT/2));
+            make.bottom.equalTo(self.view.mas_bottom);
+        }];
+        _checkView.backgroundColor = [UIColor whiteColor];
+        [_checkView.segmentControl setTintColor:RoseColor];
+        _checkView.selectedIndex = _checkView.segmentControl.selectedSegmentIndex;
+        _checkView.hidden = NO;
+        self.buttomBtnView.hidden = YES;
+        
+    }
+    
+}
+-(void)checkViewDown{
+    
+    if(_buttomBtnView.hidden == YES && _checkView.hidden == NO){
+        NSLog(@"checkView t隐藏了");
+        _tradeButtonOldFlagChangeFlag = 1;
+        _checkView.hidden = YES;
+        _buttomBtnView.hidden = NO;
     }
     
 }
@@ -1791,6 +1761,23 @@ typedef NS_ENUM(NSInteger,TradeKind){
         [_stockChartView addGestureRecognizer:tap];
     }
     return _stockChartView;
+}
+
+
+- (CheckView *)checkView{
+    if(!_checkView){
+        
+        _checkView = [[CheckView alloc]init];
+        _checkView.backgroundColor = [UIColor lightGrayColor];
+        _checkView.dataSource = self;
+        
+    }
+    return _checkView;
+}
+- (id)CheckViewDataSourceOfIndex:(NSInteger)selectedIndex{
+    
+    NSLog(@"segment %ld   pressed",(long)selectedIndex);
+    return @"check view test";
 }
 
 //横竖屏切换
