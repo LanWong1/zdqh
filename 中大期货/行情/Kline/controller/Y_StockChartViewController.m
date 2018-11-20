@@ -1777,7 +1777,8 @@ typedef NS_ENUM(NSInteger,TradeKind){
 - (id)CheckViewDataSourceOfIndex:(NSInteger)selectedIndex{
     
     NSLog(@"segment %ld   pressed",(long)selectedIndex);
-    return @"check view test";
+    
+    return [NSArray arrayWithObjects:@"CF1901",@"卖空",@"12",@"12",@"12900",@"1800",nil];
 }
 
 //横竖屏切换

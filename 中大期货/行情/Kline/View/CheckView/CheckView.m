@@ -7,7 +7,7 @@
 //
 
 #import "CheckView.h"
-
+#import "NSArray+Extension.h"
 @implementation CheckView
 
 /*
@@ -41,73 +41,116 @@
 -(void)setSelectedIndex:(NSInteger)selectedIndex{
     
     _selectedIndex = selectedIndex;
-    [self setLabelsWithItems:[NSArray arrayWithObjects:@"合约名称",@"多空",@"总仓",@"可用",@"开仓均价",@"逐笔浮盈" ,nil]];
+   // [self setLabelsWithItems:[NSArray arrayWithObjects:@"合约名称",@"多空",@"总仓",@"可用",@"开仓均价 ", ,nil]];
     [self segmentTouched:self.segmentControl];
 }
 
 - (void)segmentTouched:(UISegmentedControl*)segmentCotrol{
-    
+    NSArray *array = [NSArray new];
     switch (segmentCotrol.selectedSegmentIndex) {
         case 0:
             NSLog(@"持仓");
-           // [self setLabelsWithItems:[NSArray arrayWithObjects:@"合约名称",@"多空",@"总仓",@"可用",@"开仓均价",@"逐笔浮盈" ,nil]];
+            array = [NSArray arrayWithObjects:@"合约名称",@"多空",@"开仓均价",@"总仓",@"逐笔浮盈" ,@"可用",nil];
+           
             break;
         case 1:
+            array = [NSArray arrayWithObjects:@"合约名称",@"状态",@"委托量",@"开平",@"委托价",@"委托时间" ,nil];
             NSLog(@"委托");
+            break;
+        case 2:
+            array = [NSArray arrayWithObjects:@"合约名称",@"开平",@"委托",@"挂大量",@"委托价" ,nil];
+            break;
+        case 3:
+            array = [NSArray arrayWithObjects:@"合约名称",@"开平",@"成交价",@"成交量",@"成交时间" ,nil];
+        
         default:
             break;
     }
+    
+    
     if(self.dataSource && [self.dataSource respondsToSelector:@selector(CheckViewDataSourceOfIndex:)] ){
-      id a=  [self.dataSource CheckViewDataSourceOfIndex:segmentCotrol.selectedSegmentIndex];
-        NSLog(@"%@",a);
+      NSArray *array1 =  [self.dataSource CheckViewDataSourceOfIndex:segmentCotrol.selectedSegmentIndex];
+      NSArray<NSArray*>*array2 = [NSArray arrayWithObjects:array,array1,nil];
+        [self setLabelsWithItems:array2 forIndex:segmentCotrol.selectedSegmentIndex];
     }
 }
-- (void)setLabelsWithItems:(NSArray*)items{
+- (void)setLabelsWithItems:(NSArray<NSArray*>*)items forIndex:(NSInteger)index{
     
     
-    if(!_titleView){
-        _titleView = [[UIView alloc]init];
-        _titleView.backgroundColor = [UIColor redColor];
-        [self addSubview:_titleView];
-        [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self);
-            make.height.equalTo(@30);
-            make.top.equalTo(self.segmentControl.mas_bottom);
-        }];
-    }
-    for (UIView* view in _titleView.subviews){
+
+    for(UIView* view in _titleView.subviews){
         [view removeFromSuperview];
     }
-    UILabel *preLabel=nil;
-    for( NSString *labelText in items){
+
+ //   UILabel *preLabel=nil;
+//    for(int i = 0;i<items.count;i++){
+//        UILabel *label = [[UILabel alloc]init];
+//        [self.titleView addSubview:label];
+//        [label setTextColor:DropColor];
+//        [label mas_makeConstraints:^(MASConstraintMaker *make) {
+//            if(preLabel){
+//                make.left.equalTo(preLabel.mas_right);
+//            }
+//            else{
+//                make.left.equalTo(self);
+//            }
+//            make.width.equalTo(self).multipliedBy(1.0f/items.count);
+//            make.height.equalTo(@40);
+//            make.top.equalTo(self.segmentControl.mas_bottom);
+//
+//        }];
+//
+//        [label setText:items[i]];
+//        [label setFont:[UIFont systemFontOfSize:16]];
+//        label.textAlignment = NSTextAlignmentCenter;
+//        preLabel = label;
+//    }
+    for(int i=0;i<items.count;i++){
+        NSLog(@"%@",items[i]);
+        UILabel *preLabel=nil;
+     
+        for( NSString* title in items[i]){
+            UILabel *label = [[UILabel alloc]init];
         
-        UILabel *label = [[UILabel alloc]init];
-   
-        [_titleView addSubview:label];
-        [label setTextColor:DropColor];
-        //[label sizeToFit];
-        [label mas_makeConstraints:^(MASConstraintMaker *make) {
-            if(preLabel){
-                make.left.equalTo(preLabel.mas_right);
+            [self.titleView addSubview:label];
+            [label setTextColor:[UIColor blackColor]];
+            if(i==0){
+                [label setTextColor:DropColor];
             }
-            else{
-                make.left.equalTo(self.titleView);
-            }
-            make.width.equalTo(@(self.titleView.width/items.count));
-            make.height.equalTo(self.titleView);
-            make.top.equalTo(self.segmentControl.mas_bottom);
-        }];
-        [label setText:labelText];
-        [label setFont:[UIFont systemFontOfSize:12]];
-        label.textAlignment = NSTextAlignmentCenter;
-        preLabel = label;
-        NSLog(@"fffffffffff");
+            
+            [label mas_makeConstraints:^(MASConstraintMaker *make) {
+                if(preLabel){
+                    make.left.equalTo(preLabel.mas_right);
+                }
+                else{
+                    make.left.equalTo(self);
+                }
+                make.width.equalTo(self).multipliedBy(1.0f/items[i].count);
+                make.height.equalTo(@40);
+                make.top.equalTo(self.segmentControl.mas_bottom).offset(i*40);
+            }];
+            [label setText:title];
+            [label setFont:[UIFont systemFontOfSize:16]];
+            label.textAlignment = NSTextAlignmentCenter;
+            preLabel = label;
+        }
     }
 }
 
-
-
-
+-(UIView *)titleView{
+    
+        if(!_titleView){
+            _titleView = [[UIView alloc]init];
+            [self addSubview:_titleView];
+            [_titleView mas_makeConstraints:^(MASConstraintMaker *make) {
+                make.left.right.equalTo(self);
+                make.height.equalTo(@30);
+                make.bottom.equalTo(self.mas_bottom);
+                //make.top.equalTo(self.segmentControl.mas_bottom);
+            }];
+        }
+    return _titleView;
+}
 
 
 @end

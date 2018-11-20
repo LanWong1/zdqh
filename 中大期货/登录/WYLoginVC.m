@@ -377,7 +377,7 @@
     //info.tabBarItem.selectedImage = [[UIImage imageNamed:@"checkSelected"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     myNav.tabBarItem.title = @"我的";
     _tab.viewControllers = @[homeNav,listNav,infoNav,myNav];
-    
+    _tab.selectedIndex = 1;
     [self presentViewController:_tab animated:NO completion:nil];
 }
 

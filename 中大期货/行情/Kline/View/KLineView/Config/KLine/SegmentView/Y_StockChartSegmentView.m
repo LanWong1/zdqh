@@ -140,7 +140,7 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
             make.top.equalTo(self.mas_top);
             //make.height.equalTo(@50);
             make.bottom.equalTo(self.mas_bottom);
-            make.width.equalTo(self).multipliedBy(1.0f/count);;
+            make.width.equalTo(self).multipliedBy(1.0f/count);
             if(preBtn)
             {
                 make.left.equalTo(preBtn.mas_right).offset(0.5);
