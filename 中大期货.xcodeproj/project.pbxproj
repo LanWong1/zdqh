@@ -83,6 +83,12 @@
 		BA28DBE2219E6F0100323C8D /* ContracInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBD9219E6F0100323C8D /* ContracInfoModel.m */; };
 		BA28DBE5219E7B2F00323C8D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA28DBE3219E7B2F00323C8D /* Info.plist */; };
 		BA28DBE6219E7B2F00323C8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBE4219E7B2F00323C8D /* main.m */; };
+		BAAFAFE521A4E89F00DECDF2 /* TopScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAFAFE421A4E89F00DECDF2 /* TopScrollView.m */; };
+		BAAFAFEF21A4F65100DECDF2 /* 3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAAFAFEC21A4F65100DECDF2 /* 3.jpg */; };
+		BAAFAFF021A4F65100DECDF2 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAAFAFED21A4F65100DECDF2 /* 1.jpg */; };
+		BAAFAFF121A4F65100DECDF2 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BAAFAFEE21A4F65100DECDF2 /* 2.jpg */; };
+		BAAFAFF421A539E700DECDF2 /* NoticeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAFAFF321A539E700DECDF2 /* NoticeView.m */; };
+		BAAFAFF721A54C0C00DECDF2 /* IndexView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAAFAFF621A54C0C00DECDF2 /* IndexView.m */; };
 		BAE6184C21A244C4003A9F11 /* CheckView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE6184B21A244C4003A9F11 /* CheckView.m */; };
 /* End PBXBuildFile section */
 
@@ -248,6 +254,15 @@
 		BA28DBD9219E6F0100323C8D /* ContracInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContracInfoModel.m; path = "../../../ZYWStock-1/ZYWChart/Model/ContracInfoModel.m"; sourceTree = "<group>"; };
 		BA28DBE3219E7B2F00323C8D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA28DBE4219E7B2F00323C8D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BAAFAFE321A4E89F00DECDF2 /* TopScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopScrollView.h; sourceTree = "<group>"; };
+		BAAFAFE421A4E89F00DECDF2 /* TopScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TopScrollView.m; sourceTree = "<group>"; };
+		BAAFAFEC21A4F65100DECDF2 /* 3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 3.jpg; sourceTree = "<group>"; };
+		BAAFAFED21A4F65100DECDF2 /* 1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1.jpg; sourceTree = "<group>"; };
+		BAAFAFEE21A4F65100DECDF2 /* 2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 2.jpg; sourceTree = "<group>"; };
+		BAAFAFF221A539E700DECDF2 /* NoticeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NoticeView.h; sourceTree = "<group>"; };
+		BAAFAFF321A539E700DECDF2 /* NoticeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeView.m; sourceTree = "<group>"; };
+		BAAFAFF521A54C0C00DECDF2 /* IndexView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IndexView.h; sourceTree = "<group>"; };
+		BAAFAFF621A54C0C00DECDF2 /* IndexView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IndexView.m; sourceTree = "<group>"; };
 		BAE6184A21A244C4003A9F11 /* CheckView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckView.h; sourceTree = "<group>"; };
 		BAE6184B21A244C4003A9F11 /* CheckView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckView.m; sourceTree = "<group>"; };
 		D6BC732FC548E7025799FD81 /* Pods-中大期货.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-中大期货.release.xcconfig"; path = "Pods/Target Support Files/Pods-中大期货/Pods-中大期货.release.xcconfig"; sourceTree = "<group>"; };
@@ -427,6 +442,7 @@
 		BA28D760219E53D800323C8D /* Kline */ = {
 			isa = PBXGroup;
 			children = (
+				BAAFAF8021A4E05600DECDF2 /* Model */,
 				BA28D761219E53D800323C8D /* controller */,
 				BA28D766219E53D800323C8D /* View */,
 			);
@@ -704,6 +720,9 @@
 				BA28DB86219E659000323C8D /* config3.client */,
 				BA28DB8E219E659100323C8D /* NpTrade.ice */,
 				BA28DB8C219E659100323C8D /* QuickOrder.ice */,
+				BAAFAFED21A4F65100DECDF2 /* 1.jpg */,
+				BAAFAFEE21A4F65100DECDF2 /* 2.jpg */,
+				BAAFAFEC21A4F65100DECDF2 /* 3.jpg */,
 				BA28DB87219E659000323C8D /* SqlServer.ice */,
 				BA28DB89219E659000323C8D /* WpQuote.ice */,
 				BA28DB8D219E659100323C8D /* WpTrade.ice */,
@@ -718,6 +737,7 @@
 		BA28DBB3219E694D00323C8D /* 首页 */ = {
 			isa = PBXGroup;
 			children = (
+				BAAFAF8221A4E0D900DECDF2 /* View */,
 				BA28DBB7219E697900323C8D /* controller */,
 			);
 			path = "首页";
@@ -752,6 +772,7 @@
 		BA28DBBD219E69F700323C8D /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
+				BAAFAF8121A4E08D00DECDF2 /* View */,
 				BA28DBBE219E6A0300323C8D /* controller */,
 			);
 			path = "我的";
@@ -764,6 +785,33 @@
 				BA28DBC0219E6A1F00323C8D /* MyVC.m */,
 			);
 			path = controller;
+			sourceTree = "<group>";
+		};
+		BAAFAF8021A4E05600DECDF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BAAFAF8121A4E08D00DECDF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BAAFAF8221A4E0D900DECDF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BAAFAFE321A4E89F00DECDF2 /* TopScrollView.h */,
+				BAAFAFE421A4E89F00DECDF2 /* TopScrollView.m */,
+				BAAFAFF221A539E700DECDF2 /* NoticeView.h */,
+				BAAFAFF321A539E700DECDF2 /* NoticeView.m */,
+				BAAFAFF521A54C0C00DECDF2 /* IndexView.h */,
+				BAAFAFF621A54C0C00DECDF2 /* IndexView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		BAE6184721A243A6003A9F11 /* KLineView */ = {
@@ -896,14 +944,17 @@
 				BA28DB8F219E659100323C8D /* config3.client in Resources */,
 				BA28DB92219E659100323C8D /* WpQuote.ice in Resources */,
 				BA28DB90219E659100323C8D /* SqlServer.ice in Resources */,
+				BAAFAFEF21A4F65100DECDF2 /* 3.jpg in Resources */,
 				BA28D7CE219E53D900323C8D /* BaoBiaoItemHeader.xib in Resources */,
 				BA28DB91219E659100323C8D /* config2.client in Resources */,
+				BAAFAFF121A4F65100DECDF2 /* 2.jpg in Resources */,
 				BA28D43F219E4B0100323C8D /* Assets.xcassets in Resources */,
 				BA28D470219E52C100323C8D /* Launch Screen.storyboard in Resources */,
 				BA28D7E5219E53D900323C8D /* quoteView.xib in Resources */,
 				BA28DB95219E659100323C8D /* QuickOrder.ice in Resources */,
 				BA28DB93219E659100323C8D /* config1.client in Resources */,
 				BA28D7CA219E53D900323C8D /* buttonView.xib in Resources */,
+				BAAFAFF021A4F65100DECDF2 /* 1.jpg in Resources */,
 				BA28DB94219E659100323C8D /* config.client in Resources */,
 				BA28DB97219E659100323C8D /* NpTrade.ice in Resources */,
 			);
@@ -984,8 +1035,11 @@
 				BA28D7E2219E53D900323C8D /* Y_KLineMAView.m in Sources */,
 				BA28D7EB219E53D900323C8D /* Y_KLineModel.m in Sources */,
 				BA28D7D8219E53D900323C8D /* QuickOrderCodeListVCViewController.m in Sources */,
+				BAAFAFF721A54C0C00DECDF2 /* IndexView.m in Sources */,
 				BA28D7E7219E53D900323C8D /* Y_KLineAccessoryView.m in Sources */,
 				BA28D7EF219E53D900323C8D /* Y_KLineVolume.m in Sources */,
+				BAAFAFE521A4E89F00DECDF2 /* TopScrollView.m in Sources */,
+				BAAFAFF421A539E700DECDF2 /* NoticeView.m in Sources */,
 				BA28DBE6219E7B2F00323C8D /* main.m in Sources */,
 				BA28D7DE219E53D900323C8D /* Y_StockChartGlobalVariable.m in Sources */,
 				BA28D7EE219E53D900323C8D /* Y_KLineVolumeView.m in Sources */,

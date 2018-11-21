@@ -65,7 +65,7 @@
     //_segment.hidden = NO;
     self.navigationController.navigationBar.hidden = YES;
     self.navigationController.navigationBar.translucent =YES;
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;//设置状态时间文字为白色
+   // [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;//设置状态时间文字为白色
     [self.tableView deselectRowAtIndexPath:[self.tableView indexPathForSelectedRow] animated:YES];
 }
 
@@ -101,16 +101,19 @@
     view.backgroundColor = DropColor;
     _segment = [[UISegmentedControl alloc]initWithItems:title];
     _segment.selectedSegmentIndex = 1;
-   // [_segment setTintColor:RoseColor];
-    _segment.backgroundColor = [UIColor orangeColor];
+    [_segment setTintColor:RoseColor];
+    //_segment.backgroundColor = [UIColor orangeColor];
     [_segment setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15]} forState:UIControlStateNormal];
     //    _segment.frame = CGRectMake(self.view.centerX-50, self.navigationController.navigationBar.centerY-40, 100, 40);
     [view addSubview: _segment];
     [_segment mas_makeConstraints:^(MASConstraintMaker *make) {
-        [make.center isEqual:@(view.center)];
-        make.width.equalTo(@100);
+       // [make.center isEqual:@(view.center)];
+        make.bottom.equalTo(view.mas_bottom).offset(-10);
+        make.centerX.equalTo(view.mas_centerX);
+        make.width.equalTo(@200);
         make.height.equalTo(@30);
     }];
+    
     [_segment addTarget:self action:@selector(touchSegment:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:view];
    

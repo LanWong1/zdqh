@@ -195,7 +195,7 @@ typedef NS_ENUM(NSInteger,TradeKind){
 //    self.navigationController.navigationBar.barTintColor = DropColor;//导航栏背景色
 //    self.navigationController.navigationBar.translucent =YES;
 //    self.navigationController.navigationBar.titleTextAttributes=@{NSForegroundColorAttributeName:[UIColor whiteColor]};//设置标题文字为白色
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;//设置状态时间文字为白色
+    //[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;//设置状态时间文字为白色
 }
 
 - (void)viewWillDisappear:(BOOL)animated
