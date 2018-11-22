@@ -191,12 +191,11 @@
     ICEQuote      *quote = [ICEQuote shareInstance];
     
     
-    
-    
+    __block int ret;
+    __block int ret1;
     [self.view addSubview:self.label];
     [self addActiveId];
     [self.activeId startAnimating];
-    
     
     
     //开线程
@@ -206,28 +205,26 @@
             NSLog(@"connect to server");
             //sql 接口
             [sql Connect2ICE];//sql连接服务器
-            
-            
-            
             [self checkFundAccount];//检查账号信息
             // [self getCode];
-            
             //易捷接口
-           int ret = [quickOrder  Connect2ICE];
+            ret = [quickOrder  Connect2ICE];
 //            [quickOrder initiateCallback:self.strFundAcc];
 //            = [quickOrder Login:self.strCmd];
-            if(ret == -1){
-                AppDelegate *app =(AppDelegate*) [UIApplication sharedApplication].delegate;
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"警告" message:app.strErroInfo preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-                    [self.activeId removeFromSuperview];//转圈圈消失
-                    [self.label removeFromSuperview];//请稍后消失
-                    
-                }];
-                [alert addAction:action];
-                [self presentViewController:alert animated:YES completion:nil];
-            }
-
+//            if(ret == -1){
+//                AppDelegate *app =(AppDelegate*) [UIApplication sharedApplication].delegate;
+//                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"警告" message:app.strErroInfo preferredStyle:UIAlertControllerStyleAlert];
+//
+//                UIAlertAction *action = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//
+//                    [self.activeId removeFromSuperview];//转圈圈 消失
+//                    [self.label removeFromSuperview];//请稍后 消失
+//
+//                }];
+//                [alert addAction:action];
+//                [self presentViewController:alert animated:YES completion:nil];
+//            }
+//            NSLog(@"继续执行");
             //资金查询
              [quickOrder queryFund:quickOrder.strFunAcc];
             
@@ -241,12 +238,12 @@
             // NSLog(@"queryCode: %@",strOut);
             //行情接口
             
-            [quote Connect2Quote];//链接登录
+            ret1 = [quote Connect2Quote];//链接登录
 //            [quote initiateCallback:self.strAcc];
 //            [quote Login:self.strCmd];
             quote.userID = self.strUserId;
 
-     
+            
         }
         @catch(GLACIER2CannotCreateSessionException* ex)
         {
@@ -265,9 +262,11 @@
         @catch(ICEException* s)
         {
             NSLog(@"哈哈哈 :%@",s);
-            [self showAlart];
+            [self showAlart:s];
         }
+        
         dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"连接完成");
             AppDelegate *app =(AppDelegate*) [UIApplication sharedApplication].delegate;
             app.loginFlag = 1;
             [self.activeId removeFromSuperview];
@@ -280,9 +279,32 @@
                 [self addTabBarController];
             }
             else{
-                [self presentViewController:_tab animated:NO completion:nil];
+                [self presentViewController:self.tab animated:NO completion:nil];
             }
+            
         });
+//        if(ret==0){
+//            
+//            dispatch_sync(dispatch_get_main_queue(), ^{
+//                NSLog(@"连接完成");
+//                AppDelegate *app =(AppDelegate*) [UIApplication sharedApplication].delegate;
+//                app.loginFlag = 1;
+//                [self.activeId removeFromSuperview];
+//                [self.label removeFromSuperview];
+//                [self setHeartbeat];//心跳
+//                //判断是否重新连接 若是重新连接 无需跳转页面
+//                NSLog(@"connet flag ===== %d",self.connectFlag);
+//                if(self.connectFlag == 0){
+//                    self.connectFlag = 1;
+//                    [self addTabBarController];
+//                }
+//                else{
+//                    [self presentViewController:self.tab animated:NO completion:nil];
+//                }
+//                
+//            });
+//        }
+   
     });
 }
 
@@ -331,9 +353,9 @@
 
 
 
--(void)showAlart{
+-(void)showAlart:(ICEException *)s{
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"Error"
-                                                                   message:@"请检查网络"
+                                                                   message:(NSString*)s
                                                             preferredStyle:UIAlertControllerStyleAlert];
     [alert addAction:[UIAlertAction actionWithTitle:@"OK"
                                               style:UIAlertActionStyleDefault
@@ -341,7 +363,7 @@
                                                 [self connect2Server];
                                                 NSLog(@"重新连接");
                                             }]];
-    [_tab presentViewController:alert animated:YES completion:nil];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 
@@ -468,10 +490,7 @@
 
         self.strFundAcc = [[NSMutableString alloc]initWithString:self.UserNameTextField.text];
         
-        
-     
-        
-        
+
         AppDelegate* app = (AppDelegate*)[[UIApplication sharedApplication] delegate];
         app.strCmd = [[NSString alloc]initWithFormat:@"%@%@%@%@%@",self.UserNameTextField.text,@"=",self.strUserId,@"=",self.PassWordTextField.text];
         app.strAcc = [NSString stringWithFormat:@"%@%@%@",self.strFundAcc,@"=",self.strUserId];

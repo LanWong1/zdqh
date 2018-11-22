@@ -9,9 +9,8 @@
 #import "QuoteArrayModel.h"
 
 @implementation QuoteArrayModel
+
 static QuoteArrayModel *quoteArrayModel;
-
-
 
 +(QuoteArrayModel*)shareInstance{
     static dispatch_once_t onceToken;
@@ -20,6 +19,8 @@ static QuoteArrayModel *quoteArrayModel;
             quoteArrayModel = [[self alloc]init];
             quoteArrayModel.codelistDic = [[NSMutableDictionary alloc]init];
             quoteArrayModel.quoteModelArray = [NSMutableArray array];
+            quoteArrayModel.riseModelArray = [NSMutableArray array];
+            quoteArrayModel.dropModelArray = [NSMutableArray array];
         }
     });
     return quoteArrayModel;

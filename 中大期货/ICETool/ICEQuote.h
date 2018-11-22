@@ -48,11 +48,11 @@
 
 - (WpQuoteServerCallbackReceiverI*)Connect2Quote;
 - (void)initiateCallback:(NSString*)strAcc;
-- (void)Login:(NSString*)StrCmd;
+- (int)Login:(NSString*)StrCmd;
 - (int)HeartBeat:(NSString*)strCmd;
 - (void)SubscribeQuote:(NSString*)strCmdType strCmd:(NSString*)strCmd;
 - (void)UnSubscribeQuote:(NSString *)strCmdType strCmd:(NSString *)strcmd;
-- (WpQuoteServerDayKLineList*)GetDayKline:(NSString*)ExchangeID;
+- (int)GetDayKline:(NSString*)ExchangeID;
 //- (NSMutableArray*)getTimeData:(NSString*)sCode;
 - (NSMutableArray*)getKlineData:(NSString*)sCode type:(NSString*)type;
 //@property(nonatomic,weak) id<ICEQuoteDelegate>delegate;

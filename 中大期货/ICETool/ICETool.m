@@ -80,9 +80,7 @@
     return self.wpTradeAPIServerCallbackReceiverI;
 }
 - (void)initiateCallback:(NSString*)strAcc{
-    
     [self.WpTrade initiateCallback:strAcc proxy:self.twowayR];
-    
 }
 - (void)Login:(NSString*)StrCmd{
     NSMutableString* strOut = [[NSMutableString alloc]initWithString:@""];

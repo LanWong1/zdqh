@@ -24,7 +24,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface QuoteArrayModel : NSObject
 
 @property (nonatomic,strong)  NSMutableArray<__kindof QuoteModel*> *quoteModelArray;
-
+@property (nonatomic,strong)  NSMutableArray<__kindof QuoteModel*> *riseModelArray;
+@property (nonatomic,strong)  NSMutableArray<__kindof QuoteModel*> *dropModelArray;
 //@property(weak,nonatomic) id<QuoteArrayModelDelegate> delegate;
 @property(strong,nonatomic) NSMutableDictionary *codelistDic;
 

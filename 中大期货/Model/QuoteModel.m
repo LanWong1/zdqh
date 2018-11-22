@@ -28,10 +28,71 @@ static QuoteModel* quoteModel = nil;
 
 - (void)quoteDataChange:(NSNotification *)notify{
     
+    [[QuoteArrayModel shareInstance].riseModelArray removeAllObjects];;
+    [[QuoteArrayModel shareInstance].dropModelArray removeAllObjects];
+    NSMutableArray *dropArray = [NSMutableArray array];
+    NSMutableArray *riseArray = [NSMutableArray array];
     NSInteger index = [notify.userInfo[@"index"] integerValue];
     //NSLog(@"indexModel ========== %d",index);
     [QuoteArrayModel shareInstance].quoteModelArray[index] = notify.userInfo[@"model"];//更新第index个的数据
    // NSLog(@"quoteModelArray[%d] == %@",index,[[QuoteArrayModel shareInstance].quoteModelArray[index] description]);
+    
+    for(QuoteModel * model in  [QuoteArrayModel shareInstance].quoteModelArray ){
+        if([model.priceChangePercentage floatValue] >= 0){
+            [riseArray addObject:model];
+        }
+        else{
+            [dropArray addObject:model];
+        }
+    }
+    
+    
+    
+    [[QuoteArrayModel shareInstance].riseModelArray addObjectsFromArray:  [riseArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        QuoteModel *model1 = obj1;
+        QuoteModel *model2 = obj2;
+        float v1 = [model1.priceChangePercentage floatValue];
+        float v2 = [model2.priceChangePercentage floatValue];
+        if(v1 > v2){
+            return NSOrderedDescending;
+        }
+        else if(v1 == v2){
+            return NSOrderedSame;
+        }
+        else{
+            return NSOrderedAscending;
+        }
+        
+    }]];
+    
+    
+    
+    [[QuoteArrayModel shareInstance].dropModelArray addObjectsFromArray:[dropArray sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+        QuoteModel *model1 = obj1;
+        QuoteModel *model2 = obj2;
+        float v1 = [model1.priceChangePercentage floatValue];
+        float v2 = [model2.priceChangePercentage floatValue];
+        if(v1 > v2){
+            return NSOrderedDescending;
+        }
+        else if(v1 == v2){
+            return NSOrderedSame;
+        }
+        else{
+            return NSOrderedAscending;
+        }
+        
+    }]];
+    
+    
+    [[QuoteArrayModel shareInstance].riseModelArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        QuoteModel *model = obj;
+        NSLog(@"%@:%@", model.instrumenID ,model.priceChangePercentage);
+    }];
+    
+    
+    
+    
     
     if(self.delegate && [self.delegate respondsToSelector:@selector(reloadData:)]){
       

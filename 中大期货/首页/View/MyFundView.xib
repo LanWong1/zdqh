@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="h7i-CY-bvD" customClass="MyFundView">
+            <rect key="frame" x="0.0" y="0.0" width="514" height="94"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="权益:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhx-Os-MQa">
+                    <rect key="frame" x="20" y="36.5" width="40" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekh-ba-rcY">
+                    <rect key="frame" x="81" y="37" width="0.0" height="0.0"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sbU-oG-AOx">
+                    <rect key="frame" x="68" y="36.5" width="16" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可用:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3WP-Py-KQV">
+                    <rect key="frame" x="237" y="36.5" width="40" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="使用率:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Vx-9H-3Tu">
+                    <rect key="frame" x="413" y="36.5" width="57" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QpP-g7-wNS">
+                    <rect key="frame" x="478" y="36.5" width="16" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0g-8m-lPP">
+                    <rect key="frame" x="285" y="37" width="16" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="QpP-g7-wNS" firstAttribute="leading" secondItem="1Vx-9H-3Tu" secondAttribute="trailing" constant="8" id="5JJ-k8-qEc"/>
+                <constraint firstItem="3WP-Py-KQV" firstAttribute="centerY" secondItem="cAF-aZ-c5A" secondAttribute="centerY" id="B55-29-wQF"/>
+                <constraint firstItem="1Vx-9H-3Tu" firstAttribute="centerY" secondItem="cAF-aZ-c5A" secondAttribute="centerY" id="DFK-a6-gdg"/>
+                <constraint firstItem="m0g-8m-lPP" firstAttribute="leading" secondItem="3WP-Py-KQV" secondAttribute="trailing" constant="8" id="Dud-3g-IPn"/>
+                <constraint firstItem="m0g-8m-lPP" firstAttribute="centerY" secondItem="cAF-aZ-c5A" secondAttribute="centerY" id="Dyl-aC-pn1"/>
+                <constraint firstItem="m0g-8m-lPP" firstAttribute="centerY" secondItem="cAF-aZ-c5A" secondAttribute="centerY" id="F9V-lF-agX"/>
+                <constraint firstItem="3WP-Py-KQV" firstAttribute="centerX" secondItem="cAF-aZ-c5A" secondAttribute="centerX" id="Gwl-0a-f7a"/>
+                <constraint firstItem="sbU-oG-AOx" firstAttribute="centerY" secondItem="xhx-Os-MQa" secondAttribute="centerY" id="NQh-pU-fuX"/>
+                <constraint firstItem="cAF-aZ-c5A" firstAttribute="trailing" secondItem="QpP-g7-wNS" secondAttribute="trailing" constant="20" id="Qsc-FJ-z46"/>
+                <constraint firstItem="sbU-oG-AOx" firstAttribute="leading" secondItem="xhx-Os-MQa" secondAttribute="trailing" constant="8" id="ZTW-vS-D9c"/>
+                <constraint firstItem="QpP-g7-wNS" firstAttribute="centerY" secondItem="cAF-aZ-c5A" secondAttribute="centerY" id="d40-Ub-qCy"/>
+                <constraint firstItem="xhx-Os-MQa" firstAttribute="centerY" secondItem="cAF-aZ-c5A" secondAttribute="centerY" id="mCt-QA-EsF"/>
+                <constraint firstItem="xhx-Os-MQa" firstAttribute="leading" secondItem="cAF-aZ-c5A" secondAttribute="leading" constant="20" id="rjO-Ni-1WP"/>
+                <constraint firstItem="sbU-oG-AOx" firstAttribute="leading" secondItem="xhx-Os-MQa" secondAttribute="trailing" constant="8" id="vIc-JO-kyx"/>
+                <constraint firstItem="3WP-Py-KQV" firstAttribute="centerY" secondItem="cAF-aZ-c5A" secondAttribute="centerY" id="zbd-nr-SgN"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="cAF-aZ-c5A"/>
+            <connections>
+                <outlet property="interest" destination="sbU-oG-AOx" id="r7X-e9-YLN"/>
+                <outlet property="unusedInterest" destination="m0g-8m-lPP" id="N1i-MB-tKY"/>
+                <outlet property="usedRate" destination="QpP-g7-wNS" id="H1D-HU-uB7"/>
+            </connections>
+            <point key="canvasLocation" x="235.19999999999999" y="-641.37931034482767"/>
+        </view>
+    </objects>
+</document>

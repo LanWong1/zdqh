@@ -82,9 +82,9 @@ static ICEQuote* iceQuote = nil;
 }
 
 
-- (WpQuoteServerCallbackReceiverI*)Connect2Quote{
+- (int)Connect2Quote{
     
-    NSLog(@"connect quote=========");
+    
     if(self.router){
         
         @try{
@@ -137,13 +137,9 @@ static ICEQuote* iceQuote = nil;
     [adapter activate];
     self.wpQuoteServerCallbackReceiverI = [[WpQuoteServerCallbackReceiverI alloc]init];
     self.twowayR = [WpQuoteServerCallbackReceiverPrx uncheckedCast:[adapter add:_wpQuoteServerCallbackReceiverI identity:callbackReceiverIdent]];
-
-    
-    [self initiateCallback:self.strAcc];
-    
-    [self Login:self.strCmd];
-    
-    return self.wpQuoteServerCallbackReceiverI;
+   [self initiateCallback:self.strAcc];
+   int ret =  [self Login:self.strCmd];
+   return ret;
 }
 
 - (WpQuoteServerDayKLineList*)GetDayKline:(NSString*) ExchangeID{
@@ -165,12 +161,12 @@ static ICEQuote* iceQuote = nil;
     [self.WpQuoteServerclientApiPrx initiateCallback:strAcc proxy:self.twowayR];
 }
 
-- (void)Login:(NSString*)StrCmd{
+- (int)Login:(NSString*)StrCmd{
     NSMutableString* strOut = [[NSMutableString alloc]initWithString:@""];
     NSMutableString* strErroInfo = [[NSMutableString alloc]initWithString:@""];
     int ret = [self.WpQuoteServerclientApiPrx Login:@"" strCmd:StrCmd strOut:&strOut strErrInfo:&strErroInfo];
-    NSLog(@"login======== ===== %d",ret);
-   // [self setHeartbeat];//设置心跳
+    return ret;
+  
 }
 
 

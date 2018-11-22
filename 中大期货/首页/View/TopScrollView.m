@@ -78,7 +78,7 @@
         UIImageView *imageView = [UIImageView new];
         imageView.clipsToBounds = YES;
         imageView.tag = 1000+i;
-        NSString *imageName = [NSString stringWithFormat:@"%d%@",i+1,@".jpg"];
+        NSString *imageName = [NSString stringWithFormat:@"%d",i+1];
         [imageView setImage:[UIImage imageNamed:imageName]];
         imageView.frame = CGRectMake(self.frame.size.width * i, 0, self.frame.size.width, self.frame.size.height);
         [_scrollView addSubview:imageView];
