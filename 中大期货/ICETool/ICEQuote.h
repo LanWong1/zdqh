@@ -46,7 +46,7 @@
 
 + (ICEQuote*)shareInstance;
 
-- (WpQuoteServerCallbackReceiverI*)Connect2Quote;
+- (int)Connect2Quote;
 - (void)initiateCallback:(NSString*)strAcc;
 - (int)Login:(NSString*)StrCmd;
 - (int)HeartBeat:(NSString*)strCmd;

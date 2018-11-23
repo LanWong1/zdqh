@@ -18,7 +18,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface QuoteModel : NSObject
-
+@property (nonatomic,assign) NSInteger codeIndex;
+@property(nonatomic, copy) NSString* exChangeCode;//合约代码带中文的
+@property(nonatomic, copy) NSString* futu_price_step;//变动单位
 @property(nonatomic, copy) NSString* instrumenID;//合约代码。     1
 @property(nonatomic, copy) NSString* lastPrice;//最新价。 4
 @property(nonatomic, copy) NSString* preSettlementPrice;//上次结算价 5

@@ -183,6 +183,82 @@
         [self setAlertWithMessage:@"异常"];
     }
 }
+
+- (void)reconect{
+    
+    ICEQuickOrder *quickOrder = [ICEQuickOrder shareInstance];
+    SQLServerAPI  *sql   = [SQLServerAPI shareInstance];
+    ICEQuote      *quote = [ICEQuote shareInstance];
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
+        @try
+        {
+            NSLog(@"connect to server");
+            //sql 接口
+            [sql Connect2ICE];//sql连接服务器
+           // [self checkFundAccount];//检查账号信息
+            // [self getCode];
+            //易捷接口
+            int ret = [quickOrder  Connect2ICE];
+
+            [quickOrder queryFund:quickOrder.strFunAcc];
+            
+            //            NSString *cmd1 = [NSString stringWithFormat:@"%@%@%@",quickOrder.strFunAcc,@"=",@"" ];
+            //            [quickOrder queryOrder:cmd1];
+            //            //资金消息
+            //            NSString *cmd = [NSString stringWithFormat:@"%@%@%@",quickOrder.strFunAcc,@"=",@"49088" ];
+            //            [quickOrder queryCode:quickOrder.strFunAcc];
+            //交易时间
+            //[quickOrder.quickOrder QueryCode:@"GetTime" strCmd:@"" strOut:&strOut strErrInfo:&strErroInfo];
+            // NSLog(@"queryCode: %@",strOut);
+            //行情接口
+            
+           int ret1 = [quote Connect2Quote];//链接登录
+            quote.userID = self.strUserId;
+            
+            
+        }
+        @catch(GLACIER2CannotCreateSessionException* ex)
+        {
+            NSString* s = [NSString stringWithFormat:@"Session creation failed: %@", ex.reason_];
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                NSLog(@"%@",s);
+            });
+        }
+        @catch(GLACIER2PermissionDeniedException* ex)
+        {
+            NSString* s = [NSString stringWithFormat:@"Login failed: %@", ex.reason_];
+            dispatch_async(dispatch_get_main_queue(), ^ {
+                NSLog(@"%@",s);
+            });
+        }
+        @catch(ICEException* s)
+        {
+            NSLog(@"哈哈哈 :%@",s);
+            [self showAlart:s];
+        }
+        
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"连接完成");
+//            AppDelegate *app =(AppDelegate*) [UIApplication sharedApplication].delegate;
+//            app.loginFlag = 1;
+//            [self.activeId removeFromSuperview];
+//            [self.label removeFromSuperview];
+//            [self setHeartbeat];//心跳
+//            //判断是否重新连接 若是重新连接 无需跳转页面
+//            NSLog(@"connet flag ===== %d",self.connectFlag);
+//            if(self.connectFlag == 0){
+//                self.connectFlag = 1;
+//                [self addTabBarController];
+//            }
+//            else{
+//                [self presentViewController:self.tab animated:NO completion:nil];
+//            }
+            
+        });
+        
+    });
+    
+}
 //conncet to server
 - (void) connect2Server{
     
@@ -239,8 +315,6 @@
             //行情接口
             
             ret1 = [quote Connect2Quote];//链接登录
-//            [quote initiateCallback:self.strAcc];
-//            [quote Login:self.strCmd];
             quote.userID = self.strUserId;
 
             
@@ -399,7 +473,7 @@
     //info.tabBarItem.selectedImage = [[UIImage imageNamed:@"checkSelected"]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
     myNav.tabBarItem.title = @"我的";
     _tab.viewControllers = @[homeNav,listNav,infoNav,myNav];
-    _tab.selectedIndex = 0;
+    _tab.selectedIndex = 1;
     [self presentViewController:_tab animated:NO completion:nil];
 }
 
@@ -418,23 +492,14 @@
             ICEQuickOrder *quickOrder = [ICEQuickOrder shareInstance];
             ICEQuote *quote = [ICEQuote shareInstance];
             iRet1 = [quote HeartBeat:self.strAcc];
-            //iRet1 = [sql heartBeat];
             iRet2 = [quickOrder HeartBeat:self.strCmd];
         }
         @catch(ICEException* s){
             NSLog(@"heart beat exception ==== %@",s);
             dispatch_source_cancel(self->_timer);
-            [self connect2Server];
-//            if(iRet1 != 0){
-//                dispatch_source_cancel(self->_timer);
-//                [self connect2Server];
-//            }
+            [self reconect];
         }
-//        if(iRet1 != 0 | iRet2 != 0){
-//            NSLog(@"heart beat fails ==========");
-//            dispatch_source_cancel(self->_timer);
-//            [self connect2Server];
-//        }
+
     });
     // 开启定时器
     dispatch_resume(_timer);

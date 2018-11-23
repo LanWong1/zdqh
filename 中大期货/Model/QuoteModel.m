@@ -8,6 +8,7 @@
 
 #import "QuoteModel.h"
 #import "QuoteArrayModel.h"
+#import "ContractInfoArrayModel.h"
 @implementation QuoteModel
 //单例模式 全局变量
 
@@ -35,9 +36,19 @@ static QuoteModel* quoteModel = nil;
     NSInteger index = [notify.userInfo[@"index"] integerValue];
     //NSLog(@"indexModel ========== %d",index);
     [QuoteArrayModel shareInstance].quoteModelArray[index] = notify.userInfo[@"model"];//更新第index个的数据
+    
+    
+    [QuoteArrayModel shareInstance].quoteModelArray[index].exChangeCode = [ContractInfoArrayModel shareInstance].contractInfoArray[index].contract_name;
+    
+    
+     [QuoteArrayModel shareInstance].quoteModelArray[index].futu_price_step = [ContractInfoArrayModel shareInstance].contractInfoArray[index].futu_price_step;
+    
+    [QuoteArrayModel shareInstance].quoteModelArray[index].codeIndex = index;
+    
    // NSLog(@"quoteModelArray[%d] == %@",index,[[QuoteArrayModel shareInstance].quoteModelArray[index] description]);
     
     for(QuoteModel * model in  [QuoteArrayModel shareInstance].quoteModelArray ){
+        
         if([model.priceChangePercentage floatValue] >= 0){
             [riseArray addObject:model];
         }
@@ -54,13 +65,14 @@ static QuoteModel* quoteModel = nil;
         float v1 = [model1.priceChangePercentage floatValue];
         float v2 = [model2.priceChangePercentage floatValue];
         if(v1 > v2){
-            return NSOrderedDescending;
+            
+            return NSOrderedAscending;
         }
         else if(v1 == v2){
             return NSOrderedSame;
         }
         else{
-            return NSOrderedAscending;
+            return NSOrderedDescending;
         }
         
     }]];
@@ -84,12 +96,15 @@ static QuoteModel* quoteModel = nil;
         
     }]];
     
-    
-    [[QuoteArrayModel shareInstance].riseModelArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        QuoteModel *model = obj;
-        NSLog(@"%@:%@", model.instrumenID ,model.priceChangePercentage);
-    }];
-    
+//
+//    [[QuoteArrayModel shareInstance].riseModelArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        QuoteModel *model = obj;
+//        NSLog(@"rise %@:%@", model.instrumenID ,model.priceChangePercentage);
+//    }];
+//    [[QuoteArrayModel shareInstance].dropModelArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        QuoteModel *model = obj;
+//        NSLog(@"drop    %@:%@", model.instrumenID ,model.priceChangePercentage);
+//    }];
     
     
     

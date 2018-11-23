@@ -19,6 +19,7 @@
 #import "CodeListCell.h"
 #import "CodeListCoreData.h"
 #import "MyFavoriteModel.h"
+#import "ContractInfoArrayModel.h"
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
 #define kScreenHeight [UIScreen mainScreen].bounds.size.height
@@ -41,7 +42,12 @@
 
 //@property (nonatomic)         ICEInt refreshFlag;
 //@property (nonatomic,strong)  UIRefreshControl   *refreshControl;
-@property (nonatomic,strong)  NSMutableArray<__kindof ContracInfoModel*> *contractInfoArray;
+
+
+//@property (nonatomic,strong)  NSMutableArray<__kindof ContracInfoModel*> *contractInfoArray;
+
+
+
 @property (nonatomic,strong)  NSArray<__kindof MyFavoriteModel*> *myFavoriteArray;
 @property (nonatomic,strong)  NSMutableArray *subscribedIndex;
 //@property (nonatomic,strong)  NSMutableArray<__kindof QuoteModel*> *quoteModelArray;
@@ -82,7 +88,7 @@
     _quoteModel = [QuoteModel shareInstance];
     _quoteModel.delegate = self;
     //self.navigationItem.title = @"行情";
-     _contractInfoArray = [NSMutableArray array];
+     //[ContractInfoArrayModel shareInstance].contractInfoArray = [NSMutableArray array];
     self.reciver = [[WpQuoteServerCallbackReceiverI alloc]init];
     //self.reciver.delegate = self;
     [self addSegment];
@@ -156,24 +162,28 @@
 //        [self addLabel];
 //        [self.activeId startAnimating];
 //    }
+    typeof(self) __weak  weakSelf =self;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^ {
         [self getCode];//获取合约信息
 //        [QuoteArrayModel shareInstance].quoteModelArray = [NSMutableArray arrayWithCapacity:_codeArray.count];
-        [_codeArray removeAllObjects];
-        [_contractInfoArray enumerateObjectsUsingBlock:^(__kindof ContracInfoModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-       
-            [_codeArray addObject:obj.contract_name];
+        [weakSelf.codeArray removeAllObjects];
+        
+        [[ContractInfoArrayModel shareInstance].contractInfoArray enumerateObjectsUsingBlock:^(__kindof ContracInfoModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            
+            [weakSelf.codeArray addObject:obj.contract_name];
             //名称和顺序 当收到消息时 可以通过名称确定index 更新相应的数据code 对应 index  按照tableVIew的code排列顺序
             [[QuoteArrayModel shareInstance].codelistDic setValue:@(idx) forKey:obj.contract_code];
             //初始化quotemodelarray
-            [[QuoteArrayModel shareInstance].quoteModelArray addObject: [QuoteModel shareInstance]];
+            QuoteModel *model =[QuoteModel new];
+            [[QuoteArrayModel shareInstance].quoteModelArray addObject: model];
         }];
         dispatch_sync(dispatch_get_main_queue(), ^{
-            _searchResult =  _codeArray;
-            [self.activeId stopAnimating];
-            [self.label removeFromSuperview];
-            [self addHeaderView];
-            [self addTableView];
+           
+            weakSelf.searchResult =  weakSelf.codeArray;
+            [weakSelf.activeId stopAnimating];
+            [weakSelf.label removeFromSuperview];
+            [weakSelf addHeaderView];
+            [weakSelf addTableView];
            // [self addRefreshControl];
         });
     });
@@ -239,7 +249,7 @@
                     model.enabled = value;
                 }
             }
-            [_contractInfoArray addObject:model];
+            [[ContractInfoArrayModel shareInstance].contractInfoArray addObject:model];
         }
         if(ret == 1){
             NSLog(@"正常");
@@ -442,12 +452,15 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
    // NSLog(@"indexpath,row is %d",indexPath.row);
-    NSString *sCode = _contractInfoArray[indexPath.row].contract_code;
-    NSString *name = _contractInfoArray[indexPath.row].contract_name;
+    NSString *sCode = [ContractInfoArrayModel shareInstance].contractInfoArray[indexPath.row].contract_code;
+    NSString *name = [ContractInfoArrayModel shareInstance].contractInfoArray[indexPath.row].contract_name;
+    
+    
+    
     NSString *title = [NSString stringWithFormat:@"%@(%@)",name,sCode];
     Y_StockChartViewController* vc = [[Y_StockChartViewController alloc]initWithScode:sCode];
     vc.navigationBarTitle = title;
-    vc.futu_price_step = _contractInfoArray[indexPath.row].futu_price_step;
+    vc.futu_price_step = [ContractInfoArrayModel shareInstance].contractInfoArray[indexPath.row].futu_price_step;
     vc.codeIndex = indexPath.row;
     
     vc.hidesBottomBarWhenPushed = YES;
@@ -463,25 +476,21 @@
     NSString *openInterest;
     CodeListCell *cell = [CodeListCell cellWithTableView:tableView];
     
-    
     if(_myFavorite){
      
         lastPrice = [QuoteArrayModel shareInstance].quoteModelArray[((MyFavoriteModel*) _searchResult[indexPath.row]).index].lastPrice;
         priceChangePercentage = [QuoteArrayModel shareInstance].quoteModelArray[((MyFavoriteModel*) _searchResult[indexPath.row]).index].priceChangePercentage;
         openInterest = [QuoteArrayModel shareInstance].quoteModelArray[((MyFavoriteModel*) _searchResult[indexPath.row]).index].openInterest;
         
-        
-        
-        
         NSString* title =((MyFavoriteModel*) _searchResult[indexPath.row]).code;
         NSLog(@"title = %@",title);
         cell.textLabel.text = title;
-        cell.detailTextLabel.text  = _contractInfoArray[((MyFavoriteModel*) _searchResult[indexPath.row]).index].contract_code;
+        cell.detailTextLabel.text  = [ContractInfoArrayModel shareInstance].contractInfoArray[((MyFavoriteModel*) _searchResult[indexPath.row]).index].contract_code;
     }
     if (!_myFavorite) {
         if(![_subscribedIndex containsObject:@(indexPath.row)] ){
             [_subscribedIndex addObject:@(indexPath.row)];
-            [self subscibe:_contractInfoArray[indexPath.row].contract_code];
+            [self subscibe:[ContractInfoArrayModel shareInstance].contractInfoArray[indexPath.row].contract_code];
         }
         if([QuoteArrayModel shareInstance].quoteModelArray.count > 0){
             lastPrice = [QuoteArrayModel shareInstance].quoteModelArray[indexPath.row].lastPrice;
@@ -490,7 +499,7 @@
         }
         NSString* title = _searchResult[indexPath.row];
         cell.textLabel.text = title;
-        cell.detailTextLabel.text  = _contractInfoArray[indexPath.row].contract_code;
+        cell.detailTextLabel.text  = [ContractInfoArrayModel shareInstance].contractInfoArray[indexPath.row].contract_code;
     }
     //订阅 只订阅一次
    
@@ -519,13 +528,19 @@
 
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewRowAction *action = [[UITableViewRowAction alloc]init];
     
+    
+    
+    UITableViewRowAction *action = [[UITableViewRowAction alloc]init];
+    typeof (self) __weak weakSelf = self;
     if (!_myFavorite) {
         UITableViewRowAction *likeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"加自选" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
 //            [_myFavoriteCodeIndexArray addObject:@(indexPath.row)];
 //            [_myFavoriteCodeArray addObject:_codeArray[indexPath.row]];
-            MyFavoriteModel *myFavoriteCode = [[MyFavoriteModel alloc]initWithCode:_codeArray[indexPath.row] index:indexPath.row];
+            
+            
+            
+            MyFavoriteModel *myFavoriteCode = [[MyFavoriteModel alloc]initWithCode:weakSelf.codeArray[indexPath.row] index:indexPath.row];
             
             [[CodeListCoreData sharedInstance] create:myFavoriteCode];
             
@@ -540,11 +555,11 @@
     if(_myFavorite){
         UITableViewRowAction *disLikeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"取消自选" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
            MyFavoriteModel *removeModel = [[MyFavoriteModel alloc]init];
-            _myFavoriteArray = [NSArray array];
-           _myFavoriteArray = [[CodeListCoreData sharedInstance] findAll];
-            removeModel = _myFavoriteArray[indexPath.row];
+            weakSelf.myFavoriteArray = [NSArray array];
+           weakSelf.myFavoriteArray = [[CodeListCoreData sharedInstance] findAll];
+            removeModel = weakSelf.myFavoriteArray[indexPath.row];
           [[CodeListCoreData sharedInstance] remove:removeModel.code];
-            _searchResult = [[CodeListCoreData sharedInstance] findAll];
+            weakSelf.searchResult = [[CodeListCoreData sharedInstance] findAll];
             [tableView reloadData];
         }];
         disLikeAction.backgroundColor = [UIColor redColor];
