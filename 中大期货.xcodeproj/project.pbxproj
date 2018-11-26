@@ -80,7 +80,6 @@
 		BA28DBBC219E69D500323C8D /* InformationVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBBB219E69D500323C8D /* InformationVC.m */; };
 		BA28DBC1219E6A1F00323C8D /* MyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBC0219E6A1F00323C8D /* MyVC.m */; };
 		BA28DBC7219E6E9200323C8D /* QuoteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBC5219E6E9200323C8D /* QuoteModel.m */; };
-		BA28DBE2219E6F0100323C8D /* ContracInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBD9219E6F0100323C8D /* ContracInfoModel.m */; };
 		BA28DBE5219E7B2F00323C8D /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA28DBE3219E7B2F00323C8D /* Info.plist */; };
 		BA28DBE6219E7B2F00323C8D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28DBE4219E7B2F00323C8D /* main.m */; };
 		BAA11ABD21A7A04600CF71FE /* TopChangeView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA11ABC21A7A04600CF71FE /* TopChangeView.m */; };
@@ -97,6 +96,7 @@
 		BAAFB01421A7886300DECDF2 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = BAAFB01121A7886300DECDF2 /* 2.png */; };
 		BAAFB01621A78B1000DECDF2 /* topChangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAFB01521A78B1000DECDF2 /* topChangeView.xib */; };
 		BAE6184C21A244C4003A9F11 /* CheckView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE6184B21A244C4003A9F11 /* CheckView.m */; };
+		BAE731B321AB7CF300EE4738 /* ContracInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE731B221AB7CF300EE4738 /* ContracInfoModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -257,8 +257,6 @@
 		BA28DBC0219E6A1F00323C8D /* MyVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyVC.m; sourceTree = "<group>"; };
 		BA28DBC5219E6E9200323C8D /* QuoteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteModel.m; sourceTree = "<group>"; };
 		BA28DBC6219E6E9200323C8D /* QuoteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteModel.h; sourceTree = "<group>"; };
-		BA28DBC8219E6EFE00323C8D /* ContracInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContracInfoModel.h; path = "../../../ZYWStock-1/ZYWChart/Model/ContracInfoModel.h"; sourceTree = "<group>"; };
-		BA28DBD9219E6F0100323C8D /* ContracInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContracInfoModel.m; path = "../../../ZYWStock-1/ZYWChart/Model/ContracInfoModel.m"; sourceTree = "<group>"; };
 		BA28DBE3219E7B2F00323C8D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA28DBE4219E7B2F00323C8D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BAA11ABB21A7A04600CF71FE /* TopChangeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TopChangeView.h; sourceTree = "<group>"; };
@@ -284,6 +282,8 @@
 		BAAFB01521A78B1000DECDF2 /* topChangeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = topChangeView.xib; sourceTree = "<group>"; };
 		BAE6184A21A244C4003A9F11 /* CheckView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CheckView.h; sourceTree = "<group>"; };
 		BAE6184B21A244C4003A9F11 /* CheckView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckView.m; sourceTree = "<group>"; };
+		BAE731B121AB7CF200EE4738 /* ContracInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContracInfoModel.h; sourceTree = "<group>"; };
+		BAE731B221AB7CF300EE4738 /* ContracInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContracInfoModel.m; sourceTree = "<group>"; };
 		D6BC732FC548E7025799FD81 /* Pods-中大期货.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-中大期货.release.xcconfig"; path = "Pods/Target Support Files/Pods-中大期货/Pods-中大期货.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -675,14 +675,14 @@
 		BA28D7A5219E53D900323C8D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BAE731B121AB7CF200EE4738 /* ContracInfoModel.h */,
+				BAE731B221AB7CF300EE4738 /* ContracInfoModel.m */,
 				BA28D7AA219E53D900323C8D /* FundDataModel.h */,
 				BA28D7A6219E53D900323C8D /* FundDataModel.m */,
 				BA28D7AD219E53D900323C8D /* HoldDataModel.h */,
 				BA28D7A9219E53D900323C8D /* HoldDataModel.m */,
 				BA28D7AC219E53D900323C8D /* OrderDataModel.m */,
 				BA28D7A7219E53D900323C8D /* OrderDataModel.h */,
-				BA28DBC8219E6EFE00323C8D /* ContracInfoModel.h */,
-				BA28DBD9219E6F0100323C8D /* ContracInfoModel.m */,
 				BA28DBC6219E6E9200323C8D /* QuoteModel.h */,
 				BA28DBC5219E6E9200323C8D /* QuoteModel.m */,
 				BA28D7A8219E53D900323C8D /* QuoteArrayModel.m */,
@@ -1058,7 +1058,6 @@
 				BA28D7FF219E53D900323C8D /* ICETool.m in Sources */,
 				BA28D7EC219E53D900323C8D /* Y_KLineGroupModel.m in Sources */,
 				BA28D7FD219E53D900323C8D /* SQLServerAPI.m in Sources */,
-				BA28DBE2219E6F0100323C8D /* ContracInfoModel.m in Sources */,
 				BA28DB9E219E659D00323C8D /* NSDictionary+Extension.m in Sources */,
 				BA28D7FB219E53D900323C8D /* WYLoginVC.m in Sources */,
 				BAE6184C21A244C4003A9F11 /* CheckView.m in Sources */,
@@ -1082,6 +1081,7 @@
 				BAAFAFF721A54C0C00DECDF2 /* IndexView.m in Sources */,
 				BAAFB00121A6483200DECDF2 /* FundModel.m in Sources */,
 				BA28D7E7219E53D900323C8D /* Y_KLineAccessoryView.m in Sources */,
+				BAE731B321AB7CF300EE4738 /* ContracInfoModel.m in Sources */,
 				BA28D7EF219E53D900323C8D /* Y_KLineVolume.m in Sources */,
 				BAAFAFE521A4E89F00DECDF2 /* TopScrollView.m in Sources */,
 				BAAFAFF421A539E700DECDF2 /* NoticeView.m in Sources */,
