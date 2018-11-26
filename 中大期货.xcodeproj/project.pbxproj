@@ -97,6 +97,7 @@
 		BAAFB01621A78B1000DECDF2 /* topChangeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAAFB01521A78B1000DECDF2 /* topChangeView.xib */; };
 		BAE6184C21A244C4003A9F11 /* CheckView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE6184B21A244C4003A9F11 /* CheckView.m */; };
 		BAE731B321AB7CF300EE4738 /* ContracInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE731B221AB7CF300EE4738 /* ContracInfoModel.m */; };
+		BAE731B621AB83DE00EE4738 /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = BAE731B521AB83DE00EE4738 /* MyView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXBuildRule section */
@@ -284,6 +285,8 @@
 		BAE6184B21A244C4003A9F11 /* CheckView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CheckView.m; sourceTree = "<group>"; };
 		BAE731B121AB7CF200EE4738 /* ContracInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContracInfoModel.h; sourceTree = "<group>"; };
 		BAE731B221AB7CF300EE4738 /* ContracInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContracInfoModel.m; sourceTree = "<group>"; };
+		BAE731B421AB83DE00EE4738 /* MyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		BAE731B521AB83DE00EE4738 /* MyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
 		D6BC732FC548E7025799FD81 /* Pods-中大期货.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-中大期货.release.xcconfig"; path = "Pods/Target Support Files/Pods-中大期货/Pods-中大期货.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -818,6 +821,8 @@
 		BAAFAF8121A4E08D00DECDF2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BAE731B421AB83DE00EE4738 /* MyView.h */,
+				BAE731B521AB83DE00EE4738 /* MyView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1078,6 +1083,7 @@
 				BA28D7E2219E53D900323C8D /* Y_KLineMAView.m in Sources */,
 				BA28D7EB219E53D900323C8D /* Y_KLineModel.m in Sources */,
 				BA28D7D8219E53D900323C8D /* QuickOrderCodeListVCViewController.m in Sources */,
+				BAE731B621AB83DE00EE4738 /* MyView.m in Sources */,
 				BAAFAFF721A54C0C00DECDF2 /* IndexView.m in Sources */,
 				BAAFB00121A6483200DECDF2 /* FundModel.m in Sources */,
 				BA28D7E7219E53D900323C8D /* Y_KLineAccessoryView.m in Sources */,
