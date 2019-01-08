@@ -3,7 +3,7 @@
 //  ZYWChart
 //
 //  Created by zdqh on 2018/6/11.
-//  Copyright © 2018 zyw113. All rights reserved.
+//  Copyright © 2018 com.zdqh. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -25,24 +25,18 @@
 
 @interface WpQuoteServerCallbackReceiverI : WpQuoteServerCallbackReceiver
 @property (weak,nonatomic) id<WpQuoteServerCallbackReceiverDelegate> delegate;
-
-
 @end
 
 
-
-
-
-
-
 @interface ICEQuote : NSObject
+
 @property (nonatomic) id<WpQuoteServerClientApiPrx> WpQuoteServerclientApiPrx;
 
 @property (copy, nonatomic) NSString *userID;
 @property (nonatomic, copy) NSString* strFunAcc;
 @property (nonatomic, copy) NSString* strPassword;
 @property (nonatomic, copy) NSString* strAcc;
-@property (nonatomic,copy) NSString* strCmd;
+@property (nonatomic, copy) NSString* strCmd;
 
 + (ICEQuote*)shareInstance;
 
@@ -51,8 +45,9 @@
 - (int)Login:(NSString*)StrCmd;
 - (int)HeartBeat:(NSString*)strCmd;
 - (void)SubscribeQuote:(NSString*)strCmdType strCmd:(NSString*)strCmd;
+- (int)SubscribeQuote1:(NSString*)strCmdType strCmd:(NSString*)strCmd;
 - (void)UnSubscribeQuote:(NSString *)strCmdType strCmd:(NSString *)strcmd;
-- (int)GetDayKline:(NSString*)ExchangeID;
+//- (int)GetDayKline:(NSString*)ExchangeID;
 //- (NSMutableArray*)getTimeData:(NSString*)sCode;
 - (NSMutableArray*)getKlineData:(NSString*)sCode type:(NSString*)type;
 //@property(nonatomic,weak) id<ICEQuoteDelegate>delegate;

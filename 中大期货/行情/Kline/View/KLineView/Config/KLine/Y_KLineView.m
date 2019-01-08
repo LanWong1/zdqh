@@ -583,7 +583,7 @@
         oldPositionX = _location.x;
         CGFloat offset = 0;
         //198
-        NSLog(@"self.frame.size.width/2 = %f",self.frame.size.width/2);
+        //NSLog(@"self.frame.size.width/2 = %f",self.frame.size.width/2);
         if(_location.x-self.scrollView.contentOffset.x < self.frame.size.width/2){
             //offset = 280;
             offset = self.frame.size.width-150;

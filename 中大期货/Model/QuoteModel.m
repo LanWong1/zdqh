@@ -3,7 +3,7 @@
 //  ZYWChart
 //
 //  Created by zdqh on 2018/10/31.
-//  Copyright © 2018 zyw113. All rights reserved.
+//  Copyright © 2018 com.zdqh. All rights reserved.
 //
 
 #import "QuoteModel.h"
@@ -113,10 +113,12 @@ static QuoteModel* quoteModel = nil;
       
         [self.delegate reloadData:index];
     }
-    if(self.delegate && [self.delegate respondsToSelector:@selector(quoteViewRefresh:)]){
-        
-        [self.delegate quoteViewRefresh:index];
-    }
+//    if(self.delegate && [self.delegate respondsToSelector:@selector(quoteViewRefresh:)]){
+//
+//        [self.delegate quoteViewRefresh:index];
+//    }
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"topQuoteNotity" object:nil userInfo:@{@"index":@(index)}];
     
 }
 

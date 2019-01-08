@@ -3,7 +3,7 @@
 //  ZYWChart
 //
 //  Created by zdqh on 2018/6/11.
-//  Copyright © 2018 zyw113. All rights reserved.
+//  Copyright © 2018 com.zdqh. All rights reserved.
 //
 
 #import "ICEQuote.h"
@@ -14,6 +14,7 @@
 
 
 @interface WpQuoteServerCallbackReceiverI()<WpQuoteServerCallbackReceiver>
+
 @property (nonatomic, strong) dispatch_source_t timer;
 
 @property (nonatomic,strong)  NSMutableArray<__kindof QuoteModel*> *quoteModelArray;
@@ -24,9 +25,9 @@
 - (void)SendMsg:(ICEInt)itype strMessage:(NSMutableString *)strMessage current:(ICECurrent *)current
 {
     if(itype == 1){
-        NSLog(@"订阅消息 type:%d  strmessage = %@",itype,strMessage);
+        //NSLog(@"订阅消息 type:%d  strmessage = %@",itype,strMessage);
         NSArray* arr =  [strMessage componentsSeparatedByString:@","];
-        NSLog(@"index =======   %@",[QuoteArrayModel shareInstance].codelistDic[arr[1]]);
+       // NSLog(@"index =======   %@",[QuoteArrayModel shareInstance].codelistDic[arr[1]]);
         
         QuoteModel* model = [[QuoteModel alloc] init];//订阅返回数据模型
         [model processWithArray:arr];//处理数据
@@ -40,6 +41,7 @@
         // [self dataProcess:arr];
         //index>0的时候
         if([QuoteArrayModel shareInstance].codelistDic[arr[1]]){
+            
              [[NSNotificationCenter defaultCenter] postNotificationName:@"quoteNotity" object:self userInfo:@{@"index":[QuoteArrayModel shareInstance].codelistDic[arr[1]],@"model":model}];
         }
         //[self setHeartbeat];
@@ -142,19 +144,19 @@ static ICEQuote* iceQuote = nil;
    return ret;
 }
 
-- (WpQuoteServerDayKLineList*)GetDayKline:(NSString*) ExchangeID{
-    NSString* strErr2 = @"";
-    WpQuoteServerDayKLineList* DLL = [[WpQuoteServerDayKLineList alloc]init];
-    NSMutableString* sExchangeID = [[NSMutableString alloc]initWithString:ExchangeID];
-    @try{
-        [self.WpQuoteServerclientApiPrx GetDayKLine:sExchangeID DKLL:&DLL strErrInfo:&strErr2];
-    }
-    @catch(ICEException* s)
-    {
-        NSLog(@"%@",s);
-    }
-    return DLL;
-}
+//- (WpQuoteServerDayKLineList* )GetDayKline:(NSString*) ExchangeID{
+//    NSString* strErr2 = @"";
+//    WpQuoteServerDayKLineList* DLL = [[WpQuoteServerDayKLineList alloc]init];
+//    NSMutableString* sExchangeID = [[NSMutableString alloc]initWithString:ExchangeID];
+//    @try{
+//        [self.WpQuoteServerclientApiPrx GetDayKLine:sExchangeID DKLL:&DLL strErrInfo:&strErr2];
+//    }
+//    @catch(ICEException* s)
+//    {
+//        NSLog(@"%@",s);
+//    }
+//    return DLL;
+//}
 
 - (void)initiateCallback:(NSString*)strAcc{
     
@@ -173,28 +175,30 @@ static ICEQuote* iceQuote = nil;
 
 
 - (int)HeartBeat:(NSString*)strCmd{
-    
+
     int iRet = -2;
     NSMutableString* strOut = [[NSMutableString alloc]initWithString:@""];
     NSMutableString* strErroInfo = [[NSMutableString alloc]initWithString:@""];
     iRet = [self.WpQuoteServerclientApiPrx HeartBeat:@"" strCmd:strCmd strOut:&strOut strErrInfo:&strErroInfo];
     NSLog(@"quote heart beat iRet ==== %d",iRet);
-    
+
     return iRet;
 }
 
 
 
 - (void)SubscribeQuote:(NSString *)strCmdType strCmd:(NSString *)strcmd{
+    
 //    NSMutableString* strOut = [[NSMutableString alloc]initWithString:@""];
 //    NSMutableString* strErroInfo = [[NSMutableString alloc]initWithString:@""];
 //    NSLog(@" strcmd == %@",strcmd);
 //    int ret = [self.WpQuoteServerclientApiPrx SubscribeQuote:strCmdType strCmd:strcmd strOut:&strOut strErrInfo:&strErroInfo];
 //    NSLog(@"ret ======= %d erro ====== %@  strout======= %@",ret,strErroInfo,strOut);
     @try{
+        
         NSLog(@"开始订阅!!strCmdType = %@ strcmd = %@ ",strCmdType,strcmd);
         [self.WpQuoteServerclientApiPrx begin_SubscribeQuote:strCmdType strCmd:strcmd response:^(ICEInt i, NSMutableString *string, NSMutableString *string2) {
-           NSLog(@"ret========%d string======%@ string======%@",i, string, string2);
+            NSLog(@"ret========%d string======%@ string======%@",i, string, string2);
         } exception:^(ICEException *s) {
             NSLog(@"%@订阅失败 原因 %@",strcmd, s);
         }];
@@ -203,26 +207,49 @@ static ICEQuote* iceQuote = nil;
     {
         NSLog(@"订阅出错啦 %@",s);
     }
+    
+}
+- (int)SubscribeQuote1:(NSString *)strCmdType strCmd:(NSString *)strcmd{
+    
+    NSMutableString* strOut = [[NSMutableString alloc]initWithString:@""];
+    NSMutableString* strErroInfo = [[NSMutableString alloc]initWithString:@""];
+    NSLog(@" strcmd == %@",strcmd);
+    int ret = [self.WpQuoteServerclientApiPrx SubscribeQuote:strCmdType strCmd:strcmd strOut:&strOut strErrInfo:&strErroInfo];
+    NSLog(@"ret ======= %d erro ====== %@  strout======= %@",ret,strErroInfo,strOut);
+    return ret;
+//    @try{
+//        __block int ret;
+//        NSLog(@"开始订阅!!strCmdType = %@ strcmd = %@ ",strCmdType,strcmd);
+//        [self.WpQuoteServerclientApiPrx begin_SubscribeQuote:strCmdType strCmd:strcmd response:^(ICEInt i, NSMutableString *string, NSMutableString *string2) {
+//            ret = i;
+//            NSLog(@"ret========%d string======%@ string======%@",i, string, string2);
+//        } exception:^(ICEException *s) {
+//            NSLog(@"%@订阅失败 原因 %@",strcmd, s);
+//        }];
+//        return ret;
+//    }
+//    @catch(NSException* s)
+//    {
+//        NSLog(@"订阅出错啦 %@",s);
+//    }
+    
 }
 
 
-
 - (void)UnSubscribeQuote:(NSString *)strCmdType strCmd:(NSString *)strcmd{
+    
+  
+    
 //    NSMutableString* strOut = [[NSMutableString alloc]initWithString:@""];
 //    NSMutableString* strErroInfo = [[NSMutableString alloc]initWithString:@""];
-    
-//        NSMutableString* strOut = [[NSMutableString alloc]initWithString:@""];
-//        NSMutableString* strErroInfo = [[NSMutableString alloc]initWithString:@""];
-//        NSLog(@" strcmd == %@",strcmd);
-//        int ret = [self.WpQuoteServerclientApiPrx UnSubscribeQuote:strCmdType strCmd:strcmd strOut:&strOut strErrInfo:&strErroInfo];
-//        NSLog(@"ret ======= %d erro ====== %@  strout======= %@",ret,strErroInfo,strOut);
+//    int ret = [self.WpQuoteServerclientApiPrx UnSubscribeQuote:strCmdType strCmd:strcmd strOut:&strOut strErrInfo:&strErroInfo];
+//    NSLog(@"ret ======= %d erro ====== %@  strout======= %@",ret,strErroInfo,strOut);
    
     
     @try{
-        
-        NSLog(@"unsubscribe++++++++++");
+
         [self.WpQuoteServerclientApiPrx begin_UnSubscribeQuote:strCmdType strCmd:strcmd response:^(ICEInt i, NSMutableString *string, NSMutableString *string2) {
-            //NSLog(@"i===== %d s=====%@ s2=======%@",i, string, string2);
+            NSLog(@"i===== %d s=====%@ s2=======%@",i, string, string2);
         } exception:^(ICEException *s) {
             NSLog(@"取消订阅失败 %@",s);
         }];
@@ -231,6 +258,7 @@ static ICEQuote* iceQuote = nil;
     {
         NSLog(@"%@",s);
     }
+    
 }
 
 

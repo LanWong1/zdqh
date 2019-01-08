@@ -73,7 +73,6 @@
     self.pageControl.currentPage = 0;
     CGFloat imgWidth = _scrollView.frame.size.width * self.picCount;
     _scrollView.contentSize = CGSizeMake(imgWidth, 0);
-    
     for(int i = 0; i<_picCount;i++){
         UIImageView *imageView = [UIImageView new];
         imageView.clipsToBounds = YES;

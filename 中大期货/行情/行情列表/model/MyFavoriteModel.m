@@ -3,7 +3,7 @@
 //  ZYWChart
 //
 //  Created by zdqh on 2018/11/14.
-//  Copyright © 2018 zyw113. All rights reserved.
+//  Copyright © 2018 com.zdqh. All rights reserved.
 //
 
 #import "MyFavoriteModel.h"

@@ -3,15 +3,13 @@
 //  ZYWChart
 //
 //  Created by zdqh on 2018/9/14.
-//  Copyright © 2018年 zyw113. All rights reserved.
+//  Copyright © 2018年 com.zdqh. All rights reserved.
 //
 
 #import "SQLServerAPI.h"
 
 @interface SQLServerAPI()
-
 @property (nonatomic,strong) dispatch_source_t timer;
-
 @property (nonatomic,assign) int Ret;
 
 @end

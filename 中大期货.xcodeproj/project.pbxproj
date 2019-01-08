@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C139A3C21CB760F00A703FD /* searchNormal.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C139A3A21CB760F00A703FD /* searchNormal.png */; };
+		4C139A3D21CB760F00A703FD /* searchSelected.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C139A3B21CB760F00A703FD /* searchSelected.png */; };
+		4CD4BAE321E487A4005AD806 /* KlineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD4BAE221E487A4005AD806 /* KlineModel.m */; };
 		9D773DDDFBE243102BDA1EC9 /* libPods-中大期货.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 33B07B6AA338BFBDF067EE29 /* libPods-中大期货.a */; };
 		BA28D43F219E4B0100323C8D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA28D43E219E4B0100323C8D /* Assets.xcassets */; };
 		BA28D44F219E4B0100323C8D /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D44E219E4B0100323C8D /* ____Tests.m */; };
@@ -15,11 +18,6 @@
 		BA28D470219E52C100323C8D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA28D46F219E52C100323C8D /* Launch Screen.storyboard */; };
 		BA28D61C219E53C900323C8D /* MyFavoriteCodeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BA28D474219E53BF00323C8D /* MyFavoriteCodeModel.xcdatamodeld */; };
 		BA28D7CA219E53D900323C8D /* buttonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA28D739219E53D800323C8D /* buttonView.xib */; };
-		BA28D7CE219E53D900323C8D /* BaoBiaoItemHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA28D741219E53D800323C8D /* BaoBiaoItemHeader.xib */; };
-		BA28D7CF219E53D900323C8D /* BaoBiaoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D744219E53D800323C8D /* BaoBiaoLayout.m */; };
-		BA28D7D0219E53D900323C8D /* BaoBiaoItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA28D745219E53D800323C8D /* BaoBiaoItem.xib */; };
-		BA28D7D1219E53D900323C8D /* BaoBiaoItemHeader.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D746219E53D800323C8D /* BaoBiaoItemHeader.m */; };
-		BA28D7D2219E53D900323C8D /* BaoBiaoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D747219E53D800323C8D /* BaoBiaoItem.m */; };
 		BA28D7D8219E53D900323C8D /* QuickOrderCodeListVCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D758219E53D800323C8D /* QuickOrderCodeListVCViewController.m */; };
 		BA28D7D9219E53D900323C8D /* CodeListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D75A219E53D800323C8D /* CodeListCell.m */; };
 		BA28D7DA219E53D900323C8D /* MyFavoriteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D75C219E53D800323C8D /* MyFavoriteModel.m */; };
@@ -58,8 +56,6 @@
 		BA28D7FC219E53D900323C8D /* ICEQuickOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7BA219E53D900323C8D /* ICEQuickOrder.m */; };
 		BA28D7FD219E53D900323C8D /* SQLServerAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7BD219E53D900323C8D /* SQLServerAPI.m */; };
 		BA28D7FE219E53D900323C8D /* ICEQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7C0219E53D900323C8D /* ICEQuote.m */; };
-		BA28D7FF219E53D900323C8D /* ICETool.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7C2219E53D900323C8D /* ICETool.m */; };
-		BA28D801219E53D900323C8D /* ICENpTrade.m in Sources */ = {isa = PBXBuildFile; fileRef = BA28D7C5219E53D900323C8D /* ICENpTrade.m */; };
 		BA28DB8F219E659100323C8D /* config3.client in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB86219E659000323C8D /* config3.client */; };
 		BA28DB90219E659100323C8D /* SqlServer.ice in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB87219E659000323C8D /* SqlServer.ice */; };
 		BA28DB91219E659100323C8D /* config2.client in Resources */ = {isa = PBXBuildFile; fileRef = BA28DB88219E659000323C8D /* config2.client */; };
@@ -135,6 +131,10 @@
 /* Begin PBXFileReference section */
 		0E618CC11A1B4F28A0F40F05 /* Pods-中大期货.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-中大期货.debug.xcconfig"; path = "Pods/Target Support Files/Pods-中大期货/Pods-中大期货.debug.xcconfig"; sourceTree = "<group>"; };
 		33B07B6AA338BFBDF067EE29 /* libPods-中大期货.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-中大期货.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C139A3A21CB760F00A703FD /* searchNormal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchNormal.png; sourceTree = "<group>"; };
+		4C139A3B21CB760F00A703FD /* searchSelected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchSelected.png; sourceTree = "<group>"; };
+		4CD4BAE121E487A4005AD806 /* KlineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KlineModel.h; sourceTree = "<group>"; };
+		4CD4BAE221E487A4005AD806 /* KlineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KlineModel.m; sourceTree = "<group>"; };
 		4CE8A4F321AB7D9F00052668 /* ZYWChart-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ZYWChart-Prefix.pch"; sourceTree = "<group>"; };
 		BA28D432219E4AF300323C8D /* 中大期货.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "中大期货.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA28D43E219E4B0100323C8D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -149,14 +149,6 @@
 		BA28D46F219E52C100323C8D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		BA28D475219E53BF00323C8D /* MyFavoriteCodeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyFavoriteCodeModel.xcdatamodel; sourceTree = "<group>"; };
 		BA28D739219E53D800323C8D /* buttonView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = buttonView.xib; sourceTree = "<group>"; };
-		BA28D741219E53D800323C8D /* BaoBiaoItemHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaoBiaoItemHeader.xib; sourceTree = "<group>"; };
-		BA28D742219E53D800323C8D /* BaoBiaoItemHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoBiaoItemHeader.h; sourceTree = "<group>"; };
-		BA28D743219E53D800323C8D /* BaoBiaoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoBiaoItem.h; sourceTree = "<group>"; };
-		BA28D744219E53D800323C8D /* BaoBiaoLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoBiaoLayout.m; sourceTree = "<group>"; };
-		BA28D745219E53D800323C8D /* BaoBiaoItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaoBiaoItem.xib; sourceTree = "<group>"; };
-		BA28D746219E53D800323C8D /* BaoBiaoItemHeader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoBiaoItemHeader.m; sourceTree = "<group>"; };
-		BA28D747219E53D800323C8D /* BaoBiaoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaoBiaoItem.m; sourceTree = "<group>"; };
-		BA28D748219E53D800323C8D /* BaoBiaoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaoBiaoLayout.h; sourceTree = "<group>"; };
 		BA28D757219E53D800323C8D /* CodeListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeListCell.h; sourceTree = "<group>"; };
 		BA28D758219E53D800323C8D /* QuickOrderCodeListVCViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuickOrderCodeListVCViewController.m; sourceTree = "<group>"; };
 		BA28D759219E53D800323C8D /* QuickOrderCodeListVCViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuickOrderCodeListVCViewController.h; sourceTree = "<group>"; };
@@ -227,16 +219,12 @@
 		BA28D7B3219E53D900323C8D /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
 		BA28D7B6219E53D900323C8D /* WYLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYLoginVC.h; sourceTree = "<group>"; };
 		BA28D7B7219E53D900323C8D /* WYLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYLoginVC.m; sourceTree = "<group>"; };
-		BA28D7B9219E53D900323C8D /* ICETool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICETool.h; sourceTree = "<group>"; };
 		BA28D7BA219E53D900323C8D /* ICEQuickOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEQuickOrder.m; sourceTree = "<group>"; };
 		BA28D7BB219E53D900323C8D /* ICEQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEQuote.h; sourceTree = "<group>"; };
 		BA28D7BD219E53D900323C8D /* SQLServerAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQLServerAPI.m; sourceTree = "<group>"; };
-		BA28D7BF219E53D900323C8D /* ICENpTrade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICENpTrade.h; sourceTree = "<group>"; };
 		BA28D7C0219E53D900323C8D /* ICEQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICEQuote.m; sourceTree = "<group>"; };
 		BA28D7C1219E53D900323C8D /* ICEQuickOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ICEQuickOrder.h; sourceTree = "<group>"; };
-		BA28D7C2219E53D900323C8D /* ICETool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICETool.m; sourceTree = "<group>"; };
 		BA28D7C3219E53D900323C8D /* SQLServerAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQLServerAPI.h; sourceTree = "<group>"; };
-		BA28D7C5219E53D900323C8D /* ICENpTrade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ICENpTrade.m; sourceTree = "<group>"; };
 		BA28DB86219E659000323C8D /* config3.client */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config3.client; sourceTree = "<group>"; };
 		BA28DB87219E659000323C8D /* SqlServer.ice */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SqlServer.ice; sourceTree = "<group>"; };
 		BA28DB88219E659000323C8D /* config2.client */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = config2.client; sourceTree = "<group>"; };
@@ -316,6 +304,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4CD4BAE021E4875A005AD806 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4CD4BAE121E487A4005AD806 /* KlineModel.h */,
+				4CD4BAE221E487A4005AD806 /* KlineModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		8CC3A0CA549A3031C8EC5E2F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +355,8 @@
 		BA28D434219E4AF300323C8D /* 中大期货 */ = {
 			isa = PBXGroup;
 			children = (
+				4C139A3A21CB760F00A703FD /* searchNormal.png */,
+				4C139A3B21CB760F00A703FD /* searchSelected.png */,
 				4CE8A4F321AB7D9F00052668 /* ZYWChart-Prefix.pch */,
 				BA28DBBD219E69F700323C8D /* 我的 */,
 				BA28DBB8219E699300323C8D /* 资讯 */,
@@ -400,24 +399,8 @@
 		BA28D733219E53D800323C8D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				BA28D740219E53D800323C8D /* 查询 */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		BA28D740219E53D800323C8D /* 查询 */ = {
-			isa = PBXGroup;
-			children = (
-				BA28D741219E53D800323C8D /* BaoBiaoItemHeader.xib */,
-				BA28D742219E53D800323C8D /* BaoBiaoItemHeader.h */,
-				BA28D743219E53D800323C8D /* BaoBiaoItem.h */,
-				BA28D744219E53D800323C8D /* BaoBiaoLayout.m */,
-				BA28D745219E53D800323C8D /* BaoBiaoItem.xib */,
-				BA28D746219E53D800323C8D /* BaoBiaoItemHeader.m */,
-				BA28D747219E53D800323C8D /* BaoBiaoItem.m */,
-				BA28D748219E53D800323C8D /* BaoBiaoLayout.h */,
-			);
-			path = "查询";
 			sourceTree = "<group>";
 		};
 		BA28D754219E53D800323C8D /* 行情 */ = {
@@ -463,7 +446,7 @@
 		BA28D760219E53D800323C8D /* Kline */ = {
 			isa = PBXGroup;
 			children = (
-				BAAFAF8021A4E05600DECDF2 /* Model */,
+				4CD4BAE021E4875A005AD806 /* model */,
 				BA28D761219E53D800323C8D /* controller */,
 				BA28D766219E53D800323C8D /* View */,
 			);
@@ -700,8 +683,8 @@
 			isa = PBXGroup;
 			children = (
 				BA28D7AF219E53D900323C8D /* UIColor+YW.m */,
-				BA28D7B0219E53D900323C8D /* UIView+Extension.h */,
 				BA28D7B2219E53D900323C8D /* UIColor+YW.h */,
+				BA28D7B0219E53D900323C8D /* UIView+Extension.h */,
 				BA28D7B3219E53D900323C8D /* UIView+Extension.m */,
 			);
 			path = Category;
@@ -719,16 +702,12 @@
 		BA28D7B8219E53D900323C8D /* ICETool */ = {
 			isa = PBXGroup;
 			children = (
-				BA28D7B9219E53D900323C8D /* ICETool.h */,
-				BA28D7BA219E53D900323C8D /* ICEQuickOrder.m */,
-				BA28D7BB219E53D900323C8D /* ICEQuote.h */,
 				BA28D7BD219E53D900323C8D /* SQLServerAPI.m */,
-				BA28D7BF219E53D900323C8D /* ICENpTrade.h */,
+				BA28D7C3219E53D900323C8D /* SQLServerAPI.h */,
+				BA28D7BB219E53D900323C8D /* ICEQuote.h */,
 				BA28D7C0219E53D900323C8D /* ICEQuote.m */,
 				BA28D7C1219E53D900323C8D /* ICEQuickOrder.h */,
-				BA28D7C2219E53D900323C8D /* ICETool.m */,
-				BA28D7C3219E53D900323C8D /* SQLServerAPI.h */,
-				BA28D7C5219E53D900323C8D /* ICENpTrade.m */,
+				BA28D7BA219E53D900323C8D /* ICEQuickOrder.m */,
 			);
 			path = ICETool;
 			sourceTree = "<group>";
@@ -809,13 +788,6 @@
 				BA28DBC0219E6A1F00323C8D /* MyVC.m */,
 			);
 			path = controller;
-			sourceTree = "<group>";
-		};
-		BAAFAF8021A4E05600DECDF2 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		BAAFAF8121A4E08D00DECDF2 /* View */ = {
@@ -985,12 +957,11 @@
 				BA28DB96219E659100323C8D /* WpTrade.ice in Resources */,
 				BA28DBE5219E7B2F00323C8D /* Info.plist in Resources */,
 				BAAFB01421A7886300DECDF2 /* 2.png in Resources */,
-				BA28D7D0219E53D900323C8D /* BaoBiaoItem.xib in Resources */,
 				BAAFB01221A7886300DECDF2 /* 3.png in Resources */,
 				BA28DB8F219E659100323C8D /* config3.client in Resources */,
 				BA28DB92219E659100323C8D /* WpQuote.ice in Resources */,
 				BA28DB90219E659100323C8D /* SqlServer.ice in Resources */,
-				BA28D7CE219E53D900323C8D /* BaoBiaoItemHeader.xib in Resources */,
+				4C139A3D21CB760F00A703FD /* searchSelected.png in Resources */,
 				BAAFB01321A7886300DECDF2 /* 1.png in Resources */,
 				BA28DB91219E659100323C8D /* config2.client in Resources */,
 				BAAFB01621A78B1000DECDF2 /* topChangeView.xib in Resources */,
@@ -998,6 +969,7 @@
 				BA28D470219E52C100323C8D /* Launch Screen.storyboard in Resources */,
 				BA28D7E5219E53D900323C8D /* quoteView.xib in Resources */,
 				BAAFB00821A6547000DECDF2 /* MyFundView.xib in Resources */,
+				4C139A3C21CB760F00A703FD /* searchNormal.png in Resources */,
 				BA28DB95219E659100323C8D /* QuickOrder.ice in Resources */,
 				BA28DB93219E659100323C8D /* config1.client in Resources */,
 				BA28D7CA219E53D900323C8D /* buttonView.xib in Resources */,
@@ -1060,7 +1032,6 @@
 				BA28D7DF219E53D900323C8D /* UIColor+Y_StockChart.m in Sources */,
 				BA28D7DA219E53D900323C8D /* MyFavoriteModel.m in Sources */,
 				BA28D7E1219E53D900323C8D /* Y_KlineMAVLabelView.m in Sources */,
-				BA28D7FF219E53D900323C8D /* ICETool.m in Sources */,
 				BA28D7EC219E53D900323C8D /* Y_KLineGroupModel.m in Sources */,
 				BA28D7FD219E53D900323C8D /* SQLServerAPI.m in Sources */,
 				BA28DB9E219E659D00323C8D /* NSDictionary+Extension.m in Sources */,
@@ -1071,6 +1042,7 @@
 				BA28DBC7219E6E9200323C8D /* QuoteModel.m in Sources */,
 				BAAFB00421A6540B00DECDF2 /* MyFundView.m in Sources */,
 				BA28D61C219E53C900323C8D /* MyFavoriteCodeModel.xcdatamodeld in Sources */,
+				4CD4BAE321E487A4005AD806 /* KlineModel.m in Sources */,
 				BAAFAFFB21A640CF00DECDF2 /* IndexModel.m in Sources */,
 				BA28DBBC219E69D500323C8D /* InformationVC.m in Sources */,
 				BA28DBC1219E6A1F00323C8D /* MyVC.m in Sources */,
@@ -1102,19 +1074,15 @@
 				BA28D7E4219E53D900323C8D /* Y_StockChartRightYView.m in Sources */,
 				BAA11AC021A7A8CD00CF71FE /* ContractInfoArrayModel.m in Sources */,
 				BA28D7F5219E53D900323C8D /* QuoteArrayModel.m in Sources */,
-				BA28D801219E53D900323C8D /* ICENpTrade.m in Sources */,
 				BA28D7EA219E53D900323C8D /* Y_KLinePositionModel.m in Sources */,
 				BA28D7D9219E53D900323C8D /* CodeListCell.m in Sources */,
 				BA28D7DC219E53D900323C8D /* Y_StockChartLandScapeViewController.m in Sources */,
 				BA28D7ED219E53D900323C8D /* Y_KLineVolumePositionModel.m in Sources */,
 				BA28D7F2219E53D900323C8D /* Y_KLine.m in Sources */,
 				BA28DBA0219E659D00323C8D /* NSArray+Extension.m in Sources */,
-				BA28D7D1219E53D900323C8D /* BaoBiaoItemHeader.m in Sources */,
 				BA28D7E0219E53D900323C8D /* Y_StockChartView.m in Sources */,
-				BA28D7CF219E53D900323C8D /* BaoBiaoLayout.m in Sources */,
 				BA28D7FA219E53D900323C8D /* UIView+Extension.m in Sources */,
 				BA28D7E8219E53D900323C8D /* Y_KLineAccessory.m in Sources */,
-				BA28D7D2219E53D900323C8D /* BaoBiaoItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1269,6 +1237,7 @@
 				ADDITIONAL_SDKS = "/usr/local/opt/ice/sdk/$(PLATFORM_NAME).sdk";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W9753JG9F5;
 				ENABLE_TESTABILITY = NO;
@@ -1316,6 +1285,7 @@
 				ADDITIONAL_SDKS = "/usr/local/opt/ice/sdk/$(PLATFORM_NAME).sdk";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = W9753JG9F5;
 				ENABLE_TESTABILITY = YES;

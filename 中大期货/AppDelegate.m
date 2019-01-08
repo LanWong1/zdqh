@@ -2,28 +2,27 @@
 //  AppDelegate.m
 //  ZYWChart
 //
-//  Created by 张有为 on 2016/12/17.
-//  Copyright © 2016年 zyw113. All rights reserved.
+//  Created by zdqh on 2016/12/17.
+//  Copyright © 2016年 com.zdqh. All rights reserved.
 //
 
 #import "AppDelegate.h"
 #import "FHHFPSIndicator.h"
-//#import "LoginVC.h"
-//#import "LoginVC1.h"
 #import "WYLoginVC.h"
 #import "ICEQuickOrder.h"
 #import "ICEQuote.h"
+
 
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-@synthesize  iceTool;
+
 @synthesize  userName;
 @synthesize  passWord;
 @synthesize  userID;
-@synthesize  wpTradeAPIServerCallbackReceiverI;
+
 
 @synthesize  loginFlag;
 @synthesize  iceQuote;
@@ -36,7 +35,6 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     self.loginFlag = 0;
-    
 #if defined(DEBUG) || defined(_DEBUG)
     [[FHHFPSIndicator sharedFPSIndicator] show];
 #endif
@@ -58,7 +56,8 @@
 {
     if(self.isEable) {
         return UIInterfaceOrientationMaskLandscape;
-    } else {
+    }
+    else {
         return UIInterfaceOrientationMaskPortrait;
     }
 }
@@ -78,43 +77,32 @@
 }
 - (void)applicationWillEnterForeground:(UIApplication *)application {
 
-    NSLog(@"application will enterFFFFFFForeground");
-
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application {
-    NSLog(@"Did Become Active======");
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if(self.loginFlag){
-           
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+    NSLog(@"application will enterForeground");
+    //2s后发送心跳 并重新连接
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            //非首次登录
+            if(self.loginFlag){
                 @try{
+                    ICEQuickOrder *quickOrder = [ICEQuickOrder shareInstance];
+                    ICEQuote *quote = [ICEQuote shareInstance];
+                    [quote HeartBeat:self.strAcc];
+                    [quickOrder HeartBeat:self.strCmd];
+                }
+                @catch(ICEException* s){
+                    NSLog(@"heart beat exception ==== %@",s);
                     ICEQuickOrder *quickOrder = [ICEQuickOrder shareInstance];
                     ICEQuote *quote = [ICEQuote shareInstance];
                     [quickOrder Connect2ICE];
                     [quote Connect2Quote];
                 }
-                @catch(ICEException* s){
-                    NSLog(@"heart beat exception ==== %@",s);
-                    // [self connect2Server];
-                    //            if(iRet1 != 0){
-                    //                dispatch_source_cancel(self->_timer);
-                    //                [self connect2Server];
-                    //            }
-                }
-            });
+            }
+        });
+    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+}
 
-        }
-    });
-    
-    
- 
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    
-    
-    
+- (void)applicationDidBecomeActive:(UIApplication *)application {
+    NSLog(@"Did Become Active======");
+
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

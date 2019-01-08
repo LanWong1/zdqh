@@ -70,7 +70,7 @@
         [_segmentView mas_makeConstraints:^(MASConstraintMaker *make) {
            // make.bottom.left.top.equalTo(self);
             make.right.left.equalTo(self);
-            AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
+            AppDelegate *appdelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
             if(appdelegate.isEable == YES){
                 make.top.equalTo(self);
             }
@@ -97,13 +97,14 @@
 #pragma --mark itemModels的setter方法
 - (void)setItemModels:(NSArray *)itemModels
 {
-    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
+    AppDelegate *appdelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
     //竖屏的时候添加顶部行情图
     if(appdelegate.isEable == NO){
         [self addQuoteView];
         _quoteView.backgroundColor = [UIColor whiteColor];
     }
     _itemModels = itemModels;
+    
     if(itemModels)
     {
         NSMutableArray *items = [NSMutableArray array];
@@ -117,7 +118,8 @@
     }
     if(self.dataSource)
     {
-        AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
+        AppDelegate *appdelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
+        
         if(appdelegate.isEable == YES){
             self.segmentView.selectedIndex = 6;
         }
@@ -131,7 +133,7 @@
 {
     _dataSource = dataSource;
     if(self.itemModels)
-    {   AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
+    {   AppDelegate *appdelegate = (AppDelegate*)[UIApplication sharedApplication].delegate;
         if(appdelegate.isEable == YES){
             self.segmentView.selectedIndex = 6;
         }

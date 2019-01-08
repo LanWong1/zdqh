@@ -3,7 +3,7 @@
 //  ZYWChart
 //
 //  Created by zdqh on 2018/11/14.
-//  Copyright © 2018 zyw113. All rights reserved.
+//  Copyright © 2018 com.zdqh. All rights reserved.
 //
 
 #import "CodeListCoreData.h"
@@ -78,12 +78,8 @@ static CodeListCoreData *sharedSingleton = nil;
     //#获取上下文
     NSManagedObjectContext *context = self.persistentContainer.viewContext;
     NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Code" inManagedObjectContext:context];
-    
-    
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    
     [request setEntity:entityDescription];
-    
     NSPredicate *predicate = [NSPredicate predicateWithFormat: @"code = %@", code];
     [request setPredicate:predicate];
     
@@ -142,7 +138,7 @@ static CodeListCoreData *sharedSingleton = nil;
     
     NSManagedObjectContext *context = self.persistentContainer.viewContext;
     
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Note" inManagedObjectContext:context];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Code" inManagedObjectContext:context];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     

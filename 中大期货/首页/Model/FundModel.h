@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FundModel : NSObject
+@interface FundModel : NSObject 
 @property(copy,nonatomic) NSString* unusedInterest;//可用
 @property(copy,nonatomic) NSString* interests;//权益
 @property(assign,nonatomic) float usedRate;//使用率

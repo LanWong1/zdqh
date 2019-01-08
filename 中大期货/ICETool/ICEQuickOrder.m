@@ -1,47 +1,35 @@
-//
 //  ICEQuickOrder.m
 //  ZYWChart
-//
 //  Created by IanWong on 2018/7/17.
-//  Copyright © 2018 zyw113. All rights reserved.
-//
-
+//  Copyright © 2018 com.zdqh. All rights reserved.
 #import "ICEQuickOrder.h"
 #import "QuickOrder.h"
 #import <objc/Ice.h>
 #import <objc/Glacier2.h>
 #import "AppDelegate.h"
 
+
+
 @interface autoTradeCallbackReceiver()<AutoTradeCtpCallbackReceiver>
-//@property (nonatomic) NSMutableArray* Msg;
-//@property (nonatomic) BuyVC* buy;
 @end
+
 
 @implementation autoTradeCallbackReceiver
 
 - (void)SendMsg:(ICEInt)itype strMessage:(NSMutableString *)strMessage current:(ICECurrent *)current{
+    
    NSLog(@"返回消息类型===%d  消息=== %@",itype,strMessage);
-    //NSString *type = [NSString stringWithFormat:@"%d",itype];
+//    NSString *type = [NSString stringWithFormat:@"%d",itype];
 //    NSDictionary *note = [NSDictionary dictionaryWithObject:strMessage forKey:@"message"];
 //    [note setValue:type forKey:@"type"];
     if(itype == 2){
-          // [[NSNotificationCenter defaultCenter] postNotificationName:@"tradeNotify" object:nil userInfo:@{@"message":strMessage,@"type":type}];
-        
         [[NSNotificationCenter defaultCenter] postNotificationName:@"tradeNotify" object:nil userInfo:@{@"message":strMessage}];
     }
- 
 }
 @end
 
 
 @interface ICEQuickOrder()
-
-//@property (nonatomic) id<ICECommunicator> communicator;
-//@property (nonatomic) id<AutoTradeCtpCallbackReceiverPrx> twowayR;
-//@property (nonatomic) id<GLACIER2RouterPrx> router;
-////@property (nonatomic) id<AutoTradeCtpClientApiPrx> quickOrder;
-//@property (nonatomic) NSMutableString* Message;
-//@property (nonatomic)  autoTradeCallbackReceiver* callbackReceiver;
 
 @end
 
@@ -49,7 +37,6 @@
 
 //单例模式
 static ICEQuickOrder* QuickOrder = nil;
-
 + (ICEQuickOrder*)shareInstance{
     
     static dispatch_once_t onceToken;
@@ -61,14 +48,9 @@ static ICEQuickOrder* QuickOrder = nil;
     return QuickOrder;
 }
 
-
-
 - (int)Connect2ICE{
-    NSLog(@"connect quickorder===========");
     
-    int ret;
     if(self.router){
-     
         @try{
             [self.router destroySession];
         }
@@ -87,6 +69,7 @@ static ICEQuickOrder* QuickOrder = nil;
         }
         self.communicator = nil;
     }
+    
     if(self.connection){
         
         @try{
@@ -96,10 +79,10 @@ static ICEQuickOrder* QuickOrder = nil;
             NSLog(@"erro = %@",s);
         }
     }
-    
     ICEInitializationData* initData = [ICEInitializationData initializationData];
     initData.properties = [ICEUtil createProperties];
     [initData.properties load:[[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"config3.client"]];
+    
     initData.dispatcher = ^(id<ICEDispatcherCall> call, id<ICEConnection> con)
     {
         dispatch_sync(dispatch_get_main_queue(), ^{ [call run]; });
@@ -109,7 +92,6 @@ static ICEQuickOrder* QuickOrder = nil;
     self.router = [GLACIER2RouterPrx checkedCast:[self.communicator getDefaultRouter]];//路由
     [self.router createSession:@"" password:@""];//创建session
     self.connection =  [self.router ice_getConnection];
-
     self.quickOrder = [AutoTradeCtpClientApiPrx uncheckedCast:[self.communicator stringToProxy:@"ClientApiId"]];
     //启用主推回报
     ICEIdentity* callbackReceiverIdent= [ICEIdentity identity:@"callbackReceiver" category:[self.router getCategoryForClient]];
@@ -117,19 +99,12 @@ static ICEQuickOrder* QuickOrder = nil;
     [adapter activate];
     self.callbackReceiver = [[autoTradeCallbackReceiver alloc]init];
     self.twowayR = [AutoTradeCtpCallbackReceiverPrx uncheckedCast:[adapter add:_callbackReceiver identity:callbackReceiverIdent]];
-    
     [self initiateCallback:self.strFunAcc];
-    ret = [self Login:self.strcmd];
+    int ret = [self Login:self.strcmd];
     return ret;
-   // return self.callbackReceiver;
 }
 
-
-
-
-
 - (void)initiateCallback:(NSString*)strAcc{
-    
     [self.quickOrder initiateCallback:strAcc proxy:self.twowayR];
 }
 
@@ -138,8 +113,11 @@ static ICEQuickOrder* QuickOrder = nil;
     NSMutableString* strErroInfo = [[NSMutableString alloc]initWithString:@""];
     //[self.NpTrade Login:@"" strCmd:_loginStrCmd strOut:&strOut strErrInfo:&strErroInfo];
     int ret = [self.quickOrder Login:@"" strCmd:StrCmd strOut:&strOut strErrInfo:&strErroInfo];
-    AppDelegate *app =(AppDelegate*)[UIApplication sharedApplication].delegate;
-    app.strErroInfo = strErroInfo;
+    //发送登录信息到WYLoginVC
+    if(self.delegate && [self.delegate respondsToSelector:@selector(LoginFailErroinfo:)])
+    {
+        [self.delegate LoginFailErroinfo:strErroInfo];
+    }
     return ret;
 }
 
@@ -151,6 +129,7 @@ static ICEQuickOrder* QuickOrder = nil;
     NSLog(@"quickorder heart beat iRet ==== %d",iRet);
     //iRet = [self.quickOrder begin_HeartBeat:@"" strCmd:strCmd];
     return iRet;
+    
 }
 
 - (void)sendOrder:(NSString*)StrCmdType strCmd:(NSString *)StrCmd{
@@ -158,6 +137,7 @@ static ICEQuickOrder* QuickOrder = nil;
     NSMutableString* strErroInfo = [[NSMutableString alloc]initWithString:@""];
     [self.quickOrder SendOrder:StrCmdType strCmd:StrCmd strOut:&strOut strErrInfo:&strErroInfo];
     NSLog(@"sendOrder: strout=%@ erro = %@",strOut,strErroInfo);
+    
 }
 - (void)queryOrder:(NSString *)StrCmd strout:(NSMutableString*)strOut {
     NSMutableString* strErroInfo = [[NSMutableString alloc]initWithString:@""];
@@ -171,7 +151,8 @@ static ICEQuickOrder* QuickOrder = nil;
     [self.quickOrder QueryOrder:@"" strCmd:StrCmd strOut:&strOut strErrInfo:&strErroInfo];
     NSLog(@"QueryOrder: strout=%@ erro = %@",strOut,strErroInfo);
 }
-- (void)queryFund:(NSString*)StrCmd{
+
+- (void)queryFund:(NSString*)strCmdType strCmd:(NSString*)StrCmd{
     NSMutableString* strErroInfo = [[NSMutableString alloc]initWithString:@""];
     NSMutableString* strOut = [[NSMutableString alloc]initWithString:@""];
     [self.quickOrder QueryFund:@"" strCmd:StrCmd  strOut:&strOut strErrInfo:&strErroInfo];

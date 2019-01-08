@@ -422,7 +422,7 @@
     minAssert *= 0.9991;
     CGFloat minY = Y_StockChartKLineMainViewMinY;
     CGFloat maxY ; 
-    AppDelegate *app  = [UIApplication sharedApplication].delegate;
+    AppDelegate *app  = (AppDelegate*)[UIApplication sharedApplication].delegate;
     if (app.isEable == YES){
         maxY = self.parentScrollView.frame.size.height * [Y_StockChartGlobalVariable kLineMainViewRadio] - 25;
     }

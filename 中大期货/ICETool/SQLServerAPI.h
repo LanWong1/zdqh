@@ -3,7 +3,7 @@
 //  ZYWChart
 //
 //  Created by zdqh on 2018/9/14.
-//  Copyright © 2018年 zyw113. All rights reserved.
+//  Copyright © 2018年 com.zdqh. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -31,8 +31,6 @@
 @property (nonatomic) id<ICEConnection> connection;
 @property (nonatomic) SqlServerSqlParameter *SqlParameter;
 @property (nonatomic,strong)  SqlServerMutableSQLPARAMETERSEQUENCE *paremetersSeq;
-
-
 
 
 - (void)Connect2ICE;

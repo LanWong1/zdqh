@@ -3,7 +3,7 @@
 //  ZYWChart
 //
 //  Created by IanWong on 2018/11/12.
-//  Copyright © 2018 zyw113. All rights reserved.
+//  Copyright © 2018 com.zdqh. All rights reserved.
 //
 
 #import "CodeListCell.h"
@@ -17,7 +17,6 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-
     // Configure the view for the selected state
 }
 
@@ -31,29 +30,24 @@
          if (cell == nil) {
                  cell = [[CodeListCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
              }
+     
         return cell;
      }
 
 
 -(id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
-    NSLog(@"init cell=======");
+   
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    
     if(self){
         [self.contentView addSubview:self.priceChangePercentageLabel];
-        
         [self.contentView addSubview:self.lastPriceLabel];
-        
         [self.contentView addSubview:self.openInsertLabel];
-        
     }
     return self;
 }
 
-
-
-
 -(UILabel*)priceChangePercentageLabel{
+    
     if(!_priceChangePercentageLabel){
         _priceChangePercentageLabel = [[UILabel alloc]initWithFrame:CGRectMake(230, 0, 60, self.height)];
         _priceChangePercentageLabel.font = [UIFont systemFontOfSize:16];

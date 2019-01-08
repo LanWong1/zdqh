@@ -16,6 +16,9 @@
 #import "AppDelegate.h"
 #import "Y_StockChartViewController.h"
 #import "ICEQuote.h"
+#import "KlineModel.h"
+
+
 
 #define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
 #define kScreenWidth [UIScreen mainScreen].bounds.size.width
@@ -28,14 +31,13 @@
 
 @property (nonatomic, strong) Y_StockChartView *stockChartView;
 @property (nonatomic, strong) Y_KLineGroupModel *groupModel;
-@property (nonatomic, copy) NSMutableDictionary <NSString*, Y_KLineGroupModel*> *modelsDict;
+//@property (nonatomic, copy) NSMutableDictionary <NSString*, Y_KLineGroupModel*> *modelsDict;
 @property (nonatomic, assign) NSInteger currentIndex;
 @property (nonatomic, copy)   NSString *type;
 @property (nonatomic, strong) NSTimer *refreshTimer;
-
 @property (nonatomic, assign) NSInteger currentTypeIndex;
 
-
+@property (nonatomic, strong) KlineModel *klineModel;
 
 
 
@@ -73,17 +75,24 @@
     
     NSLog(@"change MinData get notify+++++++++++++++");
     _MinData = notiy.userInfo[@"minData"];
-    _fifteenMinsData = notiy.userInfo[@"fifteenMinData"];
-    _fiveMinsData = notiy.userInfo[@"fiveMinData"];
+    _fifteenMinsData = notiy.userInfo[@"fifteenMinData"]; //15分钟数据
+    _fiveMinsData = notiy.userInfo[@"fiveMinData"];//五分钟数据
+    self.groupModel  = [Y_KLineGroupModel objectWithArray:_MinData];
+    [self.modelsDict setObject:_groupModel forKey:@"1min"];
     
+    self.groupModel  = [Y_KLineGroupModel objectWithArray:_fifteenMinsData];
+    [self.modelsDict setObject:_groupModel forKey:@"15min"];
+    self.groupModel  = [Y_KLineGroupModel objectWithArray:_fiveMinsData];
+    [self.modelsDict setObject:_groupModel forKey:@"5min"];
+
 }
-- (NSMutableDictionary<NSString *,Y_KLineGroupModel *> *)modelsDict
-{
-    if (!_modelsDict) {
-        _modelsDict = @{}.mutableCopy;
-    }
-    return _modelsDict;
-}
+//- (NSMutableDictionary<NSString *,Y_KLineGroupModel *> *)modelsDict
+//{
+//    if (!_modelsDict) {
+//        _modelsDict = @{}.mutableCopy;
+//    }
+//    return _modelsDict;
+//}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -92,7 +101,6 @@
 
 -(id) stockDatasWithIndex:(NSInteger)index
 {
-    
     NSString *type;
     switch (index) {
         case 0:
@@ -171,49 +179,17 @@
     }
     return nil;
 }
-
-
-
-
-
-
-
+//重新加载数据
 - (void)reloadData
 {
-
-    NSMutableArray *data = [NSMutableArray array];
-
-    switch (_currentTypeIndex) {
-        case 0:
-            [data addObjectsFromArray:_MinData];
-            break;
-        case 1:
-            [data addObjectsFromArray:_fiveMinsData];
-            break;
-        case 2:
-            [data addObjectsFromArray:_fifteenMinsData];
-            break;
-        case 3:
-            [data addObjectsFromArray:_monthData];
-            break;
-        case 4:
-            [data addObjectsFromArray:_dayData];
-            break;
-        case 5:
-            [data addObjectsFromArray:_weekData];
-            break;
-        default:
-            break;
-    }
-    self.groupModel  = [Y_KLineGroupModel objectWithArray:data];
-    [self.modelsDict setObject:_groupModel forKey:self.type];//model 字典 键值编程 更新M_groupModel
     [self.stockChartView reloadData];
     [self.stockChartView.kLineView reDraw];//重绘kline
 }
+
+
 - (Y_StockChartView*)stockChartView
 {
-    
-    
+
     NSLog(@"stockchartView");
     if(!_stockChartView) {
 
@@ -228,8 +204,6 @@
                                        [Y_StockChartViewItemModel itemModelWithTitle:@"日线" type:Y_StockChartcenterViewTypeKline],
                                        [Y_StockChartViewItemModel itemModelWithTitle:@"周线" type:Y_StockChartcenterViewTypeKline],
                                        ];
-       
-        
         // _stockChartView.backgroundColor = [UIColor orangeColor];
         _stockChartView.dataSource = self;
         [self.view addSubview:_stockChartView];
@@ -250,31 +224,20 @@
 }
 - (void)dismiss
 {
-    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
+    AppDelegate *appdelegate =(AppDelegate*)[UIApplication sharedApplication].delegate;
     appdelegate.isEable = NO;//非横屏
     if(_refreshTimer){
         [_refreshTimer invalidate];
     }
-
     if(_stockChartView){
         [_stockChartView removeFromSuperview];
     }
     [self dismissViewControllerAnimated:YES completion:nil ];
-   
 }
+
 - (void)dealloc{
     NSLog(@"dealloc ++++++++++++++++");
     [[NSNotificationCenter defaultCenter] removeObserver:self name:@"changeMinDataNotity" object:nil];
     
 }
-//- (UIInterfaceOrientationMask)supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationMaskLandscape;
-//}
-//- (BOOL)shouldAutorotate
-//{
-//    return NO;
-//}
-
-
 @end

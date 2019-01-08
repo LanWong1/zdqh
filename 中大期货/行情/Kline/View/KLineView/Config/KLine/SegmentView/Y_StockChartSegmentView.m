@@ -239,7 +239,7 @@ static NSInteger const Y_StockChartSegmentStartTag = 2000;
 #pragma mark 底部按钮点击事件  按下button  调用协议方法
 - (void)event_segmentButtonClicked:(UIButton *)btn
 {
-    AppDelegate *appdelegate = [UIApplication sharedApplication].delegate;
+    AppDelegate *appdelegate =(AppDelegate*)[UIApplication sharedApplication].delegate;
     if(appdelegate.isEable == NO)
     {
         [_selectedBtnPortrit setSelected:NO];

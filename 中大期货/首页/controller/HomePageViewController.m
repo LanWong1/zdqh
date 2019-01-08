@@ -22,25 +22,28 @@
 #define heightNavAndStatus self.navigationController.navigationBar.frame.size.height +  [UIApplication sharedApplication].statusBarFrame.size.height
 @interface HomePageViewController ()<UITableViewDelegate,UITableViewDataSource,QuoteModelDelegate>
 
-@property (nonatomic, strong) TopScrollView *topScrollView;
-@property (nonatomic, strong) NoticeView *noticeView;
-@property (nonatomic, strong) MyFundView *myFundView;
-@property (nonatomic, strong) UIStackView *stactViewForIndexView;
+@property (nonatomic, strong) TopScrollView *topScrollView; //图片轮播
+@property (nonatomic, strong) NoticeView *noticeView;//通知：中大期货盈利一个亿
+@property (nonatomic, strong) MyFundView *myFundView; //出入金
+@property (nonatomic, strong) UIStackView *stactViewForIndexView;//主要指数视图方块
+
 @property (nonatomic, strong) NSMutableArray<IndexModel *> *indexArray;
-@property (nonatomic, strong) FundModel *fundModel;
-@property (nonatomic, strong) TopChangeView *topChangeView;
-@property (nonatomic, strong) UITableView *topList;
+@property (nonatomic, strong) FundModel *fundModel;  //资金: 可用资金 剩余资金 使用率
+@property (nonatomic, strong) TopChangeView *topChangeView;  //涨跌幅按钮
+@property (nonatomic, strong) UITableView *topList;  //涨跌幅榜
 @property (nonatomic, strong) NSMutableArray <QuoteModel*> * listData;//涨跌幅数据
-@property (nonatomic, assign) NSInteger dropRiseFlag;
+@property (nonatomic, assign) NSInteger dropRiseFlag;//涨幅 跌幅按钮指示
 @end
 
 @implementation HomePageViewController
-- (void)viewWillAppear:(BOOL)animated{
-    
-    [super viewWillAppear: animated];
 
+
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear: animated];
     [self.topList deselectRowAtIndexPath:[self.topList indexPathForSelectedRow] animated:YES];
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"首页";
@@ -49,11 +52,15 @@
     // 测试数据
     _listData = [NSMutableArray array];
     _fundModel = [FundModel sharedInstance];
+    //对象添加监视
     [_fundModel addObserver:self forKeyPath:@"interests" options:NSKeyValueObservingOptionNew context:nil];
-    [self testData];
+    
+    
+    [self testData];//自己编造的主要指数的数据
+    //顶部图片轮播
     self.topScrollView.picCount = 3;
     [self.topScrollView loadView];
-    [self addNoticeView];
+    [self addNoticeView];//通知
     [self addIndexViewForArray:_indexArray];
     [self.myFundView.interest setText:@"10000"];
     [self.myFundView.usedRate setText:@"60%"];
@@ -68,17 +75,18 @@
 
 -(void)changeTopList:(UIButton*)btn{
     [_listData removeAllObjects];
+    
     if(btn.tag==100){
         NSLog(@"涨幅榜");
         _dropRiseFlag = 1;
         _listData = [[QuoteArrayModel shareInstance].riseModelArray mutableCopy];
     }
+    
     else{
         NSLog(@"跌幅榜");
         _topChangeView.topRiseBtn.selected = NO;
         _dropRiseFlag = 0;
         _listData = [[QuoteArrayModel shareInstance].dropModelArray mutableCopy];
-    
     }
   
     [_topList reloadData];
@@ -98,12 +106,7 @@
     }
     return _topList;
 }
-//KVO 监测资金变化
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-   
-    [self.myFundView.interest setText: change[@"new"]];
-    
-}
+
 -(UIView*)topChangeView{
     
     if(!_topChangeView){
@@ -118,6 +121,7 @@
     }
     return _topChangeView;
 }
+// 通知 中大期货盈利一个亿
 -(void)addNoticeView{
     self.noticeView.backgroundColor = [UIColor greenColor];
     [_noticeView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -130,6 +134,17 @@
     [_noticeView.moreBtn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
     [_noticeView.moreBtn addTarget: self action:@selector(moreNotice:) forControlEvents:UIControlEventTouchUpInside];
 }
+// more 消息
+-(void)moreNotice:(UIButton *)btn{
+    NSLog(@"see more notice");
+    _fundModel.interests = @"sssssssssddd";
+}
+//KVO 监测资金变化  资金变化 实时更新
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+    [self.myFundView.interest setText: change[@"new"]];
+}
+
+//顶部轮播图
 - (TopScrollView*)topScrollView{
     if(!_topScrollView){
         _topScrollView = [[TopScrollView alloc]init];
@@ -138,20 +153,21 @@
     }
     return _topScrollView;
 }
+
+//主要市场指数 测试数据
 - (void)testData{
     NSArray *name = [NSArray arrayWithObjects:@"上证指数",@"深圳成指",@"恒生指数",nil];
     NSArray *index = [NSArray arrayWithObjects:@"3000",@"8000",@"3000", nil];
     NSArray *indexChange = [NSArray arrayWithObjects:@"10%",@"-5.0%",@"10%", nil];
-    
     for(int i=0; i<3;i++){
         IndexModel *model = [IndexModel new];
         model.indexName = name[i];
         model.indexNum = index[i];
         model.indexChange = indexChange[i];
         [_indexArray addObject:model];
-        
     }
 }
+// 懒加载
 -(NoticeView*)noticeView{
     if(!_noticeView){
         _noticeView = [[NoticeView alloc]init];
@@ -159,7 +175,7 @@
     }
     return _noticeView;
 }
-
+//指数视图
 -(void)addIndexViewForArray:(NSArray<IndexModel*>*)array{
     
     _stactViewForIndexView = [[UIStackView alloc]init];
@@ -206,7 +222,7 @@
         }];
     }
 }
-
+// 资金视图
 - (MyFundView*)myFundView{
     if(!_myFundView){
         _myFundView = [MyFundView instanceMyFundView];
@@ -217,15 +233,8 @@
             make.left.right.equalTo(self.view);
         }];
     }
-    
     return _myFundView;
-    
 }
--(void)moreNotice:(UIButton *)btn{
-    NSLog(@"see more notice");
-    _fundModel.interests = @"sssssssssddd";
-}
-
 
 
 #pragma mark  tableview delegate
@@ -238,35 +247,27 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // NSLog(@"indexpath,row is %d",indexPath.row);
-    
     NSString *sCode = _listData[indexPath.row].instrumenID;
     NSString *name = _listData[indexPath.row].exChangeCode;
-    
     NSString *title = [NSString stringWithFormat:@"%@(%@)",name,sCode];
     Y_StockChartViewController* vc = [[Y_StockChartViewController alloc]initWithScode:sCode];
-    
     vc.navigationBarTitle = title;
     vc.futu_price_step = _listData[indexPath.row].futu_price_step;
     vc.codeIndex = _listData[indexPath.row].codeIndex;
-    
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 //每个 cell
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    
     NSString *lastPrice;
     NSString *priceChangePercentage;
     NSString *openInterest;
     CodeListCell *cell = [CodeListCell cellWithTableView:tableView];
- 
     //订阅 只订阅一次
     lastPrice = _listData[indexPath.row].lastPrice;
     priceChangePercentage = _listData[indexPath.row].priceChangePercentage;
     openInterest = _listData[indexPath.row].openInterest;
-    
     cell.textLabel.text = _listData[indexPath.row].exChangeCode;
     cell.detailTextLabel.text = _listData[indexPath.row].instrumenID;
     
@@ -283,77 +284,45 @@
     [cell.lastPriceLabel setTextColor:RoseColor];
     cell.priceChangePercentageLabel.text = priceChangePercentage;
     [cell.priceChangePercentageLabel setTextColor:RoseColor];
+    [cell.contentView setBackgroundColor:RoseColor];
     if([cell.priceChangePercentageLabel.text containsString:@"-"]){
         [cell.priceChangePercentageLabel setTextColor:DropColor];
         [cell.lastPriceLabel setTextColor:DropColor];
+        [cell.contentView setBackgroundColor:DropColor];
     }
     cell.openInsertLabel.text = openInterest;
     cell.selectionStyle = UITableViewCellSelectionStyleBlue; //设置选中的颜色
     cell.textLabel.font = [UIFont systemFontOfSize:16];
+    [UIView animateWithDuration:0.5f animations:^{
+        [cell.contentView setBackgroundColor:[UIColor whiteColor]];
+    }];
     return cell;
 }
 
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
-
-
-        UITableViewRowAction *action = [[UITableViewRowAction alloc]init];
-        UITableViewRowAction *likeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"加自选" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-            //            [_myFavoriteCodeIndexArray addObject:@(indexPath.row)];
-            //            [_myFavoriteCodeArray addObject:_codeArray[indexPath.row]];
-            MyFavoriteModel *myFavoriteCode = [[MyFavoriteModel alloc]initWithCode:self.listData[indexPath.row].exChangeCode index:self.listData[indexPath.row].codeIndex];
-            
-            [[CodeListCoreData sharedInstance] create:myFavoriteCode];
-
-            //NSLog(@"myFavoriteCodeIndexArray ==== %@",_myFavoriteCodeIndexArray);
-            tableView.editing = NO;
-        }];
-        likeAction.backgroundColor = [UIColor orangeColor];
-        action = likeAction;
-//    UITableViewRowAction *action = [[UITableViewRowAction alloc]init];
-//
-//    if (!_myFavorite) {
-//        UITableViewRowAction *likeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"加自选" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-//            //            [_myFavoriteCodeIndexArray addObject:@(indexPath.row)];
-//            //            [_myFavoriteCodeArray addObject:_codeArray[indexPath.row]];
-//            MyFavoriteModel *myFavoriteCode = [[MyFavoriteModel alloc]initWithCode:_codeArray[indexPath.row] index:indexPath.row];
-//
-//            [[CodeListCoreData sharedInstance] create:myFavoriteCode];
-//
-//            //NSLog(@"myFavoriteCodeIndexArray ==== %@",_myFavoriteCodeIndexArray);
-//            tableView.editing = NO;
-//        }];
-//        likeAction.backgroundColor = [UIColor orangeColor];
-//        action = likeAction;
-//
-//    }
-//
-//    if(_myFavorite){
-//        UITableViewRowAction *disLikeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"取消自选" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
-//            MyFavoriteModel *removeModel = [[MyFavoriteModel alloc]init];
-//            _myFavoriteArray = [NSArray array];
-//            _myFavoriteArray = [[CodeListCoreData sharedInstance] findAll];
-//            removeModel = _myFavoriteArray[indexPath.row];
-//            [[CodeListCoreData sharedInstance] remove:removeModel.code];
-//            _searchResult = [[CodeListCoreData sharedInstance] findAll];
-//            [tableView reloadData];
-//        }];
-//        disLikeAction.backgroundColor = [UIColor redColor];
-//        action = disLikeAction;
-//    }
+    
+    UITableViewRowAction *action = [[UITableViewRowAction alloc]init];
+    UITableViewRowAction *likeAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleNormal title:@"加自选" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath) {
+        MyFavoriteModel *myFavoriteCode = [[MyFavoriteModel alloc]initWithCode:self.listData[indexPath.row].exChangeCode index:self.listData[indexPath.row].codeIndex];
+        [[CodeListCoreData sharedInstance] create:myFavoriteCode];
+        tableView.editing = NO;
+    }];
+    likeAction.backgroundColor = [UIColor orangeColor];
+    action = likeAction;
     return @[action];
 }
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 
+
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     return YES;
-    
 }
 
 
 - (void)reloadData:(NSInteger)index{
-    NSLog(@"reload data toplist");
+   
     [_listData removeAllObjects];
     if(_dropRiseFlag ==1){
         _listData = [[QuoteArrayModel shareInstance].dropModelArray mutableCopy];;
@@ -363,14 +332,4 @@
     }
     [_topList reloadData];
 }
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

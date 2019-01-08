@@ -2,8 +2,8 @@
 //  ZYWChart-Prefix.pch
 //  ZYWChart
 //
-//  Created by 张有为 on 2016/12/17.
-//  Copyright © 2016年 zyw113. All rights reserved.
+//  Created by zdqh on 2016/12/17.
+//  Copyright © 2016年 com.zdqh. All rights reserved.
 //
 
 #ifndef ZYWChart_Prefix_pch
@@ -12,7 +12,6 @@
 #ifdef __OBJC__
 
 #import "Masonry.h"
-
 #import "UIColor+YW.h"
 #import "UIView+Extension.h"
 #import <CoreData/CoreData.h>

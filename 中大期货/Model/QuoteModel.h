@@ -3,7 +3,7 @@
 //  ZYWChart
 //
 //  Created by zdqh on 2018/10/31.
-//  Copyright © 2018 zyw113. All rights reserved.
+//  Copyright © 2018 com.zdqh. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface QuoteModel : NSObject
+
 @property (nonatomic,assign) NSInteger codeIndex;
 @property(nonatomic, copy) NSString* exChangeCode;//合约代码带中文的
 @property(nonatomic, copy) NSString* futu_price_step;//变动单位

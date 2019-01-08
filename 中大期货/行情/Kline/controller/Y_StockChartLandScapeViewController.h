@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "Y_KLineGroupModel.h"
 @interface Y_StockChartLandScapeViewController : UIViewController
 
 @property (nonatomic, copy) NSString* sCode;
@@ -18,5 +18,5 @@
 @property (nonatomic, strong) NSArray *weekData;
 @property (nonatomic, strong) NSArray *dayData;
 @property (nonatomic, strong) NSArray *monthData;
-
+@property (nonatomic, copy) NSMutableDictionary <NSString*, Y_KLineGroupModel*> *modelsDict;
 @end

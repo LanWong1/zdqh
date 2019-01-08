@@ -3,13 +3,24 @@
 //  ZYWChart
 //
 //  Created by IanWong on 2018/7/17.
-//  Copyright © 2018 zyw113. All rights reserved.
+//  Copyright © 2018 com.zdqh. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <objc/Glacier2.h>
 #import <objc/Ice.h>
 #import "QuickOrder.h"
+
+
+@protocol CIEQuickOrderDelegate <NSObject>
+
+-(void)LoginFailErroinfo:(NSString*)erroInfo;
+
+@end
+
+
+
+
 
 
 @class ICEInitializationData;
@@ -43,6 +54,8 @@
 
 
 
+@property(weak, nonatomic) id<CIEQuickOrderDelegate>delegate;
+
 
 
 
@@ -52,10 +65,11 @@
 
 - (void)initiateCallback:(NSString*)strAcc;
 - (int)HeartBeat:(NSString*)strCmd;
-- (void)reConnect;
+//- (void)reConnect;
 - (void)sendOrder:(NSString*)StrCmdType strCmd:(NSString *)StrCmd;
 - (void)queryOrder:(NSString*)StrCmd;
-- (void)queryFund:(NSString*)StrCmd;
+//- (void)queryFund:(NSString*)StrCmd;
+- (void)queryFund:(NSString*)strCmdType strCmd:(NSString*)StrCmd;
 //- (void)queryCode:(NSString*)StrCmd;
 - (void)clearOrder:(NSString*)StrCmd;
 //- (void)Logout:(NSString*)StrCmd;
